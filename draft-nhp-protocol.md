@@ -19,35 +19,34 @@
 # Change the file extension to match the format (.xml for XML, etc...)
 #
 ###
-title: "TODO - Your title"
-abbrev: "TODO - Abbreviation"
+title: "Network infrastructure Hiding Protocol"
+abbrev: "NHP"
 category: info
 
-docname: draft-todo-yourname-protocol-latest
-submissiontype: IETF  # also: "independent", "editorial", "IAB", or "IRTF"
-number:
-date:
+docname: draft-nhp-protocol-00
+submissiontype: independent  # also: "IETF", "editorial", "IAB", or "IRTF"
+number: 00
+date: 2025-07-22
 consensus: true
-v: 3
-area: AREA
-workgroup: WG Working Group
+v: 1
+area: SEC
+workgroup: SECDispatch
 keyword:
- - next generation
- - unicorn
- - sparkling distributed ledger
+ - zero trust
+ - session layer
 venue:
   group: WG
   type: Working Group
-  mail: WG@example.com
+  mail: opennhp@gmail.com
   arch: https://example.com/WG
-  github: USER/REPO
+  github: OpenNHP/opennhp
   latest: https://example.com/LATEST
 
 author:
  -
-    fullname: Your Name Here
-    organization: Your Organization Here
-    email: your.email@example.com
+    fullname: Benfeng Chen
+    organization: OpenNHP
+    email: benfeng@gmail.com
 
 normative:
 
