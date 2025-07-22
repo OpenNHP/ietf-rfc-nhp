@@ -3,10 +3,11 @@ title: "Network infrastructure Hiding Protocol"
 abbrev: "NHP"
 category: info
 
-docname: draft-opennhp-ace-nhp
+docname: draft-opennhp-ace-nhp-latest
 submissiontype: independent
 number: 00
 date: 2025-07-22
+consensus: true
 v: 1
 area: "Security"
 workgroup: "ace"
