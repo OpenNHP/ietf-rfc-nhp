@@ -9,18 +9,18 @@ number: 00
 date: 2025-07-22
 consensus: true
 v: 1
-area: SEC
-workgroup: SECDispatch
+area: "Security"
+workgroup: "Security Dispatch"
 keyword:
  - zero trust
  - session layer
 venue:
-  group: WG
-  type: Working Group
-  mail: opennhp@gmail.com
-  arch: https://example.com/WG
-  github: OpenNHP/opennhp
-  latest: https://example.com/LATEST
+  group: "Security Dispatch"
+  type: "Working Group"
+  mail: "secdispatch@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/secdispatch/"
+  github: "OpenNHP/ietf-rfc-nhp"
+  latest: "https://OpenNHP.github.io/ietf-rfc-nhp/draft-ietf-secdispatch-nhp.html"
 
 author:
  -
