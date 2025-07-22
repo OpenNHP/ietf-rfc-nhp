@@ -14,14 +14,17 @@ workgroup: SECDispatch
 keyword:
 - zero trust
 - session layer
+keyword:
+  - zero trust
+  - session layer
 
-venue: 
- group: SECDispatch
- type: Working Group
- mail: [opennhp@gmail.com](mailto:opennhp@gmail.com)
- arch:
- github: OpenNHP/opennhp
- latest: https://github.com/OpenNHP/ietf-rfc-nhp/draft-ietf-secdispatch-nhp.md
+venue:
+  group: WG
+  type: Working Group
+  mail: opennhp@gmail.com
+  arch: https://example.com/WG
+  github: OpenNHP/opennhp
+  latest: https://github.com/OpenNHP/ietf-rfc-nhp/draft-ietf-secdispatch-nhp.md
 
 author:
 -
