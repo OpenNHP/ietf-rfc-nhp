@@ -12,25 +12,21 @@ v: 1
 area: SEC
 workgroup: SECDispatch
 keyword:
-- zero trust
-- session layer
-keyword:
-  - zero trust
-  - session layer
-
+ - zero trust
+ - session layer
 venue:
   group: WG
   type: Working Group
   mail: opennhp@gmail.com
   arch: https://example.com/WG
   github: OpenNHP/opennhp
-  latest: https://github.com/OpenNHP/ietf-rfc-nhp/draft-ietf-secdispatch-nhp.md
+  latest: https://example.com/LATEST
 
 author:
--
- fullname: Benfeng Chen
- organization: OpenNHP
- email: [benfeng@gmail.com](mailto:benfeng@gmail.com)
+ -
+    fullname: Benfeng Chen
+    organization: OpenNHP
+    email: benfeng@gmail.com
 
 normative:
 
