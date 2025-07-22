@@ -3,11 +3,10 @@ title: "Network infrastructure Hiding Protocol"
 abbrev: "NHP"
 category: info
 
-docname: draft-opennhp-ace-nhp-latest
+docname: draft-opennhp-ace-nhp-00
 submissiontype: independent
 number: 00
 date: 2025-07-22
-consensus: true
 v: 1
 area: "Security"
 workgroup: "ace"
@@ -15,7 +14,7 @@ keyword:
  - zero trust
  - session layer
 venue:
-  group: "ace"
+  group: "WG"
   type: "Working Group"
   mail: "ace@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/ace/"
