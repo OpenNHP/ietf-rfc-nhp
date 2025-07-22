@@ -3,8 +3,8 @@ title: "Network infrastructure Hiding Protocol"
 abbrev: "NHP"
 category: info
 
-docname: draft-chen-secdispatch-nhp-latest
-submissiontype: IETF
+docname: draft-opennhp-secdispatch-nhp
+submissiontype: independent
 number: 00
 date: 2025-07-22
 consensus: true
