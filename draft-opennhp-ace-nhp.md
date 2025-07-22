@@ -3,24 +3,24 @@ title: "Network infrastructure Hiding Protocol"
 abbrev: "NHP"
 category: info
 
-docname: draft-opennhp-secdispatch-nhp
+docname: draft-opennhp-ace-nhp-latest
 submissiontype: independent
 number: 00
 date: 2025-07-22
 consensus: true
 v: 1
 area: "Security"
-workgroup: "Security Dispatch"
+workgroup: "ace"
 keyword:
  - zero trust
  - session layer
 venue:
-  group: "Security Dispatch"
+  group: "ace"
   type: "Working Group"
-  mail: "secdispatch@ietf.org"
-  arch: "https://mailarchive.ietf.org/arch/browse/secdispatch/"
+  mail: "ace@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/ace/"
   github: "OpenNHP/ietf-rfc-nhp"
-  latest: "https://OpenNHP.github.io/ietf-rfc-nhp/draft-ietf-secdispatch-nhp.html"
+  latest: "https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-ace-nhp.html"
 
 author:
  -
