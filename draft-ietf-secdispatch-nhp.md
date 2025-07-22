@@ -3,7 +3,7 @@ title: "Network infrastructure Hiding Protocol"
 abbrev: "NHP"
 category: info
 
-docname: draft-nhp-secdispatch-nhp-latest
+docname: draft-ietf-secdispatch-nhp-latest
 submissiontype: IETF
 number: 00
 date: 2025-07-22
