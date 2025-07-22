@@ -5,9 +5,9 @@
 This is the working area for the IETF [SECDISPATCH Working Group](https://datatracker.ietf.org/group/secdispatch/documents/) Internet-Draft, "Network infrastructure Hiding Protocol".
 
 * [Editor's Copy](https://OpenNHP.github.io/ietf-rfc-nhp/#go.draft-ietf-secdispatch-nhp.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-secdispatch-nhp)
-* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-secdispatch-nhp)
-* [Compare Editor's Copy to Working Group Draft](https://OpenNHP.github.io/ietf-rfc-nhp/#go.draft-ietf-secdispatch-nhp.diff)
+* [Datatracker Page]([)](https://datatracker.ietf.org/doc/draft-opennhp-ace-nhp/)
+* [Working Group Draft]([)](https://www.ietf.org/archive/id/draft-opennhp-ace-nhp-00.html)
+* [Compare Editor's Copy to Working Group Draft](https://OpenNHP.github.io/ietf-rfc-nhp/#go.draft-opennhp-ace-nhp.diff)
 
 
 ## Contributing
