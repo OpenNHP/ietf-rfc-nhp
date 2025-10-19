@@ -5,7 +5,7 @@ category: info
 
 docname: draft-opennhp-ace-nhp-latest
 submissiontype: independent
-number: 00
+number: 01
 date: 2025-10-19
 v: 1
 area: "Security"
