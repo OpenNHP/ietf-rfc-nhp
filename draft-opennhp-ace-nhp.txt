@@ -3,7 +3,7 @@
 
 
 Independent Submission                                           B. Chen
-Request for Comments: 0                                          OpenNHP
+Request for Comments: 1                                          OpenNHP
 Category: Informational                                  19 October 2025
 ISSN: 2070-1721
 
@@ -99,7 +99,7 @@ Status of This Memo
 
    Information about the current status of this document, any errata,
    and how to provide feedback on it may be obtained at
-   https://www.rfc-editor.org/info/rfc0.
+   https://www.rfc-editor.org/info/rfc1.
 
 Copyright Notice
 
