@@ -4,7 +4,7 @@
 
 Independent Submission                                           B. Chen
 Request for Comments: 0                                          OpenNHP
-Category: Informational                                     22 July 2025
+Category: Informational                                  19 October 2025
 ISSN: 2070-1721
 
 
@@ -33,8 +33,8 @@ Abstract
 
    *  session layer
 
-   *  network obfuscation venue: group: "SECDISPATCH" type: "Independent
-      Submission" mail: "secdp@ietf.org (mailto:secdp@ietf.org)" arch:
+   *  network obfuscation venue: group: "saag" type: "Independent
+      Submission" mail: "saag@ietf.org (mailto:saag@ietf.org)" arch:
       "https://mailarchive.ietf.org/arch/browse/secdp/
       (https://mailarchive.ietf.org/arch/browse/secdp/)" github:
       "OpenNHP/ietf-rfc-nhp" latest: "https://OpenNHP.github.io/ietf-
