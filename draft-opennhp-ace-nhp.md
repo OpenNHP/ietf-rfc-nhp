@@ -6,17 +6,17 @@ category: info
 docname: draft-opennhp-ace-nhp-latest
 submissiontype: independent
 number: 00
-date: 2025-07-22
+date: 2025-10-19
 v: 1
 area: "Security"
-workgroup: "ace"
+workgroup: "saag"
 keyword:
  - zero trust
  - session layer
 venue:
   group: "WG"
   type: "Working Group"
-  mail: "ace@ietf.org"
+  mail: "saag@ietf.org"
   arch: "https://mailarchive.ietf.org/arch/browse/ace/"
   github: "OpenNHP/ietf-rfc-nhp"
   latest: "https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-ace-nhp.html"
@@ -90,9 +90,9 @@ keyword:
 * session layer
 * network obfuscation
   venue:
-  group: "SECDISPATCH"
+  group: "saag"
   type: "Independent Submission"
-  mail: "[secdp@ietf.org](mailto:secdp@ietf.org)"
+  mail: "[saag@ietf.org](mailto:saag@ietf.org)"
   arch: "[https://mailarchive.ietf.org/arch/browse/secdp/](https://mailarchive.ietf.org/arch/browse/secdp/)"
   github: "OpenNHP/ietf-rfc-nhp"
   latest: "[https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-ace-nhp.html](https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-ace-nhp.html)"
