@@ -1049,7 +1049,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">RFC 2</td>
 <td class="center">NHP</td>
-<td class="right">January 2025</td>
+<td class="right">January 2026</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Chen</td>
@@ -1068,7 +1068,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="category">Informational</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2025-01-01" class="published">1 January 2025</time>
+<time datetime="2026-01-01" class="published">1 January 2026</time>
     </dd>
 <dt class="label-issn">ISSN:</dt>
 <dd class="issn">2070-1721</dd>
@@ -1114,7 +1114,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <a href="#name-copyright-notice" class="section-name selfRef">Copyright Notice</a>
         </h2>
 <p id="section-boilerplate.2-1">
-            Copyright (c) 2025 IETF Trust and the persons identified as the
+            Copyright (c) 2026 IETF Trust and the persons identified as the
             document authors. All rights reserved.<a href="#section-boilerplate.2-1" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.2-2">
             This document is subject to BCP 78 and the IETF Trust's Legal
@@ -1141,294 +1141,317 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-design-objectives" class="internal xref">Design Objectives</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
-            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-threat-model" class="internal xref">Threat Model</a></p>
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-relationship-to-tls" class="internal xref">Relationship to TLS</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
-                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-reconnaissance-and-scanning" class="internal xref">Reconnaissance and Scanning</a></p>
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-osi-layer-positioning" class="internal xref">OSI Layer Positioning</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
-                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-pre-authentication-exploits" class="internal xref">Pre-Authentication Exploits</a></p>
+                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-key-differences" class="internal xref">Key Differences</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.3">
-                <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-ddos-attacks" class="internal xref">DDoS Attacks</a></p>
+                <p id="section-toc.1-1.4.2.3.1"><a href="#section-4.3" class="auto internal xref">4.3</a>.  <a href="#name-the-pre-authentication-prob" class="internal xref">The Pre-Authentication Problem</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.4">
-                <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="auto internal xref">4.4</a>.  <a href="#name-credential-theft-and-replay" class="internal xref">Credential Theft and Replay</a></p>
+                <p id="section-toc.1-1.4.2.4.1"><a href="#section-4.4" class="auto internal xref">4.4</a>.  <a href="#name-complementary-security-mode" class="internal xref">Complementary Security Model</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.5">
-                <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="auto internal xref">4.5</a>.  <a href="#name-man-in-the-middle-attacks" class="internal xref">Man-in-the-Middle Attacks</a></p>
+                <p id="section-toc.1-1.4.2.5.1"><a href="#section-4.5" class="auto internal xref">4.5</a>.  <a href="#name-vulnerabilities-addressed-b" class="internal xref">Vulnerabilities Addressed by NHP but Not TLS</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.6">
+                <p id="section-toc.1-1.4.2.6.1"><a href="#section-4.6" class="auto internal xref">4.6</a>.  <a href="#name-why-both-are-needed" class="internal xref">Why Both Are Needed</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-architectural-overview" class="internal xref">Architectural Overview</a></p>
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-threat-model" class="internal xref">Threat Model</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1">
-                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-core-components" class="internal xref">Core Components</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1.2.1">
-                    <p id="section-toc.1-1.5.2.1.2.1.1"><a href="#section-5.1.1" class="auto internal xref">5.1.1</a>.  <a href="#name-nhp-agent" class="internal xref">NHP-Agent</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1.2.2">
-                    <p id="section-toc.1-1.5.2.1.2.2.1"><a href="#section-5.1.2" class="auto internal xref">5.1.2</a>.  <a href="#name-nhp-server" class="internal xref">NHP-Server</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1.2.3">
-                    <p id="section-toc.1-1.5.2.1.2.3.1"><a href="#section-5.1.3" class="auto internal xref">5.1.3</a>.  <a href="#name-nhp-ac-access-controller" class="internal xref">NHP-AC (Access Controller)</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.1.2.4">
-                    <p id="section-toc.1-1.5.2.1.2.4.1"><a href="#section-5.1.4" class="auto internal xref">5.1.4</a>.  <a href="#name-authorization-service-provi" class="internal xref">Authorization Service Provider (ASP)</a></p>
-</li>
-                </ul>
+                <p id="section-toc.1-1.5.2.1.1"><a href="#section-5.1" class="auto internal xref">5.1</a>.  <a href="#name-reconnaissance-and-scanning" class="internal xref">Reconnaissance and Scanning</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.2">
-                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-component-interactions" class="internal xref">Component Interactions</a></p>
+                <p id="section-toc.1-1.5.2.2.1"><a href="#section-5.2" class="auto internal xref">5.2</a>.  <a href="#name-pre-authentication-exploits" class="internal xref">Pre-Authentication Exploits</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3">
-                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-deployment-models" class="internal xref">Deployment Models</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.1">
-                    <p id="section-toc.1-1.5.2.3.2.1.1"><a href="#section-5.3.1" class="auto internal xref">5.3.1</a>.  <a href="#name-standalone-deployment" class="internal xref">Standalone Deployment</a></p>
+                <p id="section-toc.1-1.5.2.3.1"><a href="#section-5.3" class="auto internal xref">5.3</a>.  <a href="#name-ddos-attacks" class="internal xref">DDoS Attacks</a></p>
 </li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.2">
-                    <p id="section-toc.1-1.5.2.3.2.2.1"><a href="#section-5.3.2" class="auto internal xref">5.3.2</a>.  <a href="#name-clustered-deployment" class="internal xref">Clustered Deployment</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.4">
+                <p id="section-toc.1-1.5.2.4.1"><a href="#section-5.4" class="auto internal xref">5.4</a>.  <a href="#name-credential-theft-and-replay" class="internal xref">Credential Theft and Replay</a></p>
 </li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.3">
-                    <p id="section-toc.1-1.5.2.3.2.3.1"><a href="#section-5.3.3" class="auto internal xref">5.3.3</a>.  <a href="#name-edge-ac-deployment" class="internal xref">Edge AC Deployment</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.3.2.4">
-                    <p id="section-toc.1-1.5.2.3.2.4.1"><a href="#section-5.3.4" class="auto internal xref">5.3.4</a>.  <a href="#name-multi-tenant-deployment" class="internal xref">Multi-Tenant Deployment</a></p>
-</li>
-                </ul>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5.2.5">
+                <p id="section-toc.1-1.5.2.5.1"><a href="#section-5.5" class="auto internal xref">5.5</a>.  <a href="#name-man-in-the-middle-attacks" class="internal xref">Man-in-the-Middle Attacks</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-protocol-workflow" class="internal xref">Protocol Workflow</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-architectural-overview" class="internal xref">Architectural Overview</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1">
-                <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="auto internal xref">6.1</a>.  <a href="#name-control-plane-vs-data-plane" class="internal xref">Control Plane vs Data Plane</a></p>
+                <p id="section-toc.1-1.6.2.1.1"><a href="#section-6.1" class="auto internal xref">6.1</a>.  <a href="#name-core-components" class="internal xref">Core Components</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1.2.1">
+                    <p id="section-toc.1-1.6.2.1.2.1.1"><a href="#section-6.1.1" class="auto internal xref">6.1.1</a>.  <a href="#name-nhp-agent" class="internal xref">NHP-Agent</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1.2.2">
+                    <p id="section-toc.1-1.6.2.1.2.2.1"><a href="#section-6.1.2" class="auto internal xref">6.1.2</a>.  <a href="#name-nhp-server" class="internal xref">NHP-Server</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1.2.3">
+                    <p id="section-toc.1-1.6.2.1.2.3.1"><a href="#section-6.1.3" class="auto internal xref">6.1.3</a>.  <a href="#name-nhp-ac-access-controller" class="internal xref">NHP-AC (Access Controller)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.1.2.4">
+                    <p id="section-toc.1-1.6.2.1.2.4.1"><a href="#section-6.1.4" class="auto internal xref">6.1.4</a>.  <a href="#name-authorization-service-provi" class="internal xref">Authorization Service Provider (ASP)</a></p>
+</li>
+                </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.2">
-                <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="auto internal xref">6.2</a>.  <a href="#name-workflow-steps" class="internal xref">Workflow Steps</a></p>
+                <p id="section-toc.1-1.6.2.2.1"><a href="#section-6.2" class="auto internal xref">6.2</a>.  <a href="#name-component-interactions" class="internal xref">Component Interactions</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3">
-                <p id="section-toc.1-1.6.2.3.1"><a href="#section-6.3" class="auto internal xref">6.3</a>.  <a href="#name-sequence-diagram" class="internal xref">Sequence Diagram</a></p>
+                <p id="section-toc.1-1.6.2.3.1"><a href="#section-6.3" class="auto internal xref">6.3</a>.  <a href="#name-deployment-models" class="internal xref">Deployment Models</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3.2.1">
+                    <p id="section-toc.1-1.6.2.3.2.1.1"><a href="#section-6.3.1" class="auto internal xref">6.3.1</a>.  <a href="#name-standalone-deployment" class="internal xref">Standalone Deployment</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3.2.2">
+                    <p id="section-toc.1-1.6.2.3.2.2.1"><a href="#section-6.3.2" class="auto internal xref">6.3.2</a>.  <a href="#name-clustered-deployment" class="internal xref">Clustered Deployment</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3.2.3">
+                    <p id="section-toc.1-1.6.2.3.2.3.1"><a href="#section-6.3.3" class="auto internal xref">6.3.3</a>.  <a href="#name-edge-ac-deployment" class="internal xref">Edge AC Deployment</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6.2.3.2.4">
+                    <p id="section-toc.1-1.6.2.3.2.4.1"><a href="#section-6.3.4" class="auto internal xref">6.3.4</a>.  <a href="#name-multi-tenant-deployment" class="internal xref">Multi-Tenant Deployment</a></p>
+</li>
+                </ul>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-cryptographic-framework" class="internal xref">Cryptographic Framework</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-protocol-workflow" class="internal xref">Protocol Workflow</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.1">
-                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-cryptographic-primitives" class="internal xref">Cryptographic Primitives</a></p>
+                <p id="section-toc.1-1.7.2.1.1"><a href="#section-7.1" class="auto internal xref">7.1</a>.  <a href="#name-control-plane-vs-data-plane" class="internal xref">Control Plane vs Data Plane</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2">
-                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-noise-protocol-handshake-pa" class="internal xref">Noise Protocol Handshake Patterns</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2.2.1">
-                    <p id="section-toc.1-1.7.2.2.2.1.1"><a href="#section-7.2.1" class="auto internal xref">7.2.1</a>.  <a href="#name-xx-pattern-default" class="internal xref">XX Pattern (Default)</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2.2.2">
-                    <p id="section-toc.1-1.7.2.2.2.2.1"><a href="#section-7.2.2" class="auto internal xref">7.2.2</a>.  <a href="#name-ik-pattern-performance-opti" class="internal xref">IK Pattern (Performance Optimized)</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.2.2.3">
-                    <p id="section-toc.1-1.7.2.2.2.3.1"><a href="#section-7.2.3" class="auto internal xref">7.2.3</a>.  <a href="#name-k-pattern-one-way" class="internal xref">K Pattern (One-Way)</a></p>
-</li>
-                </ul>
+                <p id="section-toc.1-1.7.2.2.1"><a href="#section-7.2" class="auto internal xref">7.2</a>.  <a href="#name-workflow-steps" class="internal xref">Workflow Steps</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3">
-                <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="auto internal xref">7.3</a>.  <a href="#name-key-management" class="internal xref">Key Management</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3.2.1">
-                    <p id="section-toc.1-1.7.2.3.2.1.1"><a href="#section-7.3.1" class="auto internal xref">7.3.1</a>.  <a href="#name-static-keys" class="internal xref">Static Keys</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3.2.2">
-                    <p id="section-toc.1-1.7.2.3.2.2.1"><a href="#section-7.3.2" class="auto internal xref">7.3.2</a>.  <a href="#name-ephemeral-keys" class="internal xref">Ephemeral Keys</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7.2.3.2.3">
-                    <p id="section-toc.1-1.7.2.3.2.3.1"><a href="#section-7.3.3" class="auto internal xref">7.3.3</a>.  <a href="#name-key-rotation" class="internal xref">Key Rotation</a></p>
-</li>
-                </ul>
+                <p id="section-toc.1-1.7.2.3.1"><a href="#section-7.3" class="auto internal xref">7.3</a>.  <a href="#name-sequence-diagram" class="internal xref">Sequence Diagram</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
-            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-message-format" class="internal xref">Message Format</a></p>
+            <p id="section-toc.1-1.8.1"><a href="#section-8" class="auto internal xref">8</a>.  <a href="#name-cryptographic-framework" class="internal xref">Cryptographic Framework</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.1">
-                <p id="section-toc.1-1.8.2.1.1"><a href="#section-8.1" class="auto internal xref">8.1</a>.  <a href="#name-message-header" class="internal xref">Message Header</a></p>
+                <p id="section-toc.1-1.8.2.1.1"><a href="#section-8.1" class="auto internal xref">8.1</a>.  <a href="#name-cryptographic-primitives" class="internal xref">Cryptographic Primitives</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.2">
+                <p id="section-toc.1-1.8.2.2.1"><a href="#section-8.2" class="auto internal xref">8.2</a>.  <a href="#name-noise-protocol-handshake-pa" class="internal xref">Noise Protocol Handshake Patterns</a></p>
 <ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.1.2.1">
-                    <p id="section-toc.1-1.8.2.1.2.1.1"><a href="#section-8.1.1" class="auto internal xref">8.1.1</a>.  <a href="#name-header-fields" class="internal xref">Header Fields</a></p>
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.2.2.1">
+                    <p id="section-toc.1-1.8.2.2.2.1.1"><a href="#section-8.2.1" class="auto internal xref">8.2.1</a>.  <a href="#name-xx-pattern-default" class="internal xref">XX Pattern (Default)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.2.2.2">
+                    <p id="section-toc.1-1.8.2.2.2.2.1"><a href="#section-8.2.2" class="auto internal xref">8.2.2</a>.  <a href="#name-ik-pattern-performance-opti" class="internal xref">IK Pattern (Performance Optimized)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.2.2.3">
+                    <p id="section-toc.1-1.8.2.2.2.3.1"><a href="#section-8.2.3" class="auto internal xref">8.2.3</a>.  <a href="#name-k-pattern-one-way" class="internal xref">K Pattern (One-Way)</a></p>
 </li>
                 </ul>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.2">
-                <p id="section-toc.1-1.8.2.2.1"><a href="#section-8.2" class="auto internal xref">8.2</a>.  <a href="#name-message-types" class="internal xref">Message Types</a></p>
-</li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3">
-                <p id="section-toc.1-1.8.2.3.1"><a href="#section-8.3" class="auto internal xref">8.3</a>.  <a href="#name-message-definitions" class="internal xref">Message Definitions</a></p>
+                <p id="section-toc.1-1.8.2.3.1"><a href="#section-8.3" class="auto internal xref">8.3</a>.  <a href="#name-key-management" class="internal xref">Key Management</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3.2.1">
-                    <p id="section-toc.1-1.8.2.3.2.1.1"><a href="#section-8.3.1" class="auto internal xref">8.3.1</a>.  <a href="#name-nhp-kpl-keepalive" class="internal xref">NHP-KPL (Keepalive)</a></p>
+                    <p id="section-toc.1-1.8.2.3.2.1.1"><a href="#section-8.3.1" class="auto internal xref">8.3.1</a>.  <a href="#name-static-keys" class="internal xref">Static Keys</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3.2.2">
-                    <p id="section-toc.1-1.8.2.3.2.2.1"><a href="#section-8.3.2" class="auto internal xref">8.3.2</a>.  <a href="#name-nhp-knk-knock" class="internal xref">NHP-KNK (Knock)</a></p>
+                    <p id="section-toc.1-1.8.2.3.2.2.1"><a href="#section-8.3.2" class="auto internal xref">8.3.2</a>.  <a href="#name-ephemeral-keys" class="internal xref">Ephemeral Keys</a></p>
 </li>
                   <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3.2.3">
-                    <p id="section-toc.1-1.8.2.3.2.3.1"><a href="#section-8.3.3" class="auto internal xref">8.3.3</a>.  <a href="#name-nhp-ack-acknowledge" class="internal xref">NHP-ACK (Acknowledge)</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3.2.4">
-                    <p id="section-toc.1-1.8.2.3.2.4.1"><a href="#section-8.3.4" class="auto internal xref">8.3.4</a>.  <a href="#name-nhp-aop-ac-operations" class="internal xref">NHP-AOP (AC Operations)</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3.2.5">
-                    <p id="section-toc.1-1.8.2.3.2.5.1"><a href="#section-8.3.5" class="auto internal xref">8.3.5</a>.  <a href="#name-nhp-art-ac-result" class="internal xref">NHP-ART (AC Result)</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3.2.6">
-                    <p id="section-toc.1-1.8.2.3.2.6.1"><a href="#section-8.3.6" class="auto internal xref">8.3.6</a>.  <a href="#name-nhp-acc-access" class="internal xref">NHP-ACC (Access)</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3.2.7">
-                    <p id="section-toc.1-1.8.2.3.2.7.1"><a href="#section-8.3.7" class="auto internal xref">8.3.7</a>.  <a href="#name-nhp-reg-register" class="internal xref">NHP-REG (Register)</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3.2.8">
-                    <p id="section-toc.1-1.8.2.3.2.8.1"><a href="#section-8.3.8" class="auto internal xref">8.3.8</a>.  <a href="#name-nhp-rak-register-acknowledg" class="internal xref">NHP-RAK (Register Acknowledge)</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3.2.9">
-                    <p id="section-toc.1-1.8.2.3.2.9.1"><a href="#section-8.3.9" class="auto internal xref">8.3.9</a>.  <a href="#name-nhp-log-log" class="internal xref">NHP-LOG (Log)</a></p>
-</li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8.2.3.2.10">
-                    <p id="section-toc.1-1.8.2.3.2.10.1"><a href="#section-8.3.10" class="auto internal xref">8.3.10</a>. <a href="#name-nhp-lak-log-acknowledge" class="internal xref">NHP-LAK (Log Acknowledge)</a></p>
+                    <p id="section-toc.1-1.8.2.3.2.3.1"><a href="#section-8.3.3" class="auto internal xref">8.3.3</a>.  <a href="#name-key-rotation" class="internal xref">Key Rotation</a></p>
 </li>
                 </ul>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
-            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-logging-and-auditing" class="internal xref">Logging and Auditing</a></p>
+            <p id="section-toc.1-1.9.1"><a href="#section-9" class="auto internal xref">9</a>.  <a href="#name-message-format" class="internal xref">Message Format</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.1">
-                <p id="section-toc.1-1.9.2.1.1"><a href="#section-9.1" class="auto internal xref">9.1</a>.  <a href="#name-log-types" class="internal xref">Log Types</a></p>
+                <p id="section-toc.1-1.9.2.1.1"><a href="#section-9.1" class="auto internal xref">9.1</a>.  <a href="#name-message-header" class="internal xref">Message Header</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.1.2.1">
+                    <p id="section-toc.1-1.9.2.1.2.1.1"><a href="#section-9.1.1" class="auto internal xref">9.1.1</a>.  <a href="#name-header-fields" class="internal xref">Header Fields</a></p>
+</li>
+                </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.2">
-                <p id="section-toc.1-1.9.2.2.1"><a href="#section-9.2" class="auto internal xref">9.2</a>.  <a href="#name-log-format" class="internal xref">Log Format</a></p>
+                <p id="section-toc.1-1.9.2.2.1"><a href="#section-9.2" class="auto internal xref">9.2</a>.  <a href="#name-message-types" class="internal xref">Message Types</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3">
-                <p id="section-toc.1-1.9.2.3.1"><a href="#section-9.3" class="auto internal xref">9.3</a>.  <a href="#name-log-transmission" class="internal xref">Log Transmission</a></p>
+                <p id="section-toc.1-1.9.2.3.1"><a href="#section-9.3" class="auto internal xref">9.3</a>.  <a href="#name-message-definitions" class="internal xref">Message Definitions</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3.2.1">
+                    <p id="section-toc.1-1.9.2.3.2.1.1"><a href="#section-9.3.1" class="auto internal xref">9.3.1</a>.  <a href="#name-nhp-kpl-keepalive" class="internal xref">NHP-KPL (Keepalive)</a></p>
 </li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.4">
-                <p id="section-toc.1-1.9.2.4.1"><a href="#section-9.4" class="auto internal xref">9.4</a>.  <a href="#name-compliance-considerations" class="internal xref">Compliance Considerations</a></p>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3.2.2">
+                    <p id="section-toc.1-1.9.2.3.2.2.1"><a href="#section-9.3.2" class="auto internal xref">9.3.2</a>.  <a href="#name-nhp-knk-knock" class="internal xref">NHP-KNK (Knock)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3.2.3">
+                    <p id="section-toc.1-1.9.2.3.2.3.1"><a href="#section-9.3.3" class="auto internal xref">9.3.3</a>.  <a href="#name-nhp-ack-acknowledge" class="internal xref">NHP-ACK (Acknowledge)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3.2.4">
+                    <p id="section-toc.1-1.9.2.3.2.4.1"><a href="#section-9.3.4" class="auto internal xref">9.3.4</a>.  <a href="#name-nhp-aop-ac-operations" class="internal xref">NHP-AOP (AC Operations)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3.2.5">
+                    <p id="section-toc.1-1.9.2.3.2.5.1"><a href="#section-9.3.5" class="auto internal xref">9.3.5</a>.  <a href="#name-nhp-art-ac-result" class="internal xref">NHP-ART (AC Result)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3.2.6">
+                    <p id="section-toc.1-1.9.2.3.2.6.1"><a href="#section-9.3.6" class="auto internal xref">9.3.6</a>.  <a href="#name-nhp-acc-access" class="internal xref">NHP-ACC (Access)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3.2.7">
+                    <p id="section-toc.1-1.9.2.3.2.7.1"><a href="#section-9.3.7" class="auto internal xref">9.3.7</a>.  <a href="#name-nhp-reg-register" class="internal xref">NHP-REG (Register)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3.2.8">
+                    <p id="section-toc.1-1.9.2.3.2.8.1"><a href="#section-9.3.8" class="auto internal xref">9.3.8</a>.  <a href="#name-nhp-rak-register-acknowledg" class="internal xref">NHP-RAK (Register Acknowledge)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3.2.9">
+                    <p id="section-toc.1-1.9.2.3.2.9.1"><a href="#section-9.3.9" class="auto internal xref">9.3.9</a>.  <a href="#name-nhp-log-log" class="internal xref">NHP-LOG (Log)</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9.2.3.2.10">
+                    <p id="section-toc.1-1.9.2.3.2.10.1"><a href="#section-9.3.10" class="auto internal xref">9.3.10</a>. <a href="#name-nhp-lak-log-acknowledge" class="internal xref">NHP-LAK (Log Acknowledge)</a></p>
+</li>
+                </ul>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10">
-            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-integration-with-sdp" class="internal xref">Integration with SDP</a></p>
+            <p id="section-toc.1-1.10.1"><a href="#section-10" class="auto internal xref">10</a>. <a href="#name-logging-and-auditing" class="internal xref">Logging and Auditing</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.1">
-                <p id="section-toc.1-1.10.2.1.1"><a href="#section-10.1" class="auto internal xref">10.1</a>.  <a href="#name-integration-architecture" class="internal xref">Integration Architecture</a></p>
+                <p id="section-toc.1-1.10.2.1.1"><a href="#section-10.1" class="auto internal xref">10.1</a>.  <a href="#name-log-types" class="internal xref">Log Types</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.2">
-                <p id="section-toc.1-1.10.2.2.1"><a href="#section-10.2" class="auto internal xref">10.2</a>.  <a href="#name-integration-process" class="internal xref">Integration Process</a></p>
+                <p id="section-toc.1-1.10.2.2.1"><a href="#section-10.2" class="auto internal xref">10.2</a>.  <a href="#name-log-format" class="internal xref">Log Format</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.3">
-                <p id="section-toc.1-1.10.2.3.1"><a href="#section-10.3" class="auto internal xref">10.3</a>.  <a href="#name-benefits-of-nhp-sdp-integra" class="internal xref">Benefits of NHP-SDP Integration</a></p>
+                <p id="section-toc.1-1.10.2.3.1"><a href="#section-10.3" class="auto internal xref">10.3</a>.  <a href="#name-log-transmission" class="internal xref">Log Transmission</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.10.2.4">
+                <p id="section-toc.1-1.10.2.4.1"><a href="#section-10.4" class="auto internal xref">10.4</a>.  <a href="#name-compliance-considerations" class="internal xref">Compliance Considerations</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11">
-            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-integration-with-dns" class="internal xref">Integration with DNS</a></p>
+            <p id="section-toc.1-1.11.1"><a href="#section-11" class="auto internal xref">11</a>. <a href="#name-integration-with-sdp" class="internal xref">Integration with SDP</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.1">
-                <p id="section-toc.1-1.11.2.1.1"><a href="#section-11.1" class="auto internal xref">11.1</a>.  <a href="#name-dns-integration-architectur" class="internal xref">DNS Integration Architecture</a></p>
+                <p id="section-toc.1-1.11.2.1.1"><a href="#section-11.1" class="auto internal xref">11.1</a>.  <a href="#name-integration-architecture" class="internal xref">Integration Architecture</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.2">
-                <p id="section-toc.1-1.11.2.2.1"><a href="#section-11.2" class="auto internal xref">11.2</a>.  <a href="#name-integration-process-2" class="internal xref">Integration Process</a></p>
+                <p id="section-toc.1-1.11.2.2.1"><a href="#section-11.2" class="auto internal xref">11.2</a>.  <a href="#name-integration-process" class="internal xref">Integration Process</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.11.2.3">
+                <p id="section-toc.1-1.11.2.3.1"><a href="#section-11.3" class="auto internal xref">11.3</a>.  <a href="#name-benefits-of-nhp-sdp-integra" class="internal xref">Benefits of NHP-SDP Integration</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12">
-            <p id="section-toc.1-1.12.1"><a href="#section-12" class="auto internal xref">12</a>. <a href="#name-integration-with-fido" class="internal xref">Integration with FIDO</a></p>
+            <p id="section-toc.1-1.12.1"><a href="#section-12" class="auto internal xref">12</a>. <a href="#name-integration-with-dns" class="internal xref">Integration with DNS</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.1">
-                <p id="section-toc.1-1.12.2.1.1"><a href="#section-12.1" class="auto internal xref">12.1</a>.  <a href="#name-fido-integration-flow" class="internal xref">FIDO Integration Flow</a></p>
+                <p id="section-toc.1-1.12.2.1.1"><a href="#section-12.1" class="auto internal xref">12.1</a>.  <a href="#name-dns-integration-architectur" class="internal xref">DNS Integration Architecture</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.12.2.2">
-                <p id="section-toc.1-1.12.2.2.1"><a href="#section-12.2" class="auto internal xref">12.2</a>.  <a href="#name-recovery-and-fallback" class="internal xref">Recovery and Fallback</a></p>
+                <p id="section-toc.1-1.12.2.2.1"><a href="#section-12.2" class="auto internal xref">12.2</a>.  <a href="#name-integration-process-2" class="internal xref">Integration Process</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13">
-            <p id="section-toc.1-1.13.1"><a href="#section-13" class="auto internal xref">13</a>. <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+            <p id="section-toc.1-1.13.1"><a href="#section-13" class="auto internal xref">13</a>. <a href="#name-integration-with-fido" class="internal xref">Integration with FIDO</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.1">
-                <p id="section-toc.1-1.13.2.1.1"><a href="#section-13.1" class="auto internal xref">13.1</a>.  <a href="#name-infrastructure-invisibility" class="internal xref">Infrastructure Invisibility</a></p>
+                <p id="section-toc.1-1.13.2.1.1"><a href="#section-13.1" class="auto internal xref">13.1</a>.  <a href="#name-fido-integration-flow" class="internal xref">FIDO Integration Flow</a></p>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.2">
-                <p id="section-toc.1-1.13.2.2.1"><a href="#section-13.2" class="auto internal xref">13.2</a>.  <a href="#name-replay-attack-prevention" class="internal xref">Replay Attack Prevention</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.3">
-                <p id="section-toc.1-1.13.2.3.1"><a href="#section-13.3" class="auto internal xref">13.3</a>.  <a href="#name-key-security" class="internal xref">Key Security</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.4">
-                <p id="section-toc.1-1.13.2.4.1"><a href="#section-13.4" class="auto internal xref">13.4</a>.  <a href="#name-session-security" class="internal xref">Session Security</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.5">
-                <p id="section-toc.1-1.13.2.5.1"><a href="#section-13.5" class="auto internal xref">13.5</a>.  <a href="#name-denial-of-service-mitigatio" class="internal xref">Denial of Service Mitigation</a></p>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.13.2.6">
-                <p id="section-toc.1-1.13.2.6.1"><a href="#section-13.6" class="auto internal xref">13.6</a>.  <a href="#name-limitations" class="internal xref">Limitations</a></p>
+                <p id="section-toc.1-1.13.2.2.1"><a href="#section-13.2" class="auto internal xref">13.2</a>.  <a href="#name-recovery-and-fallback" class="internal xref">Recovery and Fallback</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14">
-            <p id="section-toc.1-1.14.1"><a href="#section-14" class="auto internal xref">14</a>. <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
-</li>
-          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15">
-            <p id="section-toc.1-1.15.1"><a href="#section-15" class="auto internal xref">15</a>. <a href="#name-reference-implementation" class="internal xref">Reference Implementation</a></p>
+            <p id="section-toc.1-1.14.1"><a href="#section-14" class="auto internal xref">14</a>. <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 <ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1">
-                <p id="section-toc.1-1.15.2.1.1"><a href="#section-15.1" class="auto internal xref">15.1</a>.  <a href="#name-implementation-characterist" class="internal xref">Implementation Characteristics</a></p>
-<ul class="compact toc ulBare ulEmpty">
-<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.1">
-                    <p id="section-toc.1-1.15.2.1.2.1.1"><a href="#section-15.1.1" class="auto internal xref">15.1.1</a>.  <a href="#name-memory-safe-language" class="internal xref">Memory-Safe Language</a></p>
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14.2.1">
+                <p id="section-toc.1-1.14.2.1.1"><a href="#section-14.1" class="auto internal xref">14.1</a>.  <a href="#name-infrastructure-invisibility" class="internal xref">Infrastructure Invisibility</a></p>
 </li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.2">
-                    <p id="section-toc.1-1.15.2.1.2.2.1"><a href="#section-15.1.2" class="auto internal xref">15.1.2</a>.  <a href="#name-cross-platform-support" class="internal xref">Cross-Platform Support</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14.2.2">
+                <p id="section-toc.1-1.14.2.2.1"><a href="#section-14.2" class="auto internal xref">14.2</a>.  <a href="#name-replay-attack-prevention" class="internal xref">Replay Attack Prevention</a></p>
 </li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.3">
-                    <p id="section-toc.1-1.15.2.1.2.3.1"><a href="#section-15.1.3" class="auto internal xref">15.1.3</a>.  <a href="#name-modular-architecture" class="internal xref">Modular Architecture</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14.2.3">
+                <p id="section-toc.1-1.14.2.3.1"><a href="#section-14.3" class="auto internal xref">14.3</a>.  <a href="#name-key-security" class="internal xref">Key Security</a></p>
 </li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.4">
-                    <p id="section-toc.1-1.15.2.1.2.4.1"><a href="#section-15.1.4" class="auto internal xref">15.1.4</a>.  <a href="#name-cryptographic-implementatio" class="internal xref">Cryptographic Implementation</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14.2.4">
+                <p id="section-toc.1-1.14.2.4.1"><a href="#section-14.4" class="auto internal xref">14.4</a>.  <a href="#name-session-security" class="internal xref">Session Security</a></p>
 </li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.5">
-                    <p id="section-toc.1-1.15.2.1.2.5.1"><a href="#section-15.1.5" class="auto internal xref">15.1.5</a>.  <a href="#name-performance-characteristics" class="internal xref">Performance Characteristics</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14.2.5">
+                <p id="section-toc.1-1.14.2.5.1"><a href="#section-14.5" class="auto internal xref">14.5</a>.  <a href="#name-denial-of-service-mitigatio" class="internal xref">Denial of Service Mitigation</a></p>
 </li>
-                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.6">
-                    <p id="section-toc.1-1.15.2.1.2.6.1"><a href="#section-15.1.6" class="auto internal xref">15.1.6</a>.  <a href="#name-open-source-governance" class="internal xref">Open Source Governance</a></p>
-</li>
-                </ul>
-</li>
-              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.2">
-                <p id="section-toc.1-1.15.2.2.1"><a href="#section-15.2" class="auto internal xref">15.2</a>.  <a href="#name-practical-use-case-stealthd" class="internal xref">Practical Use Case: StealthDNS</a></p>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.14.2.6">
+                <p id="section-toc.1-1.14.2.6.1"><a href="#section-14.6" class="auto internal xref">14.6</a>.  <a href="#name-limitations" class="internal xref">Limitations</a></p>
 </li>
             </ul>
 </li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15">
+            <p id="section-toc.1-1.15.1"><a href="#section-15" class="auto internal xref">15</a>. <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+</li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16">
-            <p id="section-toc.1-1.16.1"><a href="#section-16" class="auto internal xref">16</a>. <a href="#name-references" class="internal xref">References</a></p>
+            <p id="section-toc.1-1.16.1"><a href="#section-16" class="auto internal xref">16</a>. <a href="#name-reference-implementation" class="internal xref">Reference Implementation</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1">
-                <p id="section-toc.1-1.16.2.1.1"><a href="#section-16.1" class="auto internal xref">16.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+                <p id="section-toc.1-1.16.2.1.1"><a href="#section-16.1" class="auto internal xref">16.1</a>.  <a href="#name-implementation-characterist" class="internal xref">Implementation Characteristics</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.1">
+                    <p id="section-toc.1-1.16.2.1.2.1.1"><a href="#section-16.1.1" class="auto internal xref">16.1.1</a>.  <a href="#name-memory-safe-language" class="internal xref">Memory-Safe Language</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.2">
+                    <p id="section-toc.1-1.16.2.1.2.2.1"><a href="#section-16.1.2" class="auto internal xref">16.1.2</a>.  <a href="#name-cross-platform-support" class="internal xref">Cross-Platform Support</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.3">
+                    <p id="section-toc.1-1.16.2.1.2.3.1"><a href="#section-16.1.3" class="auto internal xref">16.1.3</a>.  <a href="#name-modular-architecture" class="internal xref">Modular Architecture</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.4">
+                    <p id="section-toc.1-1.16.2.1.2.4.1"><a href="#section-16.1.4" class="auto internal xref">16.1.4</a>.  <a href="#name-cryptographic-implementatio" class="internal xref">Cryptographic Implementation</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.5">
+                    <p id="section-toc.1-1.16.2.1.2.5.1"><a href="#section-16.1.5" class="auto internal xref">16.1.5</a>.  <a href="#name-performance-characteristics" class="internal xref">Performance Characteristics</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.1.2.6">
+                    <p id="section-toc.1-1.16.2.1.2.6.1"><a href="#section-16.1.6" class="auto internal xref">16.1.6</a>.  <a href="#name-open-source-governance" class="internal xref">Open Source Governance</a></p>
+</li>
+                </ul>
 </li>
               <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.16.2.2">
-                <p id="section-toc.1-1.16.2.2.1"><a href="#section-16.2" class="auto internal xref">16.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+                <p id="section-toc.1-1.16.2.2.1"><a href="#section-16.2" class="auto internal xref">16.2</a>.  <a href="#name-practical-use-case-stealthd" class="internal xref">Practical Use Case: StealthDNS</a></p>
 </li>
             </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.17">
-            <p id="section-toc.1-1.17.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.17.1"><a href="#section-17" class="auto internal xref">17</a>. <a href="#name-references" class="internal xref">References</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.17.2.1">
+                <p id="section-toc.1-1.17.2.1.1"><a href="#section-17.1" class="auto internal xref">17.1</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.17.2.2">
+                <p id="section-toc.1-1.17.2.2.1"><a href="#section-17.2" class="auto internal xref">17.2</a>.  <a href="#name-informative-references" class="internal xref">Informative References</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.18">
-            <p id="section-toc.1-1.18.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+            <p id="section-toc.1-1.18.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.19">
+            <p id="section-toc.1-1.19.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
 </li>
         </ul>
 </nav>
@@ -1562,160 +1585,387 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       </ol>
 </section>
 </div>
-<div id="threat-model">
+<div id="relationship-to-tls">
 <section id="section-4">
-      <h2 id="name-threat-model">
-<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-threat-model" class="section-name selfRef">Threat Model</a>
+      <h2 id="name-relationship-to-tls">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-relationship-to-tls" class="section-name selfRef">Relationship to TLS</a>
       </h2>
-<p id="section-4-1">NHP is designed to mitigate the following threat categories:<a href="#section-4-1" class="pilcrow">¶</a></p>
-<div id="reconnaissance-and-scanning">
+<p id="section-4-1">NHP and TLS (Transport Layer Security) are complementary protocols that operate at different OSI layers and serve distinct security purposes. This section clarifies their differences and how they work together.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<div id="osi-layer-positioning">
 <section id="section-4.1">
-        <h3 id="name-reconnaissance-and-scanning">
-<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-reconnaissance-and-scanning" class="section-name selfRef">Reconnaissance and Scanning</a>
+        <h3 id="name-osi-layer-positioning">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-osi-layer-positioning" class="section-name selfRef">OSI Layer Positioning</a>
         </h3>
-<p id="section-4.1-1">Automated scanning tools and AI-driven reconnaissance continuously probe Internet-facing services. NHP eliminates the ability to discover protected resources by requiring cryptographic authentication before any network visibility is granted.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-4.1-1">
+<pre>
++-------------------+
+| Application (L7)  |  HTTP, SMTP, SSH, etc.
++-------------------+
+        ↓
++-------------------+
+| Presentation (L6) |  TLS/SSL - Data encryption &amp; integrity
++-------------------+
+        ↓
++-------------------+
+| Session (L5)      |  NHP - Authentication before connection
++-------------------+
+        ↓
++-------------------+
+| Transport (L4)    |  TCP, UDP, QUIC
++-------------------+
+        ↓
++-------------------+
+| Network (L3)      |  IP
++-------------------+
+</pre><a href="#section-4.1-1" class="pilcrow">¶</a>
+</div>
+</section>
+</div>
+<div id="key-differences">
+<section id="section-4.2">
+        <h3 id="name-key-differences">
+<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-key-differences" class="section-name selfRef">Key Differences</a>
+        </h3>
+<table class="center" id="table-1">
+          <caption><a href="#table-1" class="selfRef">Table 1</a></caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Aspect</th>
+              <th class="text-left" rowspan="1" colspan="1">NHP (Layer 5)</th>
+              <th class="text-left" rowspan="1" colspan="1">TLS (Layer 6)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Primary Purpose</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Infrastructure hiding and access control</td>
+              <td class="text-left" rowspan="1" colspan="1">Data encryption and integrity</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>When Authentication Occurs</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">BEFORE connection establishment</td>
+              <td class="text-left" rowspan="1" colspan="1">AFTER TCP connection established</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Service Visibility</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Services are INVISIBLE to unauthorized users</td>
+              <td class="text-left" rowspan="1" colspan="1">Services are VISIBLE, communication is encrypted</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Attack Surface</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">Eliminates pre-authentication attack surface</td>
+              <td class="text-left" rowspan="1" colspan="1">Protects data in transit, but service ports remain exposed</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Port Exposure</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">No ports exposed until authenticated</td>
+              <td class="text-left" rowspan="1" colspan="1">Ports must be open to initiate TLS handshake</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">
+                <strong>Vulnerability Window</strong>
+</td>
+              <td class="text-left" rowspan="1" colspan="1">None—no connection without authentication</td>
+              <td class="text-left" rowspan="1" colspan="1">TLS handshake vulnerabilities can be exploited</td>
+            </tr>
+          </tbody>
+        </table>
+</section>
+</div>
+<div id="the-pre-authentication-problem">
+<section id="section-4.3">
+        <h3 id="name-the-pre-authentication-prob">
+<a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-the-pre-authentication-prob" class="section-name selfRef">The Pre-Authentication Problem</a>
+        </h3>
+<p id="section-4.3-1">TLS provides excellent protection for data in transit, but it has a fundamental limitation: <strong>the service must be reachable to initiate the TLS handshake</strong>. This creates a pre-authentication attack window:<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-4.3-2">
+<pre>
+Traditional TLS Flow:
+
+Attacker    ──────►  Open Port 443  ──────►  TLS Handshake  ──────►  Authentication
+                         ↑
+                    Service is VISIBLE
+                    Port scan succeeds
+                    Pre-auth exploits possible
+</pre><a href="#section-4.3-2" class="pilcrow">¶</a>
+</div>
+<div class="alignLeft art-text artwork" id="section-4.3-3">
+<pre>
+NHP + TLS Flow:
+
+Attacker    ──────►  No Open Ports  ──────►  BLOCKED (Service Invisible)
+                         ↑
+                    Cannot discover service
+                    Port scan fails
+
+Authorized  ──────►  NHP Knock  ──────►  Port Opens  ──────►  TLS  ──────►  Application
+User                     ↑                    ↑
+                    Authenticated         Encrypted
+                    BEFORE connect        data transfer
+</pre><a href="#section-4.3-3" class="pilcrow">¶</a>
+</div>
+</section>
+</div>
+<div id="complementary-security-model">
+<section id="section-4.4">
+        <h3 id="name-complementary-security-mode">
+<a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-complementary-security-mode" class="section-name selfRef">Complementary Security Model</a>
+        </h3>
+<p id="section-4.4-1">NHP and TLS are designed to work together, not replace each other:<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-4.4-2">
+<li id="section-4.4-2.1">
+            <p id="section-4.4-2.1.1"><strong>NHP provides:</strong> Authentication-before-connect, infrastructure invisibility, access control<a href="#section-4.4-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li id="section-4.4-2.2">
+            <p id="section-4.4-2.2.1"><strong>TLS provides:</strong> Data encryption, integrity verification, server authentication<a href="#section-4.4-2.2.1" class="pilcrow">¶</a></p>
+</li>
+        </ol>
+<p id="section-4.4-3">A complete Zero Trust deployment <span class="bcp14">SHOULD</span> use both:<a href="#section-4.4-3" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4.4-4.1">
+            <p id="section-4.4-4.1.1"><strong>NHP</strong> ensures only authorized users can discover and reach the service<a href="#section-4.4-4.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-4.4-4.2">
+            <p id="section-4.4-4.2.1"><strong>TLS</strong> encrypts all data exchanged after access is granted<a href="#section-4.4-4.2.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+</section>
+</div>
+<div id="vulnerabilities-addressed-by-nhp-but-not-tls">
+<section id="section-4.5">
+        <h3 id="name-vulnerabilities-addressed-b">
+<a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-vulnerabilities-addressed-b" class="section-name selfRef">Vulnerabilities Addressed by NHP but Not TLS</a>
+        </h3>
+<table class="center" id="table-2">
+          <caption><a href="#table-2" class="selfRef">Table 2</a></caption>
+<thead>
+            <tr>
+              <th class="text-left" rowspan="1" colspan="1">Vulnerability Type</th>
+              <th class="text-left" rowspan="1" colspan="1">TLS Protection</th>
+              <th class="text-left" rowspan="1" colspan="1">NHP Protection</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Port scanning and service discovery</td>
+              <td class="text-left" rowspan="1" colspan="1">✗ None</td>
+              <td class="text-left" rowspan="1" colspan="1">✓ Service invisible</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Pre-authentication exploits (e.g., Heartbleed)</td>
+              <td class="text-left" rowspan="1" colspan="1">✗ Vulnerable</td>
+              <td class="text-left" rowspan="1" colspan="1">✓ No connection possible</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">TLS implementation bugs before handshake</td>
+              <td class="text-left" rowspan="1" colspan="1">✗ Vulnerable</td>
+              <td class="text-left" rowspan="1" colspan="1">✓ No handshake initiated</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">DDoS attacks on exposed services</td>
+              <td class="text-left" rowspan="1" colspan="1">✗ Service reachable</td>
+              <td class="text-left" rowspan="1" colspan="1">✓ Service hidden</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Credential stuffing on login pages</td>
+              <td class="text-left" rowspan="1" colspan="1">✗ Page accessible</td>
+              <td class="text-left" rowspan="1" colspan="1">✓ Page invisible</td>
+            </tr>
+            <tr>
+              <td class="text-left" rowspan="1" colspan="1">Zero-day exploits before authentication</td>
+              <td class="text-left" rowspan="1" colspan="1">✗ Service exposed</td>
+              <td class="text-left" rowspan="1" colspan="1">✓ Service protected</td>
+            </tr>
+          </tbody>
+        </table>
+</section>
+</div>
+<div id="why-both-are-needed">
+<section id="section-4.6">
+        <h3 id="name-why-both-are-needed">
+<a href="#section-4.6" class="section-number selfRef">4.6. </a><a href="#name-why-both-are-needed" class="section-name selfRef">Why Both Are Needed</a>
+        </h3>
+<p id="section-4.6-1">NHP alone does not encrypt application data—it only controls access. TLS alone does not hide services—it only encrypts traffic. Together, they provide defense in depth:<a href="#section-4.6-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-4.6-2.1">
+            <p id="section-4.6-2.1.1"><strong>Without NHP:</strong> Attackers can scan, probe, and exploit services before any authentication occurs<a href="#section-4.6-2.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-4.6-2.2">
+            <p id="section-4.6-2.2.1"><strong>Without TLS:</strong> Authorized traffic would be transmitted in plaintext after NHP grants access<a href="#section-4.6-2.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-4.6-2.3">
+            <p id="section-4.6-2.3.1"><strong>With Both:</strong> Services are invisible to attackers, and all authorized traffic is encrypted<a href="#section-4.6-2.3.1" class="pilcrow">¶</a></p>
+</li>
+        </ul>
+<p id="section-4.6-3">This layered approach aligns with Zero Trust principles: never trust, always verify, and minimize attack surface at every layer.<a href="#section-4.6-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="threat-model">
+<section id="section-5">
+      <h2 id="name-threat-model">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-threat-model" class="section-name selfRef">Threat Model</a>
+      </h2>
+<p id="section-5-1">NHP is designed to mitigate the following threat categories:<a href="#section-5-1" class="pilcrow">¶</a></p>
+<div id="reconnaissance-and-scanning">
+<section id="section-5.1">
+        <h3 id="name-reconnaissance-and-scanning">
+<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-reconnaissance-and-scanning" class="section-name selfRef">Reconnaissance and Scanning</a>
+        </h3>
+<p id="section-5.1-1">Automated scanning tools and AI-driven reconnaissance continuously probe Internet-facing services. NHP eliminates the ability to discover protected resources by requiring cryptographic authentication before any network visibility is granted.<a href="#section-5.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="pre-authentication-exploits">
-<section id="section-4.2">
+<section id="section-5.2">
         <h3 id="name-pre-authentication-exploits">
-<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-pre-authentication-exploits" class="section-name selfRef">Pre-Authentication Exploits</a>
+<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-pre-authentication-exploits" class="section-name selfRef">Pre-Authentication Exploits</a>
         </h3>
-<p id="section-4.2-1">Many vulnerabilities can be exploited before authentication occurs. By enforcing authentication-before-connect, NHP prevents attackers from reaching vulnerable services.<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<p id="section-5.2-1">Many vulnerabilities can be exploited before authentication occurs. By enforcing authentication-before-connect, NHP prevents attackers from reaching vulnerable services.<a href="#section-5.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="ddos-attacks">
-<section id="section-4.3">
+<section id="section-5.3">
         <h3 id="name-ddos-attacks">
-<a href="#section-4.3" class="section-number selfRef">4.3. </a><a href="#name-ddos-attacks" class="section-name selfRef">DDoS Attacks</a>
+<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-ddos-attacks" class="section-name selfRef">DDoS Attacks</a>
         </h3>
-<p id="section-4.3-1">NHP reduces DDoS attack surface by hiding service endpoints. Attackers cannot target what they cannot discover.<a href="#section-4.3-1" class="pilcrow">¶</a></p>
+<p id="section-5.3-1">NHP reduces DDoS attack surface by hiding service endpoints. Attackers cannot target what they cannot discover.<a href="#section-5.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="credential-theft-and-replay">
-<section id="section-4.4">
+<section id="section-5.4">
         <h3 id="name-credential-theft-and-replay">
-<a href="#section-4.4" class="section-number selfRef">4.4. </a><a href="#name-credential-theft-and-replay" class="section-name selfRef">Credential Theft and Replay</a>
+<a href="#section-5.4" class="section-number selfRef">5.4. </a><a href="#name-credential-theft-and-replay" class="section-name selfRef">Credential Theft and Replay</a>
         </h3>
-<p id="section-4.4-1">NHP uses ephemeral keys and timestamp-based nonces to prevent credential replay attacks. Each session requires fresh cryptographic material.<a href="#section-4.4-1" class="pilcrow">¶</a></p>
+<p id="section-5.4-1">NHP uses ephemeral keys and timestamp-based nonces to prevent credential replay attacks. Each session requires fresh cryptographic material.<a href="#section-5.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="man-in-the-middle-attacks">
-<section id="section-4.5">
+<section id="section-5.5">
         <h3 id="name-man-in-the-middle-attacks">
-<a href="#section-4.5" class="section-number selfRef">4.5. </a><a href="#name-man-in-the-middle-attacks" class="section-name selfRef">Man-in-the-Middle Attacks</a>
+<a href="#section-5.5" class="section-number selfRef">5.5. </a><a href="#name-man-in-the-middle-attacks" class="section-name selfRef">Man-in-the-Middle Attacks</a>
         </h3>
-<p id="section-4.5-1">Mutual authentication using asymmetric cryptography ensures both parties verify each other's identity before establishing communication.<a href="#section-4.5-1" class="pilcrow">¶</a></p>
+<p id="section-5.5-1">Mutual authentication using asymmetric cryptography ensures both parties verify each other's identity before establishing communication.<a href="#section-5.5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
 </div>
 <div id="architectural-overview">
-<section id="section-5">
+<section id="section-6">
       <h2 id="name-architectural-overview">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-architectural-overview" class="section-name selfRef">Architectural Overview</a>
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-architectural-overview" class="section-name selfRef">Architectural Overview</a>
       </h2>
-<p id="section-5-1">NHP operates as a distributed session-layer protocol that enforces authentication-before-connect access between clients and protected resources.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-6-1">NHP operates as a distributed session-layer protocol that enforces authentication-before-connect access between clients and protected resources.<a href="#section-6-1" class="pilcrow">¶</a></p>
 <div id="core-components">
-<section id="section-5.1">
+<section id="section-6.1">
         <h3 id="name-core-components">
-<a href="#section-5.1" class="section-number selfRef">5.1. </a><a href="#name-core-components" class="section-name selfRef">Core Components</a>
+<a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-core-components" class="section-name selfRef">Core Components</a>
         </h3>
 <div id="nhp-agent">
-<section id="section-5.1.1">
+<section id="section-6.1.1">
           <h4 id="name-nhp-agent">
-<a href="#section-5.1.1" class="section-number selfRef">5.1.1. </a><a href="#name-nhp-agent" class="section-name selfRef">NHP-Agent</a>
+<a href="#section-6.1.1" class="section-number selfRef">6.1.1. </a><a href="#name-nhp-agent" class="section-name selfRef">NHP-Agent</a>
           </h4>
-<p id="section-5.1.1-1">The NHP-Agent is a client-side process, SDK, or embedded module that initiates communication with the protected network. Its responsibilities include:<a href="#section-5.1.1-1" class="pilcrow">¶</a></p>
+<p id="section-6.1.1-1">The NHP-Agent is a client-side process, SDK, or embedded module that initiates communication with the protected network. Its responsibilities include:<a href="#section-6.1.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-5.1.1-2.1">
-              <p id="section-5.1.1-2.1.1">Generating and sending NHP-KNK (Knock) messages to the NHP-Server<a href="#section-5.1.1-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-6.1.1-2.1">
+              <p id="section-6.1.1-2.1.1">Generating and sending NHP-KNK (Knock) messages to the NHP-Server<a href="#section-6.1.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.1-2.2">
-              <p id="section-5.1.1-2.2.1">Performing cryptographic key exchange using Noise Protocol handshakes<a href="#section-5.1.1-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.1-2.2">
+              <p id="section-6.1.1-2.2.1">Performing cryptographic key exchange using Noise Protocol handshakes<a href="#section-6.1.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.1-2.3">
-              <p id="section-5.1.1-2.3.1">Managing client identity credentials and device attestation<a href="#section-5.1.1-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.1-2.3">
+              <p id="section-6.1.1-2.3.1">Managing client identity credentials and device attestation<a href="#section-6.1.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.1-2.4">
-              <p id="section-5.1.1-2.4.1">Handling session lifecycle including keepalives and re-authentication<a href="#section-5.1.1-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.1-2.4">
+              <p id="section-6.1.1-2.4.1">Handling session lifecycle including keepalives and re-authentication<a href="#section-6.1.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
 </div>
 <div id="nhp-server">
-<section id="section-5.1.2">
+<section id="section-6.1.2">
           <h4 id="name-nhp-server">
-<a href="#section-5.1.2" class="section-number selfRef">5.1.2. </a><a href="#name-nhp-server" class="section-name selfRef">NHP-Server</a>
+<a href="#section-6.1.2" class="section-number selfRef">6.1.2. </a><a href="#name-nhp-server" class="section-name selfRef">NHP-Server</a>
           </h4>
-<p id="section-5.1.2-1">The NHP-Server is the core control-plane service responsible for:<a href="#section-5.1.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.1.2-1">The NHP-Server is the core control-plane service responsible for:<a href="#section-6.1.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-5.1.2-2.1">
-              <p id="section-5.1.2-2.1.1">Receiving and validating NHP-KNK messages from NHP-Agents<a href="#section-5.1.2-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-6.1.2-2.1">
+              <p id="section-6.1.2-2.1.1">Receiving and validating NHP-KNK messages from NHP-Agents<a href="#section-6.1.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.2-2.2">
-              <p id="section-5.1.2-2.2.1">Authenticating the NHP-Agent identity and device posture<a href="#section-5.1.2-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.2-2.2">
+              <p id="section-6.1.2-2.2.1">Authenticating the NHP-Agent identity and device posture<a href="#section-6.1.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.2-2.3">
-              <p id="section-5.1.2-2.3.1">Interfacing with external Authorization Service Providers (ASP) or IAM systems<a href="#section-5.1.2-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.2-2.3">
+              <p id="section-6.1.2-2.3.1">Interfacing with external Authorization Service Providers (ASP) or IAM systems<a href="#section-6.1.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.2-2.4">
-              <p id="section-5.1.2-2.4.1">Evaluating access policies based on identity, context, and resource attributes<a href="#section-5.1.2-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.2-2.4">
+              <p id="section-6.1.2-2.4.1">Evaluating access policies based on identity, context, and resource attributes<a href="#section-6.1.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.2-2.5">
-              <p id="section-5.1.2-2.5.1">Instructing NHP-AC components to open or close access paths<a href="#section-5.1.2-2.5.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.2-2.5">
+              <p id="section-6.1.2-2.5.1">Instructing NHP-AC components to open or close access paths<a href="#section-6.1.2-2.5.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.2-2.6">
-              <p id="section-5.1.2-2.6.1">Managing session state and expiration<a href="#section-5.1.2-2.6.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.2-2.6">
+              <p id="section-6.1.2-2.6.1">Managing session state and expiration<a href="#section-6.1.2-2.6.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
-<p id="section-5.1.2-3">Functionally, the NHP-Server maps to the <strong>Policy Administrator</strong> role defined in NIST SP 800-207 Zero Trust Architecture.<a href="#section-5.1.2-3" class="pilcrow">¶</a></p>
+<p id="section-6.1.2-3">Functionally, the NHP-Server maps to the <strong>Policy Administrator</strong> role defined in NIST SP 800-207 Zero Trust Architecture.<a href="#section-6.1.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="nhp-ac-access-controller">
-<section id="section-5.1.3">
+<section id="section-6.1.3">
           <h4 id="name-nhp-ac-access-controller">
-<a href="#section-5.1.3" class="section-number selfRef">5.1.3. </a><a href="#name-nhp-ac-access-controller" class="section-name selfRef">NHP-AC (Access Controller)</a>
+<a href="#section-6.1.3" class="section-number selfRef">6.1.3. </a><a href="#name-nhp-ac-access-controller" class="section-name selfRef">NHP-AC (Access Controller)</a>
           </h4>
-<p id="section-5.1.3-1">The NHP-AC is the enforcement component residing logically or physically near protected resources. Its responsibilities include:<a href="#section-5.1.3-1" class="pilcrow">¶</a></p>
+<p id="section-6.1.3-1">The NHP-AC is the enforcement component residing logically or physically near protected resources. Its responsibilities include:<a href="#section-6.1.3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-5.1.3-2.1">
-              <p id="section-5.1.3-2.1.1">Maintaining default-deny firewall rules for all protected resources<a href="#section-5.1.3-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-6.1.3-2.1">
+              <p id="section-6.1.3-2.1.1">Maintaining default-deny firewall rules for all protected resources<a href="#section-6.1.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.3-2.2">
-              <p id="section-5.1.3-2.2.1">Receiving NHP-AOP (AC Operations) commands from the NHP-Server<a href="#section-5.1.3-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.3-2.2">
+              <p id="section-6.1.3-2.2.1">Receiving NHP-AOP (AC Operations) commands from the NHP-Server<a href="#section-6.1.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.3-2.3">
-              <p id="section-5.1.3-2.3.1">Temporarily opening access paths for authorized NHP-Agents<a href="#section-5.1.3-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.3-2.3">
+              <p id="section-6.1.3-2.3.1">Temporarily opening access paths for authorized NHP-Agents<a href="#section-6.1.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.3-2.4">
-              <p id="section-5.1.3-2.4.1">Automatically reverting to default-deny state when sessions expire<a href="#section-5.1.3-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.3-2.4">
+              <p id="section-6.1.3-2.4.1">Automatically reverting to default-deny state when sessions expire<a href="#section-6.1.3-2.4.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.3-2.5">
-              <p id="section-5.1.3-2.5.1">Reporting access logs and status to the NHP-Server<a href="#section-5.1.3-2.5.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.3-2.5">
+              <p id="section-6.1.3-2.5.1">Reporting access logs and status to the NHP-Server<a href="#section-6.1.3-2.5.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
-<p id="section-5.1.3-3">The NHP-AC corresponds to the <strong>Policy Enforcement Point (PEP)</strong> in NIST SP 800-207 terminology.<a href="#section-5.1.3-3" class="pilcrow">¶</a></p>
+<p id="section-6.1.3-3">The NHP-AC corresponds to the <strong>Policy Enforcement Point (PEP)</strong> in NIST SP 800-207 terminology.<a href="#section-6.1.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="authorization-service-provider-asp">
-<section id="section-5.1.4">
+<section id="section-6.1.4">
           <h4 id="name-authorization-service-provi">
-<a href="#section-5.1.4" class="section-number selfRef">5.1.4. </a><a href="#name-authorization-service-provi" class="section-name selfRef">Authorization Service Provider (ASP)</a>
+<a href="#section-6.1.4" class="section-number selfRef">6.1.4. </a><a href="#name-authorization-service-provi" class="section-name selfRef">Authorization Service Provider (ASP)</a>
           </h4>
-<p id="section-5.1.4-1">The ASP is an external identity and policy service that the NHP-Server queries for authorization decisions. This may include:<a href="#section-5.1.4-1" class="pilcrow">¶</a></p>
+<p id="section-6.1.4-1">The ASP is an external identity and policy service that the NHP-Server queries for authorization decisions. This may include:<a href="#section-6.1.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-5.1.4-2.1">
-              <p id="section-5.1.4-2.1.1">Identity Providers (IdP) such as LDAP, Active Directory, or OIDC providers<a href="#section-5.1.4-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-6.1.4-2.1">
+              <p id="section-6.1.4-2.1.1">Identity Providers (IdP) such as LDAP, Active Directory, or OIDC providers<a href="#section-6.1.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.4-2.2">
-              <p id="section-5.1.4-2.2.1">Policy Decision Points (PDP) implementing ABAC or RBAC policies<a href="#section-5.1.4-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.4-2.2">
+              <p id="section-6.1.4-2.2.1">Policy Decision Points (PDP) implementing ABAC or RBAC policies<a href="#section-6.1.4-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.4-2.3">
-              <p id="section-5.1.4-2.3.1">Device posture assessment services<a href="#section-5.1.4-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.4-2.3">
+              <p id="section-6.1.4-2.3.1">Device posture assessment services<a href="#section-6.1.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-5.1.4-2.4">
-              <p id="section-5.1.4-2.4.1">Risk scoring engines<a href="#section-5.1.4-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-6.1.4-2.4">
+              <p id="section-6.1.4-2.4.1">Risk scoring engines<a href="#section-6.1.4-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -1723,12 +1973,12 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 </section>
 </div>
 <div id="component-interactions">
-<section id="section-5.2">
+<section id="section-6.2">
         <h3 id="name-component-interactions">
-<a href="#section-5.2" class="section-number selfRef">5.2. </a><a href="#name-component-interactions" class="section-name selfRef">Component Interactions</a>
+<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-component-interactions" class="section-name selfRef">Component Interactions</a>
         </h3>
-<p id="section-5.2-1">The following diagram illustrates the relationship between NHP components:<a href="#section-5.2-1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-5.2-2">
+<p id="section-6.2-1">The following diagram illustrates the relationship between NHP components:<a href="#section-6.2-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-6.2-2">
 <pre>
 +-------------+          +-------------+          +-------------+
 |             |  NHP-KNK |             |  Auth    |             |
@@ -1747,46 +1997,46 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 |  Protected  |&lt;---------------+
 |  Resource   |   Data Plane
 +-------------+
-</pre><a href="#section-5.2-2" class="pilcrow">¶</a>
+</pre><a href="#section-6.2-2" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="deployment-models">
-<section id="section-5.3">
+<section id="section-6.3">
         <h3 id="name-deployment-models">
-<a href="#section-5.3" class="section-number selfRef">5.3. </a><a href="#name-deployment-models" class="section-name selfRef">Deployment Models</a>
+<a href="#section-6.3" class="section-number selfRef">6.3. </a><a href="#name-deployment-models" class="section-name selfRef">Deployment Models</a>
         </h3>
-<p id="section-5.3-1">NHP components can be deployed in different configurations:<a href="#section-5.3-1" class="pilcrow">¶</a></p>
+<p id="section-6.3-1">NHP components can be deployed in different configurations:<a href="#section-6.3-1" class="pilcrow">¶</a></p>
 <div id="standalone-deployment">
-<section id="section-5.3.1">
+<section id="section-6.3.1">
           <h4 id="name-standalone-deployment">
-<a href="#section-5.3.1" class="section-number selfRef">5.3.1. </a><a href="#name-standalone-deployment" class="section-name selfRef">Standalone Deployment</a>
+<a href="#section-6.3.1" class="section-number selfRef">6.3.1. </a><a href="#name-standalone-deployment" class="section-name selfRef">Standalone Deployment</a>
           </h4>
-<p id="section-5.3.1-1">For small environments or testing scenarios, the NHP-Server and NHP-AC can coexist on the same host. This configuration simplifies setup while maintaining full protocol compliance.<a href="#section-5.3.1-1" class="pilcrow">¶</a></p>
+<p id="section-6.3.1-1">For small environments or testing scenarios, the NHP-Server and NHP-AC can coexist on the same host. This configuration simplifies setup while maintaining full protocol compliance.<a href="#section-6.3.1-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="clustered-deployment">
-<section id="section-5.3.2">
+<section id="section-6.3.2">
           <h4 id="name-clustered-deployment">
-<a href="#section-5.3.2" class="section-number selfRef">5.3.2. </a><a href="#name-clustered-deployment" class="section-name selfRef">Clustered Deployment</a>
+<a href="#section-6.3.2" class="section-number selfRef">6.3.2. </a><a href="#name-clustered-deployment" class="section-name selfRef">Clustered Deployment</a>
           </h4>
-<p id="section-5.3.2-1">In enterprise or cloud environments, multiple NHP-Servers can be deployed in a load-balanced cluster. Each server manages a pool of NHP-AC instances distributed across data centers or network segments. The NHP-Agent dynamically discovers the nearest NHP-Server through DNS or bootstrap configuration.<a href="#section-5.3.2-1" class="pilcrow">¶</a></p>
+<p id="section-6.3.2-1">In enterprise or cloud environments, multiple NHP-Servers can be deployed in a load-balanced cluster. Each server manages a pool of NHP-AC instances distributed across data centers or network segments. The NHP-Agent dynamically discovers the nearest NHP-Server through DNS or bootstrap configuration.<a href="#section-6.3.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="edge-ac-deployment">
-<section id="section-5.3.3">
+<section id="section-6.3.3">
           <h4 id="name-edge-ac-deployment">
-<a href="#section-5.3.3" class="section-number selfRef">5.3.3. </a><a href="#name-edge-ac-deployment" class="section-name selfRef">Edge AC Deployment</a>
+<a href="#section-6.3.3" class="section-number selfRef">6.3.3. </a><a href="#name-edge-ac-deployment" class="section-name selfRef">Edge AC Deployment</a>
           </h4>
-<p id="section-5.3.3-1">Edge nodes (e.g., gateways, routers, or micro-segmentation agents) can host lightweight NHP-AC components. These edge ACs enforce fine-grained policies close to workloads, improving latency and fault isolation.<a href="#section-5.3.3-1" class="pilcrow">¶</a></p>
+<p id="section-6.3.3-1">Edge nodes (e.g., gateways, routers, or micro-segmentation agents) can host lightweight NHP-AC components. These edge ACs enforce fine-grained policies close to workloads, improving latency and fault isolation.<a href="#section-6.3.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="multi-tenant-deployment">
-<section id="section-5.3.4">
+<section id="section-6.3.4">
           <h4 id="name-multi-tenant-deployment">
-<a href="#section-5.3.4" class="section-number selfRef">5.3.4. </a><a href="#name-multi-tenant-deployment" class="section-name selfRef">Multi-Tenant Deployment</a>
+<a href="#section-6.3.4" class="section-number selfRef">6.3.4. </a><a href="#name-multi-tenant-deployment" class="section-name selfRef">Multi-Tenant Deployment</a>
           </h4>
-<p id="section-5.3.4-1">In service-provider or multi-cloud environments, each tenant can operate an independent NHP-Server while sharing an underlying AC infrastructure. The NHP protocol's namespace isolation ensures complete tenant separation through identity-scoped keys and per-tenant policy databases.<a href="#section-5.3.4-1" class="pilcrow">¶</a></p>
+<p id="section-6.3.4-1">In service-provider or multi-cloud environments, each tenant can operate an independent NHP-Server while sharing an underlying AC infrastructure. The NHP protocol's namespace isolation ensures complete tenant separation through identity-scoped keys and per-tenant policy databases.<a href="#section-6.3.4-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -1794,63 +2044,63 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 </section>
 </div>
 <div id="protocol-workflow">
-<section id="section-6">
+<section id="section-7">
       <h2 id="name-protocol-workflow">
-<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-protocol-workflow" class="section-name selfRef">Protocol Workflow</a>
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-protocol-workflow" class="section-name selfRef">Protocol Workflow</a>
       </h2>
 <div id="control-plane-vs-data-plane">
-<section id="section-6.1">
+<section id="section-7.1">
         <h3 id="name-control-plane-vs-data-plane">
-<a href="#section-6.1" class="section-number selfRef">6.1. </a><a href="#name-control-plane-vs-data-plane" class="section-name selfRef">Control Plane vs Data Plane</a>
+<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-control-plane-vs-data-plane" class="section-name selfRef">Control Plane vs Data Plane</a>
         </h3>
-<p id="section-6.1-1">The <strong>Control Plane</strong> carries cryptographic authentication and authorization information among NHP-Agent, NHP-Server, NHP-AC, and optional external ASP. Control plane messages are encrypted using Noise Protocol handshakes.<a href="#section-6.1-1" class="pilcrow">¶</a></p>
-<p id="section-6.1-2">The <strong>Data Plane</strong> carries application data between the resource requester (NHP-Agent host) and the protected resource, but only after NHP-AC explicitly authorizes access.<a href="#section-6.1-2" class="pilcrow">¶</a></p>
-<p id="section-6.1-3">This strict separation enforces the <em>authenticate-before-connect</em> principle central to Zero Trust.<a href="#section-6.1-3" class="pilcrow">¶</a></p>
+<p id="section-7.1-1">The <strong>Control Plane</strong> carries cryptographic authentication and authorization information among NHP-Agent, NHP-Server, NHP-AC, and optional external ASP. Control plane messages are encrypted using Noise Protocol handshakes.<a href="#section-7.1-1" class="pilcrow">¶</a></p>
+<p id="section-7.1-2">The <strong>Data Plane</strong> carries application data between the resource requester (NHP-Agent host) and the protected resource, but only after NHP-AC explicitly authorizes access.<a href="#section-7.1-2" class="pilcrow">¶</a></p>
+<p id="section-7.1-3">This strict separation enforces the <em>authenticate-before-connect</em> principle central to Zero Trust.<a href="#section-7.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="workflow-steps">
-<section id="section-6.2">
+<section id="section-7.2">
         <h3 id="name-workflow-steps">
-<a href="#section-6.2" class="section-number selfRef">6.2. </a><a href="#name-workflow-steps" class="section-name selfRef">Workflow Steps</a>
+<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-workflow-steps" class="section-name selfRef">Workflow Steps</a>
         </h3>
-<p id="section-6.2-1">The complete NHP workflow consists of the following steps:<a href="#section-6.2-1" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-6.2-2">
-<li id="section-6.2-2.1">
-            <p id="section-6.2-2.1.1"><strong>Knock Request:</strong> NHP-Agent sends NHP-KNK message to NHP-Server containing encrypted identity claims and access request.<a href="#section-6.2-2.1.1" class="pilcrow">¶</a></p>
+<p id="section-7.2-1">The complete NHP workflow consists of the following steps:<a href="#section-7.2-1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-7.2-2">
+<li id="section-7.2-2.1">
+            <p id="section-7.2-2.1.1"><strong>Knock Request:</strong> NHP-Agent sends NHP-KNK message to NHP-Server containing encrypted identity claims and access request.<a href="#section-7.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-6.2-2.2">
-            <p id="section-6.2-2.2.1"><strong>Authorization Query:</strong> NHP-Server validates the cryptographic envelope and queries ASP for authorization decision.<a href="#section-6.2-2.2.1" class="pilcrow">¶</a></p>
+          <li id="section-7.2-2.2">
+            <p id="section-7.2-2.2.1"><strong>Authorization Query:</strong> NHP-Server validates the cryptographic envelope and queries ASP for authorization decision.<a href="#section-7.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-6.2-2.3">
-            <p id="section-6.2-2.3.1"><strong>Authorization Response:</strong> ASP returns authorization decision with granted permissions and session parameters.<a href="#section-6.2-2.3.1" class="pilcrow">¶</a></p>
+          <li id="section-7.2-2.3">
+            <p id="section-7.2-2.3.1"><strong>Authorization Response:</strong> ASP returns authorization decision with granted permissions and session parameters.<a href="#section-7.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-6.2-2.4">
-            <p id="section-6.2-2.4.1"><strong>Door Opening:</strong> NHP-Server sends NHP-AOP command to NHP-AC instructing it to open access for the specific NHP-Agent.<a href="#section-6.2-2.4.1" class="pilcrow">¶</a></p>
+          <li id="section-7.2-2.4">
+            <p id="section-7.2-2.4.1"><strong>Door Opening:</strong> NHP-Server sends NHP-AOP command to NHP-AC instructing it to open access for the specific NHP-Agent.<a href="#section-7.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-6.2-2.5">
-            <p id="section-6.2-2.5.1"><strong>AC Confirmation:</strong> NHP-AC enforces the access rule and replies with NHP-ART confirming the operation.<a href="#section-6.2-2.5.1" class="pilcrow">¶</a></p>
+          <li id="section-7.2-2.5">
+            <p id="section-7.2-2.5.1"><strong>AC Confirmation:</strong> NHP-AC enforces the access rule and replies with NHP-ART confirming the operation.<a href="#section-7.2-2.5.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-6.2-2.6">
-            <p id="section-6.2-2.6.1"><strong>Agent Notification:</strong> NHP-Server sends NHP-ACK to NHP-Agent with access token and connection parameters.<a href="#section-6.2-2.6.1" class="pilcrow">¶</a></p>
+          <li id="section-7.2-2.6">
+            <p id="section-7.2-2.6.1"><strong>Agent Notification:</strong> NHP-Server sends NHP-ACK to NHP-Agent with access token and connection parameters.<a href="#section-7.2-2.6.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-6.2-2.7">
-            <p id="section-6.2-2.7.1"><strong>Resource Access:</strong> NHP-Agent sends NHP-ACC to NHP-AC and establishes data plane connection to protected resource.<a href="#section-6.2-2.7.1" class="pilcrow">¶</a></p>
+          <li id="section-7.2-2.7">
+            <p id="section-7.2-2.7.1"><strong>Resource Access:</strong> NHP-Agent sends NHP-ACC to NHP-AC and establishes data plane connection to protected resource.<a href="#section-7.2-2.7.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-6.2-2.8">
-            <p id="section-6.2-2.8.1"><strong>Session Maintenance:</strong> NHP-Server and NHP-AC maintain session state through NHP-KPL keepalive messages.<a href="#section-6.2-2.8.1" class="pilcrow">¶</a></p>
+          <li id="section-7.2-2.8">
+            <p id="section-7.2-2.8.1"><strong>Session Maintenance:</strong> NHP-Server and NHP-AC maintain session state through NHP-KPL keepalive messages.<a href="#section-7.2-2.8.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-6.2-2.9">
-            <p id="section-6.2-2.9.1"><strong>Logging and Audit:</strong> NHP-AC uploads access logs via NHP-LOG messages for compliance and auditing.<a href="#section-6.2-2.9.1" class="pilcrow">¶</a></p>
+          <li id="section-7.2-2.9">
+            <p id="section-7.2-2.9.1"><strong>Logging and Audit:</strong> NHP-AC uploads access logs via NHP-LOG messages for compliance and auditing.<a href="#section-7.2-2.9.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 </section>
 </div>
 <div id="sequence-diagram">
-<section id="section-6.3">
+<section id="section-7.3">
         <h3 id="name-sequence-diagram">
-<a href="#section-6.3" class="section-number selfRef">6.3. </a><a href="#name-sequence-diagram" class="section-name selfRef">Sequence Diagram</a>
+<a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-sequence-diagram" class="section-name selfRef">Sequence Diagram</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-6.3-1">
+<div class="alignLeft art-text artwork" id="section-7.3-1">
 <pre>
 NHP-Agent           NHP-Server            NHP-AC             ASP/IAM
     |                    |                    |                   |
@@ -1869,26 +2119,26 @@ NHP-Agent           NHP-Server            NHP-AC             ASP/IAM
     |                    |&lt;-- NHP-LOG --------|                   |
     |                    |--- NHP-LAK -------&gt;|                   |
     |                    |                    |                   |
-</pre><a href="#section-6.3-1" class="pilcrow">¶</a>
+</pre><a href="#section-7.3-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 </section>
 </div>
 <div id="cryptographic-framework">
-<section id="section-7">
+<section id="section-8">
       <h2 id="name-cryptographic-framework">
-<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-cryptographic-framework" class="section-name selfRef">Cryptographic Framework</a>
+<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-cryptographic-framework" class="section-name selfRef">Cryptographic Framework</a>
       </h2>
-<p id="section-7-1">NHP employs the Noise Protocol Framework <span>[<a href="#NoiseFramework" class="cite xref">NoiseFramework</a>]</span> for all cryptographic operations. This section defines the required cryptographic primitives and handshake patterns.<a href="#section-7-1" class="pilcrow">¶</a></p>
+<p id="section-8-1">NHP employs the Noise Protocol Framework <span>[<a href="#NoiseFramework" class="cite xref">NoiseFramework</a>]</span> for all cryptographic operations. This section defines the required cryptographic primitives and handshake patterns.<a href="#section-8-1" class="pilcrow">¶</a></p>
 <div id="cryptographic-primitives">
-<section id="section-7.1">
+<section id="section-8.1">
         <h3 id="name-cryptographic-primitives">
-<a href="#section-7.1" class="section-number selfRef">7.1. </a><a href="#name-cryptographic-primitives" class="section-name selfRef">Cryptographic Primitives</a>
+<a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-cryptographic-primitives" class="section-name selfRef">Cryptographic Primitives</a>
         </h3>
-<p id="section-7.1-1">Implementations <span class="bcp14">MUST</span> support the following cryptographic primitives:<a href="#section-7.1-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-1">
-          <caption><a href="#table-1" class="selfRef">Table 1</a></caption>
+<p id="section-8.1-1">Implementations <span class="bcp14">MUST</span> support the following cryptographic primitives:<a href="#section-8.1-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-3">
+          <caption><a href="#table-3" class="selfRef">Table 3</a></caption>
 <thead>
             <tr>
               <th class="text-left" rowspan="1" colspan="1">Function</th>
@@ -1919,9 +2169,9 @@ NHP-Agent           NHP-Server            NHP-AC             ASP/IAM
             </tr>
           </tbody>
         </table>
-<p id="section-7.1-3">Implementations <span class="bcp14">MAY</span> additionally support:<a href="#section-7.1-3" class="pilcrow">¶</a></p>
-<table class="center" id="table-2">
-          <caption><a href="#table-2" class="selfRef">Table 2</a></caption>
+<p id="section-8.1-3">Implementations <span class="bcp14">MAY</span> additionally support:<a href="#section-8.1-3" class="pilcrow">¶</a></p>
+<table class="center" id="table-4">
+          <caption><a href="#table-4" class="selfRef">Table 4</a></caption>
 <thead>
             <tr>
               <th class="text-left" rowspan="1" colspan="1">Function</th>
@@ -1950,101 +2200,101 @@ NHP-Agent           NHP-Server            NHP-AC             ASP/IAM
 </section>
 </div>
 <div id="noise-protocol-handshake-patterns">
-<section id="section-7.2">
+<section id="section-8.2">
         <h3 id="name-noise-protocol-handshake-pa">
-<a href="#section-7.2" class="section-number selfRef">7.2. </a><a href="#name-noise-protocol-handshake-pa" class="section-name selfRef">Noise Protocol Handshake Patterns</a>
+<a href="#section-8.2" class="section-number selfRef">8.2. </a><a href="#name-noise-protocol-handshake-pa" class="section-name selfRef">Noise Protocol Handshake Patterns</a>
         </h3>
-<p id="section-7.2-1">NHP supports the following Noise handshake patterns:<a href="#section-7.2-1" class="pilcrow">¶</a></p>
+<p id="section-8.2-1">NHP supports the following Noise handshake patterns:<a href="#section-8.2-1" class="pilcrow">¶</a></p>
 <div id="xx-pattern-default">
-<section id="section-7.2.1">
+<section id="section-8.2.1">
           <h4 id="name-xx-pattern-default">
-<a href="#section-7.2.1" class="section-number selfRef">7.2.1. </a><a href="#name-xx-pattern-default" class="section-name selfRef">XX Pattern (Default)</a>
+<a href="#section-8.2.1" class="section-number selfRef">8.2.1. </a><a href="#name-xx-pattern-default" class="section-name selfRef">XX Pattern (Default)</a>
           </h4>
-<p id="section-7.2.1-1">The XX pattern provides full forward secrecy and identity protection for both parties. It is the <span class="bcp14">RECOMMENDED</span> pattern for most deployments.<a href="#section-7.2.1-1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-7.2.1-2">
+<p id="section-8.2.1-1">The XX pattern provides full forward secrecy and identity protection for both parties. It is the <span class="bcp14">RECOMMENDED</span> pattern for most deployments.<a href="#section-8.2.1-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8.2.1-2">
 <pre>
 XX:
   -&gt; e
   &lt;- e, ee, s, es
   -&gt; s, se
-</pre><a href="#section-7.2.1-2" class="pilcrow">¶</a>
+</pre><a href="#section-8.2.1-2" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="ik-pattern-performance-optimized">
-<section id="section-7.2.2">
+<section id="section-8.2.2">
           <h4 id="name-ik-pattern-performance-opti">
-<a href="#section-7.2.2" class="section-number selfRef">7.2.2. </a><a href="#name-ik-pattern-performance-opti" class="section-name selfRef">IK Pattern (Performance Optimized)</a>
+<a href="#section-8.2.2" class="section-number selfRef">8.2.2. </a><a href="#name-ik-pattern-performance-opti" class="section-name selfRef">IK Pattern (Performance Optimized)</a>
           </h4>
-<p id="section-7.2.2-1">The IK pattern is used when the NHP-Agent knows the NHP-Server's static public key in advance, reducing round trips.<a href="#section-7.2.2-1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-7.2.2-2">
+<p id="section-8.2.2-1">The IK pattern is used when the NHP-Agent knows the NHP-Server's static public key in advance, reducing round trips.<a href="#section-8.2.2-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8.2.2-2">
 <pre>
 IK:
   &lt;- s
   ...
   -&gt; e, es, s, ss
   &lt;- e, ee, se
-</pre><a href="#section-7.2.2-2" class="pilcrow">¶</a>
+</pre><a href="#section-8.2.2-2" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="k-pattern-one-way">
-<section id="section-7.2.3">
+<section id="section-8.2.3">
           <h4 id="name-k-pattern-one-way">
-<a href="#section-7.2.3" class="section-number selfRef">7.2.3. </a><a href="#name-k-pattern-one-way" class="section-name selfRef">K Pattern (One-Way)</a>
+<a href="#section-8.2.3" class="section-number selfRef">8.2.3. </a><a href="#name-k-pattern-one-way" class="section-name selfRef">K Pattern (One-Way)</a>
           </h4>
-<p id="section-7.2.3-1">The K pattern is used for one-way initiation where only the initiator needs to be authenticated by the responder.<a href="#section-7.2.3-1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-7.2.3-2">
+<p id="section-8.2.3-1">The K pattern is used for one-way initiation where only the initiator needs to be authenticated by the responder.<a href="#section-8.2.3-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-8.2.3-2">
 <pre>
 K:
   &lt;- s
   ...
   -&gt; e, es, ss
-</pre><a href="#section-7.2.3-2" class="pilcrow">¶</a>
+</pre><a href="#section-8.2.3-2" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 </section>
 </div>
 <div id="key-management">
-<section id="section-7.3">
+<section id="section-8.3">
         <h3 id="name-key-management">
-<a href="#section-7.3" class="section-number selfRef">7.3. </a><a href="#name-key-management" class="section-name selfRef">Key Management</a>
+<a href="#section-8.3" class="section-number selfRef">8.3. </a><a href="#name-key-management" class="section-name selfRef">Key Management</a>
         </h3>
 <div id="static-keys">
-<section id="section-7.3.1">
+<section id="section-8.3.1">
           <h4 id="name-static-keys">
-<a href="#section-7.3.1" class="section-number selfRef">7.3.1. </a><a href="#name-static-keys" class="section-name selfRef">Static Keys</a>
+<a href="#section-8.3.1" class="section-number selfRef">8.3.1. </a><a href="#name-static-keys" class="section-name selfRef">Static Keys</a>
           </h4>
-<p id="section-7.3.1-1">Each NHP component maintains a static Curve25519 key pair:<a href="#section-7.3.1-1" class="pilcrow">¶</a></p>
+<p id="section-8.3.1-1">Each NHP component maintains a static Curve25519 key pair:<a href="#section-8.3.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-7.3.1-2.1">
-              <p id="section-7.3.1-2.1.1">NHP-Agent: Used for client identity and authentication<a href="#section-7.3.1-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-8.3.1-2.1">
+              <p id="section-8.3.1-2.1.1">NHP-Agent: Used for client identity and authentication<a href="#section-8.3.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-7.3.1-2.2">
-              <p id="section-7.3.1-2.2.1">NHP-Server: Used for server identity and authentication<a href="#section-7.3.1-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-8.3.1-2.2">
+              <p id="section-8.3.1-2.2.1">NHP-Server: Used for server identity and authentication<a href="#section-8.3.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-7.3.1-2.3">
-              <p id="section-7.3.1-2.3.1">NHP-AC: Used for secure communication with NHP-Server<a href="#section-7.3.1-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-8.3.1-2.3">
+              <p id="section-8.3.1-2.3.1">NHP-AC: Used for secure communication with NHP-Server<a href="#section-8.3.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
-<p id="section-7.3.1-3">Static public keys <span class="bcp14">MUST</span> be distributed through a secure out-of-band mechanism or registered through the NHP-REG message flow.<a href="#section-7.3.1-3" class="pilcrow">¶</a></p>
+<p id="section-8.3.1-3">Static public keys <span class="bcp14">MUST</span> be distributed through a secure out-of-band mechanism or registered through the NHP-REG message flow.<a href="#section-8.3.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="ephemeral-keys">
-<section id="section-7.3.2">
+<section id="section-8.3.2">
           <h4 id="name-ephemeral-keys">
-<a href="#section-7.3.2" class="section-number selfRef">7.3.2. </a><a href="#name-ephemeral-keys" class="section-name selfRef">Ephemeral Keys</a>
+<a href="#section-8.3.2" class="section-number selfRef">8.3.2. </a><a href="#name-ephemeral-keys" class="section-name selfRef">Ephemeral Keys</a>
           </h4>
-<p id="section-7.3.2-1">Ephemeral keys are generated for each session to provide forward secrecy. Implementations <span class="bcp14">MUST</span> use cryptographically secure random number generators for ephemeral key generation.<a href="#section-7.3.2-1" class="pilcrow">¶</a></p>
+<p id="section-8.3.2-1">Ephemeral keys are generated for each session to provide forward secrecy. Implementations <span class="bcp14">MUST</span> use cryptographically secure random number generators for ephemeral key generation.<a href="#section-8.3.2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="key-rotation">
-<section id="section-7.3.3">
+<section id="section-8.3.3">
           <h4 id="name-key-rotation">
-<a href="#section-7.3.3" class="section-number selfRef">7.3.3. </a><a href="#name-key-rotation" class="section-name selfRef">Key Rotation</a>
+<a href="#section-8.3.3" class="section-number selfRef">8.3.3. </a><a href="#name-key-rotation" class="section-name selfRef">Key Rotation</a>
           </h4>
-<p id="section-7.3.3-1">Static keys <span class="bcp14">SHOULD</span> be rotated periodically. The NHP-REG and NHP-RAK messages support key re-registration without service interruption.<a href="#section-7.3.3-1" class="pilcrow">¶</a></p>
+<p id="section-8.3.3-1">Static keys <span class="bcp14">SHOULD</span> be rotated periodically. The NHP-REG and NHP-RAK messages support key re-registration without service interruption.<a href="#section-8.3.3-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
@@ -2052,18 +2302,18 @@ K:
 </section>
 </div>
 <div id="message-format">
-<section id="section-8">
+<section id="section-9">
       <h2 id="name-message-format">
-<a href="#section-8" class="section-number selfRef">8. </a><a href="#name-message-format" class="section-name selfRef">Message Format</a>
+<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-message-format" class="section-name selfRef">Message Format</a>
       </h2>
-<p id="section-8-1">All NHP messages share a common header structure followed by an encrypted payload.<a href="#section-8-1" class="pilcrow">¶</a></p>
+<p id="section-9-1">All NHP messages share a common header structure followed by an encrypted payload.<a href="#section-9-1" class="pilcrow">¶</a></p>
 <div id="message-header">
-<section id="section-8.1">
+<section id="section-9.1">
         <h3 id="name-message-header">
-<a href="#section-8.1" class="section-number selfRef">8.1. </a><a href="#name-message-header" class="section-name selfRef">Message Header</a>
+<a href="#section-9.1" class="section-number selfRef">9.1. </a><a href="#name-message-header" class="section-name selfRef">Message Header</a>
         </h3>
-<p id="section-8.1-1">The NHP message header is 32 bytes with the following structure:<a href="#section-8.1-1" class="pilcrow">¶</a></p>
-<div class="alignLeft art-text artwork" id="section-8.1-2">
+<p id="section-9.1-1">The NHP message header is 32 bytes with the following structure:<a href="#section-9.1-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-9.1-2">
 <pre>
  0                   1                   2                   3
  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
@@ -2080,56 +2330,56 @@ K:
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 |        Payload Length         |        Header Checksum        |
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-</pre><a href="#section-8.1-2" class="pilcrow">¶</a>
+</pre><a href="#section-9.1-2" class="pilcrow">¶</a>
 </div>
 <div id="header-fields">
-<section id="section-8.1.1">
+<section id="section-9.1.1">
           <h4 id="name-header-fields">
-<a href="#section-8.1.1" class="section-number selfRef">8.1.1. </a><a href="#name-header-fields" class="section-name selfRef">Header Fields</a>
+<a href="#section-9.1.1" class="section-number selfRef">9.1.1. </a><a href="#name-header-fields" class="section-name selfRef">Header Fields</a>
           </h4>
-<span class="break"></span><dl class="dlParallel" id="section-8.1.1-1">
-            <dt id="section-8.1.1-1.1">Version (8 bits)</dt>
-            <dd style="margin-left: 1.5em" id="section-8.1.1-1.2">
-              <p id="section-8.1.1-1.2.1">Protocol version. Current version is 0x01.<a href="#section-8.1.1-1.2.1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-9.1.1-1">
+            <dt id="section-9.1.1-1.1">Version (8 bits)</dt>
+            <dd style="margin-left: 1.5em" id="section-9.1.1-1.2">
+              <p id="section-9.1.1-1.2.1">Protocol version. Current version is 0x01.<a href="#section-9.1.1-1.2.1" class="pilcrow">¶</a></p>
 </dd>
             <dd class="break"></dd>
-<dt id="section-8.1.1-1.3">Type (8 bits)</dt>
-            <dd style="margin-left: 1.5em" id="section-8.1.1-1.4">
-              <p id="section-8.1.1-1.4.1">Message type code. See <a href="#message-types" class="auto internal xref">Section 8.2</a>.<a href="#section-8.1.1-1.4.1" class="pilcrow">¶</a></p>
+<dt id="section-9.1.1-1.3">Type (8 bits)</dt>
+            <dd style="margin-left: 1.5em" id="section-9.1.1-1.4">
+              <p id="section-9.1.1-1.4.1">Message type code. See <a href="#message-types" class="auto internal xref">Section 9.2</a>.<a href="#section-9.1.1-1.4.1" class="pilcrow">¶</a></p>
 </dd>
             <dd class="break"></dd>
-<dt id="section-8.1.1-1.5">Flags (8 bits)</dt>
-            <dd style="margin-left: 1.5em" id="section-8.1.1-1.6">
-              <p id="section-8.1.1-1.6.1">Control flags:
+<dt id="section-9.1.1-1.5">Flags (8 bits)</dt>
+            <dd style="margin-left: 1.5em" id="section-9.1.1-1.6">
+              <p id="section-9.1.1-1.6.1">Control flags:
 * Bit 0: Compression enabled
 * Bit 1: Fragmentation flag
 * Bit 2: Priority message
-* Bits 3-7: Reserved<a href="#section-8.1.1-1.6.1" class="pilcrow">¶</a></p>
+* Bits 3-7: Reserved<a href="#section-9.1.1-1.6.1" class="pilcrow">¶</a></p>
 </dd>
             <dd class="break"></dd>
-<dt id="section-8.1.1-1.7">Reserved (8 bits)</dt>
-            <dd style="margin-left: 1.5em" id="section-8.1.1-1.8">
-              <p id="section-8.1.1-1.8.1">Reserved for future use. <span class="bcp14">MUST</span> be set to zero.<a href="#section-8.1.1-1.8.1" class="pilcrow">¶</a></p>
+<dt id="section-9.1.1-1.7">Reserved (8 bits)</dt>
+            <dd style="margin-left: 1.5em" id="section-9.1.1-1.8">
+              <p id="section-9.1.1-1.8.1">Reserved for future use. <span class="bcp14">MUST</span> be set to zero.<a href="#section-9.1.1-1.8.1" class="pilcrow">¶</a></p>
 </dd>
             <dd class="break"></dd>
-<dt id="section-8.1.1-1.9">Nonce (96 bits)</dt>
-            <dd style="margin-left: 1.5em" id="section-8.1.1-1.10">
-              <p id="section-8.1.1-1.10.1">Unique nonce for AEAD encryption. <span class="bcp14">MUST</span> be unique per message within a session.<a href="#section-8.1.1-1.10.1" class="pilcrow">¶</a></p>
+<dt id="section-9.1.1-1.9">Nonce (96 bits)</dt>
+            <dd style="margin-left: 1.5em" id="section-9.1.1-1.10">
+              <p id="section-9.1.1-1.10.1">Unique nonce for AEAD encryption. <span class="bcp14">MUST</span> be unique per message within a session.<a href="#section-9.1.1-1.10.1" class="pilcrow">¶</a></p>
 </dd>
             <dd class="break"></dd>
-<dt id="section-8.1.1-1.11">Timestamp (64 bits)</dt>
-            <dd style="margin-left: 1.5em" id="section-8.1.1-1.12">
-              <p id="section-8.1.1-1.12.1">UNIX epoch time in milliseconds. Used for replay protection.<a href="#section-8.1.1-1.12.1" class="pilcrow">¶</a></p>
+<dt id="section-9.1.1-1.11">Timestamp (64 bits)</dt>
+            <dd style="margin-left: 1.5em" id="section-9.1.1-1.12">
+              <p id="section-9.1.1-1.12.1">UNIX epoch time in milliseconds. Used for replay protection.<a href="#section-9.1.1-1.12.1" class="pilcrow">¶</a></p>
 </dd>
             <dd class="break"></dd>
-<dt id="section-8.1.1-1.13">Payload Length (16 bits)</dt>
-            <dd style="margin-left: 1.5em" id="section-8.1.1-1.14">
-              <p id="section-8.1.1-1.14.1">Length of the encrypted payload in bytes.<a href="#section-8.1.1-1.14.1" class="pilcrow">¶</a></p>
+<dt id="section-9.1.1-1.13">Payload Length (16 bits)</dt>
+            <dd style="margin-left: 1.5em" id="section-9.1.1-1.14">
+              <p id="section-9.1.1-1.14.1">Length of the encrypted payload in bytes.<a href="#section-9.1.1-1.14.1" class="pilcrow">¶</a></p>
 </dd>
             <dd class="break"></dd>
-<dt id="section-8.1.1-1.15">Header Checksum (16 bits)</dt>
-            <dd style="margin-left: 1.5em" id="section-8.1.1-1.16">
-              <p id="section-8.1.1-1.16.1">CRC-16 checksum of the header for integrity verification.<a href="#section-8.1.1-1.16.1" class="pilcrow">¶</a></p>
+<dt id="section-9.1.1-1.15">Header Checksum (16 bits)</dt>
+            <dd style="margin-left: 1.5em" id="section-9.1.1-1.16">
+              <p id="section-9.1.1-1.16.1">CRC-16 checksum of the header for integrity verification.<a href="#section-9.1.1-1.16.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
 </dl>
@@ -2138,12 +2388,12 @@ K:
 </section>
 </div>
 <div id="message-types">
-<section id="section-8.2">
+<section id="section-9.2">
         <h3 id="name-message-types">
-<a href="#section-8.2" class="section-number selfRef">8.2. </a><a href="#name-message-types" class="section-name selfRef">Message Types</a>
+<a href="#section-9.2" class="section-number selfRef">9.2. </a><a href="#name-message-types" class="section-name selfRef">Message Types</a>
         </h3>
-<table class="center" id="table-3">
-          <caption><a href="#table-3" class="selfRef">Table 3</a></caption>
+<table class="center" id="table-5">
+          <caption><a href="#table-5" class="selfRef">Table 5</a></caption>
 <thead>
             <tr>
               <th class="text-left" rowspan="1" colspan="1">Type Code</th>
@@ -2266,18 +2516,18 @@ K:
 </section>
 </div>
 <div id="message-definitions">
-<section id="section-8.3">
+<section id="section-9.3">
         <h3 id="name-message-definitions">
-<a href="#section-8.3" class="section-number selfRef">8.3. </a><a href="#name-message-definitions" class="section-name selfRef">Message Definitions</a>
+<a href="#section-9.3" class="section-number selfRef">9.3. </a><a href="#name-message-definitions" class="section-name selfRef">Message Definitions</a>
         </h3>
 <div id="nhp-kpl-keepalive">
-<section id="section-8.3.1">
+<section id="section-9.3.1">
           <h4 id="name-nhp-kpl-keepalive">
-<a href="#section-8.3.1" class="section-number selfRef">8.3.1. </a><a href="#name-nhp-kpl-keepalive" class="section-name selfRef">NHP-KPL (Keepalive)</a>
+<a href="#section-9.3.1" class="section-number selfRef">9.3.1. </a><a href="#name-nhp-kpl-keepalive" class="section-name selfRef">NHP-KPL (Keepalive)</a>
           </h4>
-<p id="section-8.3.1-1">Keepalive messages maintain session state between components. The payload contains:<a href="#section-8.3.1-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-4">
-            <caption><a href="#table-4" class="selfRef">Table 4</a></caption>
+<p id="section-9.3.1-1">Keepalive messages maintain session state between components. The payload contains:<a href="#section-9.3.1-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-6">
+            <caption><a href="#table-6" class="selfRef">Table 6</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Field</th>
@@ -2301,13 +2551,13 @@ K:
 </section>
 </div>
 <div id="nhp-knk-knock">
-<section id="section-8.3.2">
+<section id="section-9.3.2">
           <h4 id="name-nhp-knk-knock">
-<a href="#section-8.3.2" class="section-number selfRef">8.3.2. </a><a href="#name-nhp-knk-knock" class="section-name selfRef">NHP-KNK (Knock)</a>
+<a href="#section-9.3.2" class="section-number selfRef">9.3.2. </a><a href="#name-nhp-knk-knock" class="section-name selfRef">NHP-KNK (Knock)</a>
           </h4>
-<p id="section-8.3.2-1">The knock message initiates access request from NHP-Agent to NHP-Server. The encrypted payload contains:<a href="#section-8.3.2-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-5">
-            <caption><a href="#table-5" class="selfRef">Table 5</a></caption>
+<p id="section-9.3.2-1">The knock message initiates access request from NHP-Agent to NHP-Server. The encrypted payload contains:<a href="#section-9.3.2-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-7">
+            <caption><a href="#table-7" class="selfRef">Table 7</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Field</th>
@@ -2346,13 +2596,13 @@ K:
 </section>
 </div>
 <div id="nhp-ack-acknowledge">
-<section id="section-8.3.3">
+<section id="section-9.3.3">
           <h4 id="name-nhp-ack-acknowledge">
-<a href="#section-8.3.3" class="section-number selfRef">8.3.3. </a><a href="#name-nhp-ack-acknowledge" class="section-name selfRef">NHP-ACK (Acknowledge)</a>
+<a href="#section-9.3.3" class="section-number selfRef">9.3.3. </a><a href="#name-nhp-ack-acknowledge" class="section-name selfRef">NHP-ACK (Acknowledge)</a>
           </h4>
-<p id="section-8.3.3-1">The acknowledge message confirms knock success and provides access parameters:<a href="#section-8.3.3-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-6">
-            <caption><a href="#table-6" class="selfRef">Table 6</a></caption>
+<p id="section-9.3.3-1">The acknowledge message confirms knock success and provides access parameters:<a href="#section-9.3.3-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-8">
+            <caption><a href="#table-8" class="selfRef">Table 8</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Field</th>
@@ -2396,13 +2646,13 @@ K:
 </section>
 </div>
 <div id="nhp-aop-ac-operations">
-<section id="section-8.3.4">
+<section id="section-9.3.4">
           <h4 id="name-nhp-aop-ac-operations">
-<a href="#section-8.3.4" class="section-number selfRef">8.3.4. </a><a href="#name-nhp-aop-ac-operations" class="section-name selfRef">NHP-AOP (AC Operations)</a>
+<a href="#section-9.3.4" class="section-number selfRef">9.3.4. </a><a href="#name-nhp-aop-ac-operations" class="section-name selfRef">NHP-AOP (AC Operations)</a>
           </h4>
-<p id="section-8.3.4-1">The AC operations message instructs NHP-AC to modify access rules:<a href="#section-8.3.4-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-7">
-            <caption><a href="#table-7" class="selfRef">Table 7</a></caption>
+<p id="section-9.3.4-1">The AC operations message instructs NHP-AC to modify access rules:<a href="#section-9.3.4-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-9">
+            <caption><a href="#table-9" class="selfRef">Table 9</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Field</th>
@@ -2441,13 +2691,13 @@ K:
 </section>
 </div>
 <div id="nhp-art-ac-result">
-<section id="section-8.3.5">
+<section id="section-9.3.5">
           <h4 id="name-nhp-art-ac-result">
-<a href="#section-8.3.5" class="section-number selfRef">8.3.5. </a><a href="#name-nhp-art-ac-result" class="section-name selfRef">NHP-ART (AC Result)</a>
+<a href="#section-9.3.5" class="section-number selfRef">9.3.5. </a><a href="#name-nhp-art-ac-result" class="section-name selfRef">NHP-ART (AC Result)</a>
           </h4>
-<p id="section-8.3.5-1">The AC result message reports operation status:<a href="#section-8.3.5-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-8">
-            <caption><a href="#table-8" class="selfRef">Table 8</a></caption>
+<p id="section-9.3.5-1">The AC result message reports operation status:<a href="#section-9.3.5-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-10">
+            <caption><a href="#table-10" class="selfRef">Table 10</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Field</th>
@@ -2476,13 +2726,13 @@ K:
 </section>
 </div>
 <div id="nhp-acc-access">
-<section id="section-8.3.6">
+<section id="section-9.3.6">
           <h4 id="name-nhp-acc-access">
-<a href="#section-8.3.6" class="section-number selfRef">8.3.6. </a><a href="#name-nhp-acc-access" class="section-name selfRef">NHP-ACC (Access)</a>
+<a href="#section-9.3.6" class="section-number selfRef">9.3.6. </a><a href="#name-nhp-acc-access" class="section-name selfRef">NHP-ACC (Access)</a>
           </h4>
-<p id="section-8.3.6-1">The access message is sent from NHP-Agent to NHP-AC to initiate data plane access:<a href="#section-8.3.6-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-9">
-            <caption><a href="#table-9" class="selfRef">Table 9</a></caption>
+<p id="section-9.3.6-1">The access message is sent from NHP-Agent to NHP-AC to initiate data plane access:<a href="#section-9.3.6-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-11">
+            <caption><a href="#table-11" class="selfRef">Table 11</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Field</th>
@@ -2516,13 +2766,13 @@ K:
 </section>
 </div>
 <div id="nhp-reg-register">
-<section id="section-8.3.7">
+<section id="section-9.3.7">
           <h4 id="name-nhp-reg-register">
-<a href="#section-8.3.7" class="section-number selfRef">8.3.7. </a><a href="#name-nhp-reg-register" class="section-name selfRef">NHP-REG (Register)</a>
+<a href="#section-9.3.7" class="section-number selfRef">9.3.7. </a><a href="#name-nhp-reg-register" class="section-name selfRef">NHP-REG (Register)</a>
           </h4>
-<p id="section-8.3.7-1">The registration message registers NHP-Agent public key with NHP-Server:<a href="#section-8.3.7-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-10">
-            <caption><a href="#table-10" class="selfRef">Table 10</a></caption>
+<p id="section-9.3.7-1">The registration message registers NHP-Agent public key with NHP-Server:<a href="#section-9.3.7-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-12">
+            <caption><a href="#table-12" class="selfRef">Table 12</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Field</th>
@@ -2556,13 +2806,13 @@ K:
 </section>
 </div>
 <div id="nhp-rak-register-acknowledge">
-<section id="section-8.3.8">
+<section id="section-9.3.8">
           <h4 id="name-nhp-rak-register-acknowledg">
-<a href="#section-8.3.8" class="section-number selfRef">8.3.8. </a><a href="#name-nhp-rak-register-acknowledg" class="section-name selfRef">NHP-RAK (Register Acknowledge)</a>
+<a href="#section-9.3.8" class="section-number selfRef">9.3.8. </a><a href="#name-nhp-rak-register-acknowledg" class="section-name selfRef">NHP-RAK (Register Acknowledge)</a>
           </h4>
-<p id="section-8.3.8-1">Confirms successful registration:<a href="#section-8.3.8-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-11">
-            <caption><a href="#table-11" class="selfRef">Table 11</a></caption>
+<p id="section-9.3.8-1">Confirms successful registration:<a href="#section-9.3.8-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-13">
+            <caption><a href="#table-13" class="selfRef">Table 13</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Field</th>
@@ -2591,13 +2841,13 @@ K:
 </section>
 </div>
 <div id="nhp-log-log">
-<section id="section-8.3.9">
+<section id="section-9.3.9">
           <h4 id="name-nhp-log-log">
-<a href="#section-8.3.9" class="section-number selfRef">8.3.9. </a><a href="#name-nhp-log-log" class="section-name selfRef">NHP-LOG (Log)</a>
+<a href="#section-9.3.9" class="section-number selfRef">9.3.9. </a><a href="#name-nhp-log-log" class="section-name selfRef">NHP-LOG (Log)</a>
           </h4>
-<p id="section-8.3.9-1">Log upload message from NHP-AC to NHP-Server:<a href="#section-8.3.9-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-12">
-            <caption><a href="#table-12" class="selfRef">Table 12</a></caption>
+<p id="section-9.3.9-1">Log upload message from NHP-AC to NHP-Server:<a href="#section-9.3.9-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-14">
+            <caption><a href="#table-14" class="selfRef">Table 14</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Field</th>
@@ -2626,13 +2876,13 @@ K:
 </section>
 </div>
 <div id="nhp-lak-log-acknowledge">
-<section id="section-8.3.10">
+<section id="section-9.3.10">
           <h4 id="name-nhp-lak-log-acknowledge">
-<a href="#section-8.3.10" class="section-number selfRef">8.3.10. </a><a href="#name-nhp-lak-log-acknowledge" class="section-name selfRef">NHP-LAK (Log Acknowledge)</a>
+<a href="#section-9.3.10" class="section-number selfRef">9.3.10. </a><a href="#name-nhp-lak-log-acknowledge" class="section-name selfRef">NHP-LAK (Log Acknowledge)</a>
           </h4>
-<p id="section-8.3.10-1">Confirms log receipt:<a href="#section-8.3.10-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-13">
-            <caption><a href="#table-13" class="selfRef">Table 13</a></caption>
+<p id="section-9.3.10-1">Confirms log receipt:<a href="#section-9.3.10-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-15">
+            <caption><a href="#table-15" class="selfRef">Table 15</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Field</th>
@@ -2655,48 +2905,48 @@ K:
 </section>
 </div>
 <div id="logging-and-auditing">
-<section id="section-9">
+<section id="section-10">
       <h2 id="name-logging-and-auditing">
-<a href="#section-9" class="section-number selfRef">9. </a><a href="#name-logging-and-auditing" class="section-name selfRef">Logging and Auditing</a>
+<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-logging-and-auditing" class="section-name selfRef">Logging and Auditing</a>
       </h2>
-<p id="section-9-1">NHP provides comprehensive logging capabilities to support security monitoring, compliance, and forensic analysis.<a href="#section-9-1" class="pilcrow">¶</a></p>
+<p id="section-10-1">NHP provides comprehensive logging capabilities to support security monitoring, compliance, and forensic analysis.<a href="#section-10-1" class="pilcrow">¶</a></p>
 <div id="log-types">
-<section id="section-9.1">
+<section id="section-10.1">
         <h3 id="name-log-types">
-<a href="#section-9.1" class="section-number selfRef">9.1. </a><a href="#name-log-types" class="section-name selfRef">Log Types</a>
+<a href="#section-10.1" class="section-number selfRef">10.1. </a><a href="#name-log-types" class="section-name selfRef">Log Types</a>
         </h3>
-<p id="section-9.1-1">NHP defines the following log categories:<a href="#section-9.1-1" class="pilcrow">¶</a></p>
-<span class="break"></span><dl class="dlParallel" id="section-9.1-2">
-          <dt id="section-9.1-2.1">Access Logs</dt>
-          <dd style="margin-left: 1.5em" id="section-9.1-2.2">
-            <p id="section-9.1-2.2.1">Record all access attempts, including source identity, timestamp, requested resource, and decision outcome.<a href="#section-9.1-2.2.1" class="pilcrow">¶</a></p>
+<p id="section-10.1-1">NHP defines the following log categories:<a href="#section-10.1-1" class="pilcrow">¶</a></p>
+<span class="break"></span><dl class="dlParallel" id="section-10.1-2">
+          <dt id="section-10.1-2.1">Access Logs</dt>
+          <dd style="margin-left: 1.5em" id="section-10.1-2.2">
+            <p id="section-10.1-2.2.1">Record all access attempts, including source identity, timestamp, requested resource, and decision outcome.<a href="#section-10.1-2.2.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-9.1-2.3">Authentication Logs</dt>
-          <dd style="margin-left: 1.5em" id="section-9.1-2.4">
-            <p id="section-9.1-2.4.1">Record authentication events including key exchanges, identity verification, and authentication failures.<a href="#section-9.1-2.4.1" class="pilcrow">¶</a></p>
+<dt id="section-10.1-2.3">Authentication Logs</dt>
+          <dd style="margin-left: 1.5em" id="section-10.1-2.4">
+            <p id="section-10.1-2.4.1">Record authentication events including key exchanges, identity verification, and authentication failures.<a href="#section-10.1-2.4.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-9.1-2.5">Policy Logs</dt>
-          <dd style="margin-left: 1.5em" id="section-9.1-2.6">
-            <p id="section-9.1-2.6.1">Record policy evaluation decisions and the factors considered.<a href="#section-9.1-2.6.1" class="pilcrow">¶</a></p>
+<dt id="section-10.1-2.5">Policy Logs</dt>
+          <dd style="margin-left: 1.5em" id="section-10.1-2.6">
+            <p id="section-10.1-2.6.1">Record policy evaluation decisions and the factors considered.<a href="#section-10.1-2.6.1" class="pilcrow">¶</a></p>
 </dd>
           <dd class="break"></dd>
-<dt id="section-9.1-2.7">System Logs</dt>
-          <dd style="margin-left: 1.5em" id="section-9.1-2.8">
-            <p id="section-9.1-2.8.1">Record component health, configuration changes, and operational events.<a href="#section-9.1-2.8.1" class="pilcrow">¶</a></p>
+<dt id="section-10.1-2.7">System Logs</dt>
+          <dd style="margin-left: 1.5em" id="section-10.1-2.8">
+            <p id="section-10.1-2.8.1">Record component health, configuration changes, and operational events.<a href="#section-10.1-2.8.1" class="pilcrow">¶</a></p>
 </dd>
         <dd class="break"></dd>
 </dl>
 </section>
 </div>
 <div id="log-format">
-<section id="section-9.2">
+<section id="section-10.2">
         <h3 id="name-log-format">
-<a href="#section-9.2" class="section-number selfRef">9.2. </a><a href="#name-log-format" class="section-name selfRef">Log Format</a>
+<a href="#section-10.2" class="section-number selfRef">10.2. </a><a href="#name-log-format" class="section-name selfRef">Log Format</a>
         </h3>
-<p id="section-9.2-1">All NHP logs <span class="bcp14">SHOULD</span> use structured JSON format with the following mandatory fields:<a href="#section-9.2-1" class="pilcrow">¶</a></p>
-<div class="lang-json sourcecode" id="section-9.2-2">
+<p id="section-10.2-1">All NHP logs <span class="bcp14">SHOULD</span> use structured JSON format with the following mandatory fields:<a href="#section-10.2-1" class="pilcrow">¶</a></p>
+<div class="lang-json sourcecode" id="section-10.2-2">
 <pre>
 {
   "timestamp": "2025-01-01T12:00:00.000Z",
@@ -2710,50 +2960,50 @@ K:
   "action": "access_granted",
   "details": {}
 }
-</pre><a href="#section-9.2-2" class="pilcrow">¶</a>
+</pre><a href="#section-10.2-2" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="log-transmission">
-<section id="section-9.3">
+<section id="section-10.3">
         <h3 id="name-log-transmission">
-<a href="#section-9.3" class="section-number selfRef">9.3. </a><a href="#name-log-transmission" class="section-name selfRef">Log Transmission</a>
+<a href="#section-10.3" class="section-number selfRef">10.3. </a><a href="#name-log-transmission" class="section-name selfRef">Log Transmission</a>
         </h3>
-<p id="section-9.3-1">NHP-AC components transmit logs to NHP-Server using NHP-LOG messages. Implementations <span class="bcp14">MUST</span>:<a href="#section-9.3-1" class="pilcrow">¶</a></p>
+<p id="section-10.3-1">NHP-AC components transmit logs to NHP-Server using NHP-LOG messages. Implementations <span class="bcp14">MUST</span>:<a href="#section-10.3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-9.3-2.1">
-            <p id="section-9.3-2.1.1">Encrypt all log transmissions using the established Noise session<a href="#section-9.3-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-10.3-2.1">
+            <p id="section-10.3-2.1.1">Encrypt all log transmissions using the established Noise session<a href="#section-10.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-9.3-2.2">
-            <p id="section-9.3-2.2.1">Batch logs to reduce network overhead<a href="#section-9.3-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-10.3-2.2">
+            <p id="section-10.3-2.2.1">Batch logs to reduce network overhead<a href="#section-10.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-9.3-2.3">
-            <p id="section-9.3-2.3.1">Implement retry logic for failed transmissions<a href="#section-9.3-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-10.3-2.3">
+            <p id="section-10.3-2.3.1">Implement retry logic for failed transmissions<a href="#section-10.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-9.3-2.4">
-            <p id="section-9.3-2.4.1">Store logs locally if transmission fails<a href="#section-9.3-2.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-10.3-2.4">
+            <p id="section-10.3-2.4.1">Store logs locally if transmission fails<a href="#section-10.3-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
 </div>
 <div id="compliance-considerations">
-<section id="section-9.4">
+<section id="section-10.4">
         <h3 id="name-compliance-considerations">
-<a href="#section-9.4" class="section-number selfRef">9.4. </a><a href="#name-compliance-considerations" class="section-name selfRef">Compliance Considerations</a>
+<a href="#section-10.4" class="section-number selfRef">10.4. </a><a href="#name-compliance-considerations" class="section-name selfRef">Compliance Considerations</a>
         </h3>
-<p id="section-9.4-1">NHP logging supports compliance with:<a href="#section-9.4-1" class="pilcrow">¶</a></p>
+<p id="section-10.4-1">NHP logging supports compliance with:<a href="#section-10.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-9.4-2.1">
-            <p id="section-9.4-2.1.1">SOC 2 Type II audit requirements<a href="#section-9.4-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-10.4-2.1">
+            <p id="section-10.4-2.1.1">SOC 2 Type II audit requirements<a href="#section-10.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-9.4-2.2">
-            <p id="section-9.4-2.2.1">GDPR access logging requirements<a href="#section-9.4-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-10.4-2.2">
+            <p id="section-10.4-2.2.1">GDPR access logging requirements<a href="#section-10.4-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-9.4-2.3">
-            <p id="section-9.4-2.3.1">HIPAA audit trail requirements<a href="#section-9.4-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-10.4-2.3">
+            <p id="section-10.4-2.3.1">HIPAA audit trail requirements<a href="#section-10.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-9.4-2.4">
-            <p id="section-9.4-2.4.1">PCI-DSS logging requirements<a href="#section-9.4-2.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-10.4-2.4">
+            <p id="section-10.4-2.4.1">PCI-DSS logging requirements<a href="#section-10.4-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2761,19 +3011,19 @@ K:
 </section>
 </div>
 <div id="integration-with-sdp">
-<section id="section-10">
+<section id="section-11">
       <h2 id="name-integration-with-sdp">
-<a href="#section-10" class="section-number selfRef">10. </a><a href="#name-integration-with-sdp" class="section-name selfRef">Integration with SDP</a>
+<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-integration-with-sdp" class="section-name selfRef">Integration with SDP</a>
       </h2>
-<p id="section-10-1">NHP is designed to integrate seamlessly with existing Software-Defined Perimeter (SDP) deployments as defined in <span>[<a href="#CSA.SDP.Spec2.0" class="cite xref">CSA.SDP.Spec2.0</a>]</span>.<a href="#section-10-1" class="pilcrow">¶</a></p>
+<p id="section-11-1">NHP is designed to integrate seamlessly with existing Software-Defined Perimeter (SDP) deployments as defined in <span>[<a href="#CSA.SDP.Spec2.0" class="cite xref">CSA.SDP.Spec2.0</a>]</span>.<a href="#section-11-1" class="pilcrow">¶</a></p>
 <div id="integration-architecture">
-<section id="section-10.1">
+<section id="section-11.1">
         <h3 id="name-integration-architecture">
-<a href="#section-10.1" class="section-number selfRef">10.1. </a><a href="#name-integration-architecture" class="section-name selfRef">Integration Architecture</a>
+<a href="#section-11.1" class="section-number selfRef">11.1. </a><a href="#name-integration-architecture" class="section-name selfRef">Integration Architecture</a>
         </h3>
-<p id="section-10.1-1">In an SDP integration, NHP components map to SDP components as follows:<a href="#section-10.1-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-14">
-          <caption><a href="#table-14" class="selfRef">Table 14</a></caption>
+<p id="section-11.1-1">In an SDP integration, NHP components map to SDP components as follows:<a href="#section-11.1-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-16">
+          <caption><a href="#table-16" class="selfRef">Table 16</a></caption>
 <thead>
             <tr>
               <th class="text-left" rowspan="1" colspan="1">NHP Component</th>
@@ -2798,43 +3048,43 @@ K:
 </section>
 </div>
 <div id="integration-process">
-<section id="section-10.2">
+<section id="section-11.2">
         <h3 id="name-integration-process">
-<a href="#section-10.2" class="section-number selfRef">10.2. </a><a href="#name-integration-process" class="section-name selfRef">Integration Process</a>
+<a href="#section-11.2" class="section-number selfRef">11.2. </a><a href="#name-integration-process" class="section-name selfRef">Integration Process</a>
         </h3>
-<ol start="1" type="1" class="normal type-1" id="section-10.2-1">
-<li id="section-10.2-1.1">
-            <p id="section-10.2-1.1.1"><strong>Discovery:</strong> SDP Controller advertises NHP-Server endpoint to SDP Initiating Hosts.<a href="#section-10.2-1.1.1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-11.2-1">
+<li id="section-11.2-1.1">
+            <p id="section-11.2-1.1.1"><strong>Discovery:</strong> SDP Controller advertises NHP-Server endpoint to SDP Initiating Hosts.<a href="#section-11.2-1.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-10.2-1.2">
-            <p id="section-10.2-1.2.1"><strong>Authentication:</strong> SDP Initiating Host uses NHP-KNK to authenticate with NHP-Server instead of SPA.<a href="#section-10.2-1.2.1" class="pilcrow">¶</a></p>
+          <li id="section-11.2-1.2">
+            <p id="section-11.2-1.2.1"><strong>Authentication:</strong> SDP Initiating Host uses NHP-KNK to authenticate with NHP-Server instead of SPA.<a href="#section-11.2-1.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-10.2-1.3">
-            <p id="section-10.2-1.3.1"><strong>Authorization:</strong> NHP-Server queries SDP Controller for policy decisions.<a href="#section-10.2-1.3.1" class="pilcrow">¶</a></p>
+          <li id="section-11.2-1.3">
+            <p id="section-11.2-1.3.1"><strong>Authorization:</strong> NHP-Server queries SDP Controller for policy decisions.<a href="#section-11.2-1.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-10.2-1.4">
-            <p id="section-10.2-1.4.1"><strong>Enforcement:</strong> NHP-AC opens ports on SDP Gateway based on NHP-AOP commands.<a href="#section-10.2-1.4.1" class="pilcrow">¶</a></p>
+          <li id="section-11.2-1.4">
+            <p id="section-11.2-1.4.1"><strong>Enforcement:</strong> NHP-AC opens ports on SDP Gateway based on NHP-AOP commands.<a href="#section-11.2-1.4.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 </section>
 </div>
 <div id="benefits-of-nhp-sdp-integration">
-<section id="section-10.3">
+<section id="section-11.3">
         <h3 id="name-benefits-of-nhp-sdp-integra">
-<a href="#section-10.3" class="section-number selfRef">10.3. </a><a href="#name-benefits-of-nhp-sdp-integra" class="section-name selfRef">Benefits of NHP-SDP Integration</a>
+<a href="#section-11.3" class="section-number selfRef">11.3. </a><a href="#name-benefits-of-nhp-sdp-integra" class="section-name selfRef">Benefits of NHP-SDP Integration</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-10.3-1.1">
-            <p id="section-10.3-1.1.1"><strong>Stronger Cryptography:</strong> NHP's Noise-based key exchange provides better forward secrecy than traditional SPA.<a href="#section-10.3-1.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-11.3-1.1">
+            <p id="section-11.3-1.1.1"><strong>Stronger Cryptography:</strong> NHP's Noise-based key exchange provides better forward secrecy than traditional SPA.<a href="#section-11.3-1.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-10.3-1.2">
-            <p id="section-10.3-1.2.1"><strong>Mutual Authentication:</strong> Both client and server authenticate each other.<a href="#section-10.3-1.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-11.3-1.2">
+            <p id="section-11.3-1.2.1"><strong>Mutual Authentication:</strong> Both client and server authenticate each other.<a href="#section-11.3-1.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-10.3-1.3">
-            <p id="section-10.3-1.3.1"><strong>Scalability:</strong> NHP's architecture supports enterprise-scale deployments.<a href="#section-10.3-1.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-11.3-1.3">
+            <p id="section-11.3-1.3.1"><strong>Scalability:</strong> NHP's architecture supports enterprise-scale deployments.<a href="#section-11.3-1.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-10.3-1.4">
-            <p id="section-10.3-1.4.1"><strong>Extensibility:</strong> NHP message types support richer interaction patterns.<a href="#section-10.3-1.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-11.3-1.4">
+            <p id="section-11.3-1.4.1"><strong>Extensibility:</strong> NHP message types support richer interaction patterns.<a href="#section-11.3-1.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2842,17 +3092,17 @@ K:
 </section>
 </div>
 <div id="integration-with-dns">
-<section id="section-11">
+<section id="section-12">
       <h2 id="name-integration-with-dns">
-<a href="#section-11" class="section-number selfRef">11. </a><a href="#name-integration-with-dns" class="section-name selfRef">Integration with DNS</a>
+<a href="#section-12" class="section-number selfRef">12. </a><a href="#name-integration-with-dns" class="section-name selfRef">Integration with DNS</a>
       </h2>
-<p id="section-11-1">NHP can integrate with DNS infrastructure to provide stealth resolution of protected resources.<a href="#section-11-1" class="pilcrow">¶</a></p>
+<p id="section-12-1">NHP can integrate with DNS infrastructure to provide stealth resolution of protected resources.<a href="#section-12-1" class="pilcrow">¶</a></p>
 <div id="dns-integration-architecture">
-<section id="section-11.1">
+<section id="section-12.1">
         <h3 id="name-dns-integration-architectur">
-<a href="#section-11.1" class="section-number selfRef">11.1. </a><a href="#name-dns-integration-architectur" class="section-name selfRef">DNS Integration Architecture</a>
+<a href="#section-12.1" class="section-number selfRef">12.1. </a><a href="#name-dns-integration-architectur" class="section-name selfRef">DNS Integration Architecture</a>
         </h3>
-<div class="alignLeft art-text artwork" id="section-11.1-1">
+<div class="alignLeft art-text artwork" id="section-12.1-1">
 <pre>
 +-------------+     +-------------+     +-------------+
 | NHP-Agent   |----&gt;| NHP-Server  |----&gt;| DNS Server  |
@@ -2864,73 +3114,73 @@ K:
 | Public DNS  |     | NHP-AC      |
 | (No Records)|     |             |
 +-------------+     +-------------+
-</pre><a href="#section-11.1-1" class="pilcrow">¶</a>
+</pre><a href="#section-12.1-1" class="pilcrow">¶</a>
 </div>
 </section>
 </div>
 <div id="integration-process-1">
-<section id="section-11.2">
+<section id="section-12.2">
         <h3 id="name-integration-process-2">
-<a href="#section-11.2" class="section-number selfRef">11.2. </a><a href="#name-integration-process-2" class="section-name selfRef">Integration Process</a>
+<a href="#section-12.2" class="section-number selfRef">12.2. </a><a href="#name-integration-process-2" class="section-name selfRef">Integration Process</a>
         </h3>
-<ol start="1" type="1" class="normal type-1" id="section-11.2-1">
-<li id="section-11.2-1.1">
-            <p id="section-11.2-1.1.1">Protected resources have no public DNS records.<a href="#section-11.2-1.1.1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-12.2-1">
+<li id="section-12.2-1.1">
+            <p id="section-12.2-1.1.1">Protected resources have no public DNS records.<a href="#section-12.2-1.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-11.2-1.2">
-            <p id="section-11.2-1.2.1">NHP-Agent authenticates with NHP-Server via NHP-KNK.<a href="#section-11.2-1.2.1" class="pilcrow">¶</a></p>
+          <li id="section-12.2-1.2">
+            <p id="section-12.2-1.2.1">NHP-Agent authenticates with NHP-Server via NHP-KNK.<a href="#section-12.2-1.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-11.2-1.3">
-            <p id="section-11.2-1.3.1">NHP-Server returns resource IP addresses in NHP-ACK only after successful authentication.<a href="#section-11.2-1.3.1" class="pilcrow">¶</a></p>
+          <li id="section-12.2-1.3">
+            <p id="section-12.2-1.3.1">NHP-Server returns resource IP addresses in NHP-ACK only after successful authentication.<a href="#section-12.2-1.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-11.2-1.4">
-            <p id="section-11.2-1.4.1">NHP-Agent can then connect to the resolved addresses.<a href="#section-11.2-1.4.1" class="pilcrow">¶</a></p>
+          <li id="section-12.2-1.4">
+            <p id="section-12.2-1.4.1">NHP-Agent can then connect to the resolved addresses.<a href="#section-12.2-1.4.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
-<p id="section-11.2-2">This prevents DNS enumeration attacks and keeps resource addresses invisible to unauthorized users.<a href="#section-11.2-2" class="pilcrow">¶</a></p>
+<p id="section-12.2-2">This prevents DNS enumeration attacks and keeps resource addresses invisible to unauthorized users.<a href="#section-12.2-2" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
 </div>
 <div id="integration-with-fido">
-<section id="section-12">
+<section id="section-13">
       <h2 id="name-integration-with-fido">
-<a href="#section-12" class="section-number selfRef">12. </a><a href="#name-integration-with-fido" class="section-name selfRef">Integration with FIDO</a>
+<a href="#section-13" class="section-number selfRef">13. </a><a href="#name-integration-with-fido" class="section-name selfRef">Integration with FIDO</a>
       </h2>
-<p id="section-12-1">NHP supports integration with FIDO2/WebAuthn for strong user authentication.<a href="#section-12-1" class="pilcrow">¶</a></p>
+<p id="section-13-1">NHP supports integration with FIDO2/WebAuthn for strong user authentication.<a href="#section-13-1" class="pilcrow">¶</a></p>
 <div id="fido-integration-flow">
-<section id="section-12.1">
+<section id="section-13.1">
         <h3 id="name-fido-integration-flow">
-<a href="#section-12.1" class="section-number selfRef">12.1. </a><a href="#name-fido-integration-flow" class="section-name selfRef">FIDO Integration Flow</a>
+<a href="#section-13.1" class="section-number selfRef">13.1. </a><a href="#name-fido-integration-flow" class="section-name selfRef">FIDO Integration Flow</a>
         </h3>
-<ol start="1" type="1" class="normal type-1" id="section-12.1-1">
-<li id="section-12.1-1.1">
-            <p id="section-12.1-1.1.1">User initiates NHP-KNK with FIDO assertion<a href="#section-12.1-1.1.1" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-13.1-1">
+<li id="section-13.1-1.1">
+            <p id="section-13.1-1.1.1">User initiates NHP-KNK with FIDO assertion<a href="#section-13.1-1.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-12.1-1.2">
-            <p id="section-12.1-1.2.1">NHP-Server validates FIDO assertion with FIDO server<a href="#section-12.1-1.2.1" class="pilcrow">¶</a></p>
+          <li id="section-13.1-1.2">
+            <p id="section-13.1-1.2.1">NHP-Server validates FIDO assertion with FIDO server<a href="#section-13.1-1.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-12.1-1.3">
-            <p id="section-12.1-1.3.1">Upon successful FIDO authentication, NHP-Server proceeds with access grant<a href="#section-12.1-1.3.1" class="pilcrow">¶</a></p>
+          <li id="section-13.1-1.3">
+            <p id="section-13.1-1.3.1">Upon successful FIDO authentication, NHP-Server proceeds with access grant<a href="#section-13.1-1.3.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 </section>
 </div>
 <div id="recovery-and-fallback">
-<section id="section-12.2">
+<section id="section-13.2">
         <h3 id="name-recovery-and-fallback">
-<a href="#section-12.2" class="section-number selfRef">12.2. </a><a href="#name-recovery-and-fallback" class="section-name selfRef">Recovery and Fallback</a>
+<a href="#section-13.2" class="section-number selfRef">13.2. </a><a href="#name-recovery-and-fallback" class="section-name selfRef">Recovery and Fallback</a>
         </h3>
-<p id="section-12.2-1">For FIDO authentication failures, NHP supports fallback to:<a href="#section-12.2-1" class="pilcrow">¶</a></p>
+<p id="section-13.2-1">For FIDO authentication failures, NHP supports fallback to:<a href="#section-13.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-12.2-2.1">
-            <p id="section-12.2-2.1.1">One-Time Password (OTP) via NHP-OTP message<a href="#section-12.2-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-13.2-2.1">
+            <p id="section-13.2-2.1.1">One-Time Password (OTP) via NHP-OTP message<a href="#section-13.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-12.2-2.2">
-            <p id="section-12.2-2.2.1">SMS/Email verification codes<a href="#section-12.2-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-13.2-2.2">
+            <p id="section-13.2-2.2.1">SMS/Email verification codes<a href="#section-13.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-12.2-2.3">
-            <p id="section-12.2-2.3.1">Recovery codes<a href="#section-12.2-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-13.2-2.3">
+            <p id="section-13.2-2.3.1">Recovery codes<a href="#section-13.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2938,128 +3188,128 @@ K:
 </section>
 </div>
 <div id="security-considerations">
-<section id="section-13">
+<section id="section-14">
       <h2 id="name-security-considerations">
-<a href="#section-13" class="section-number selfRef">13. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<a href="#section-14" class="section-number selfRef">14. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
       </h2>
 <div id="infrastructure-invisibility">
-<section id="section-13.1">
+<section id="section-14.1">
         <h3 id="name-infrastructure-invisibility">
-<a href="#section-13.1" class="section-number selfRef">13.1. </a><a href="#name-infrastructure-invisibility" class="section-name selfRef">Infrastructure Invisibility</a>
+<a href="#section-14.1" class="section-number selfRef">14.1. </a><a href="#name-infrastructure-invisibility" class="section-name selfRef">Infrastructure Invisibility</a>
         </h3>
-<p id="section-13.1-1">NHP ensures infrastructure invisibility by:<a href="#section-13.1-1" class="pilcrow">¶</a></p>
+<p id="section-14.1-1">NHP ensures infrastructure invisibility by:<a href="#section-14.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-13.1-2.1">
-            <p id="section-13.1-2.1.1">Encrypting all control plane traffic using Noise Protocol<a href="#section-13.1-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-14.1-2.1">
+            <p id="section-14.1-2.1.1">Encrypting all control plane traffic using Noise Protocol<a href="#section-14.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.1-2.2">
-            <p id="section-13.1-2.2.1">Requiring mutual authentication before any resource visibility<a href="#section-13.1-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.1-2.2">
+            <p id="section-14.1-2.2.1">Requiring mutual authentication before any resource visibility<a href="#section-14.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.1-2.3">
-            <p id="section-13.1-2.3.1">Maintaining default-deny firewall rules on all NHP-AC components<a href="#section-13.1-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.1-2.3">
+            <p id="section-14.1-2.3.1">Maintaining default-deny firewall rules on all NHP-AC components<a href="#section-14.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.1-2.4">
-            <p id="section-13.1-2.4.1">Supporting ephemeral port allocation for data plane connections<a href="#section-13.1-2.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.1-2.4">
+            <p id="section-14.1-2.4.1">Supporting ephemeral port allocation for data plane connections<a href="#section-14.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
 </div>
 <div id="replay-attack-prevention">
-<section id="section-13.2">
+<section id="section-14.2">
         <h3 id="name-replay-attack-prevention">
-<a href="#section-13.2" class="section-number selfRef">13.2. </a><a href="#name-replay-attack-prevention" class="section-name selfRef">Replay Attack Prevention</a>
+<a href="#section-14.2" class="section-number selfRef">14.2. </a><a href="#name-replay-attack-prevention" class="section-name selfRef">Replay Attack Prevention</a>
         </h3>
-<p id="section-13.2-1">NHP prevents replay attacks through:<a href="#section-13.2-1" class="pilcrow">¶</a></p>
+<p id="section-14.2-1">NHP prevents replay attacks through:<a href="#section-14.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-13.2-2.1">
-            <p id="section-13.2-2.1.1">Timestamp validation with configurable tolerance (<span class="bcp14">RECOMMENDED</span>: 60 seconds)<a href="#section-13.2-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-14.2-2.1">
+            <p id="section-14.2-2.1.1">Timestamp validation with configurable tolerance (<span class="bcp14">RECOMMENDED</span>: 60 seconds)<a href="#section-14.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.2-2.2">
-            <p id="section-13.2-2.2.1">Unique nonce per message<a href="#section-13.2-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.2-2.2">
+            <p id="section-14.2-2.2.1">Unique nonce per message<a href="#section-14.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.2-2.3">
-            <p id="section-13.2-2.3.1">Session-bound tokens that cannot be reused across sessions<a href="#section-13.2-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.2-2.3">
+            <p id="section-14.2-2.3.1">Session-bound tokens that cannot be reused across sessions<a href="#section-14.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
 </div>
 <div id="key-security">
-<section id="section-13.3">
+<section id="section-14.3">
         <h3 id="name-key-security">
-<a href="#section-13.3" class="section-number selfRef">13.3. </a><a href="#name-key-security" class="section-name selfRef">Key Security</a>
+<a href="#section-14.3" class="section-number selfRef">14.3. </a><a href="#name-key-security" class="section-name selfRef">Key Security</a>
         </h3>
-<p id="section-13.3-1">Implementations <span class="bcp14">MUST</span>:<a href="#section-13.3-1" class="pilcrow">¶</a></p>
+<p id="section-14.3-1">Implementations <span class="bcp14">MUST</span>:<a href="#section-14.3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-13.3-2.1">
-            <p id="section-13.3-2.1.1">Use cryptographically secure random number generators for all key generation<a href="#section-13.3-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-14.3-2.1">
+            <p id="section-14.3-2.1.1">Use cryptographically secure random number generators for all key generation<a href="#section-14.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.3-2.2">
-            <p id="section-13.3-2.2.1">Store private keys in secure enclaves or HSMs where available<a href="#section-13.3-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.3-2.2">
+            <p id="section-14.3-2.2.1">Store private keys in secure enclaves or HSMs where available<a href="#section-14.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.3-2.3">
-            <p id="section-13.3-2.3.1">Implement key rotation policies<a href="#section-13.3-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.3-2.3">
+            <p id="section-14.3-2.3.1">Implement key rotation policies<a href="#section-14.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.3-2.4">
-            <p id="section-13.3-2.4.1">Securely erase key material when no longer needed<a href="#section-13.3-2.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.3-2.4">
+            <p id="section-14.3-2.4.1">Securely erase key material when no longer needed<a href="#section-14.3-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
 </div>
 <div id="session-security">
-<section id="section-13.4">
+<section id="section-14.4">
         <h3 id="name-session-security">
-<a href="#section-13.4" class="section-number selfRef">13.4. </a><a href="#name-session-security" class="section-name selfRef">Session Security</a>
+<a href="#section-14.4" class="section-number selfRef">14.4. </a><a href="#name-session-security" class="section-name selfRef">Session Security</a>
         </h3>
 <ul class="normal">
-<li class="normal" id="section-13.4-1.1">
-            <p id="section-13.4-1.1.1">Sessions <span class="bcp14">MUST</span> have configurable expiration (<span class="bcp14">RECOMMENDED</span> default: 4 hours)<a href="#section-13.4-1.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-14.4-1.1">
+            <p id="section-14.4-1.1.1">Sessions <span class="bcp14">MUST</span> have configurable expiration (<span class="bcp14">RECOMMENDED</span> default: 4 hours)<a href="#section-14.4-1.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.4-1.2">
-            <p id="section-13.4-1.2.1">Sessions <span class="bcp14">MUST</span> be revocable by NHP-Server<a href="#section-13.4-1.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.4-1.2">
+            <p id="section-14.4-1.2.1">Sessions <span class="bcp14">MUST</span> be revocable by NHP-Server<a href="#section-14.4-1.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.4-1.3">
-            <p id="section-13.4-1.3.1">Session tokens <span class="bcp14">MUST</span> be bound to client identity and IP address<a href="#section-13.4-1.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.4-1.3">
+            <p id="section-14.4-1.3.1">Session tokens <span class="bcp14">MUST</span> be bound to client identity and IP address<a href="#section-14.4-1.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
 </div>
 <div id="denial-of-service-mitigation">
-<section id="section-13.5">
+<section id="section-14.5">
         <h3 id="name-denial-of-service-mitigatio">
-<a href="#section-13.5" class="section-number selfRef">13.5. </a><a href="#name-denial-of-service-mitigatio" class="section-name selfRef">Denial of Service Mitigation</a>
+<a href="#section-14.5" class="section-number selfRef">14.5. </a><a href="#name-denial-of-service-mitigatio" class="section-name selfRef">Denial of Service Mitigation</a>
         </h3>
-<p id="section-13.5-1">NHP provides DoS resistance through:<a href="#section-13.5-1" class="pilcrow">¶</a></p>
+<p id="section-14.5-1">NHP provides DoS resistance through:<a href="#section-14.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-13.5-2.1">
-            <p id="section-13.5-2.1.1">Cryptographic puzzles for computationally expensive operations<a href="#section-13.5-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-14.5-2.1">
+            <p id="section-14.5-2.1.1">Cryptographic puzzles for computationally expensive operations<a href="#section-14.5-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.5-2.2">
-            <p id="section-13.5-2.2.1">Rate limiting on NHP-Server and NHP-AC<a href="#section-13.5-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.5-2.2">
+            <p id="section-14.5-2.2.1">Rate limiting on NHP-Server and NHP-AC<a href="#section-14.5-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.5-2.3">
-            <p id="section-13.5-2.3.1">Cookie-based session resumption to avoid repeated handshakes<a href="#section-13.5-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.5-2.3">
+            <p id="section-14.5-2.3.1">Cookie-based session resumption to avoid repeated handshakes<a href="#section-14.5-2.3.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
 </div>
 <div id="limitations">
-<section id="section-13.6">
+<section id="section-14.6">
         <h3 id="name-limitations">
-<a href="#section-13.6" class="section-number selfRef">13.6. </a><a href="#name-limitations" class="section-name selfRef">Limitations</a>
+<a href="#section-14.6" class="section-number selfRef">14.6. </a><a href="#name-limitations" class="section-name selfRef">Limitations</a>
         </h3>
-<p id="section-13.6-1">NHP does not protect against:<a href="#section-13.6-1" class="pilcrow">¶</a></p>
+<p id="section-14.6-1">NHP does not protect against:<a href="#section-14.6-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-13.6-2.1">
-            <p id="section-13.6-2.1.1">Compromised endpoints with valid credentials<a href="#section-13.6-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-14.6-2.1">
+            <p id="section-14.6-2.1.1">Compromised endpoints with valid credentials<a href="#section-14.6-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.6-2.2">
-            <p id="section-13.6-2.2.1">Insider threats with legitimate access<a href="#section-13.6-2.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.6-2.2">
+            <p id="section-14.6-2.2.1">Insider threats with legitimate access<a href="#section-14.6-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.6-2.3">
-            <p id="section-13.6-2.3.1">Attacks on the data plane after access is granted<a href="#section-13.6-2.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.6-2.3">
+            <p id="section-14.6-2.3.1">Attacks on the data plane after access is granted<a href="#section-14.6-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-13.6-2.4">
-            <p id="section-13.6-2.4.1">Social engineering attacks targeting user credentials<a href="#section-13.6-2.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-14.6-2.4">
+            <p id="section-14.6-2.4.1">Social engineering attacks targeting user credentials<a href="#section-14.6-2.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -3067,13 +3317,13 @@ K:
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-14">
+<section id="section-15">
       <h2 id="name-iana-considerations">
-<a href="#section-14" class="section-number selfRef">14. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-15" class="section-number selfRef">15. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-14-1">This document requests IANA to establish a new registry for NHP Message Types with the following initial values:<a href="#section-14-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-15">
-        <caption><a href="#table-15" class="selfRef">Table 15</a></caption>
+<p id="section-15-1">This document requests IANA to establish a new registry for NHP Message Types with the following initial values:<a href="#section-15-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-17">
+        <caption><a href="#table-17" class="selfRef">Table 17</a></caption>
 <thead>
           <tr>
             <th class="text-left" rowspan="1" colspan="1">Value</th>
@@ -3174,53 +3424,53 @@ K:
           </tr>
         </tbody>
       </table>
-<p id="section-14-3">Values 0x12-0xFF are reserved for future use.<a href="#section-14-3" class="pilcrow">¶</a></p>
+<p id="section-15-3">Values 0x12-0xFF are reserved for future use.<a href="#section-15-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="reference-implementation">
-<section id="section-15">
+<section id="section-16">
       <h2 id="name-reference-implementation">
-<a href="#section-15" class="section-number selfRef">15. </a><a href="#name-reference-implementation" class="section-name selfRef">Reference Implementation</a>
+<a href="#section-16" class="section-number selfRef">16. </a><a href="#name-reference-implementation" class="section-name selfRef">Reference Implementation</a>
       </h2>
-<p id="section-15-1">An open-source reference implementation of NHP is available at:<a href="#section-15-1" class="pilcrow">¶</a></p>
-<p id="section-15-2">https://github.com/OpenNHP/opennhp<a href="#section-15-2" class="pilcrow">¶</a></p>
+<p id="section-16-1">An open-source reference implementation of NHP is available at:<a href="#section-16-1" class="pilcrow">¶</a></p>
+<p id="section-16-2">https://github.com/OpenNHP/opennhp<a href="#section-16-2" class="pilcrow">¶</a></p>
 <div id="implementation-characteristics">
-<section id="section-15.1">
+<section id="section-16.1">
         <h3 id="name-implementation-characterist">
-<a href="#section-15.1" class="section-number selfRef">15.1. </a><a href="#name-implementation-characterist" class="section-name selfRef">Implementation Characteristics</a>
+<a href="#section-16.1" class="section-number selfRef">16.1. </a><a href="#name-implementation-characterist" class="section-name selfRef">Implementation Characteristics</a>
         </h3>
-<p id="section-15.1-1">The OpenNHP reference implementation is designed with the following characteristics:<a href="#section-15.1-1" class="pilcrow">¶</a></p>
+<p id="section-16.1-1">The OpenNHP reference implementation is designed with the following characteristics:<a href="#section-16.1-1" class="pilcrow">¶</a></p>
 <div id="memory-safe-language">
-<section id="section-15.1.1">
+<section id="section-16.1.1">
           <h4 id="name-memory-safe-language">
-<a href="#section-15.1.1" class="section-number selfRef">15.1.1. </a><a href="#name-memory-safe-language" class="section-name selfRef">Memory-Safe Language</a>
+<a href="#section-16.1.1" class="section-number selfRef">16.1.1. </a><a href="#name-memory-safe-language" class="section-name selfRef">Memory-Safe Language</a>
           </h4>
-<p id="section-15.1.1-1">OpenNHP is implemented in <strong>Go (Golang)</strong>, a memory-safe programming language that eliminates entire classes of vulnerabilities common in C/C++ implementations:<a href="#section-15.1.1-1" class="pilcrow">¶</a></p>
+<p id="section-16.1.1-1">OpenNHP is implemented in <strong>Go (Golang)</strong>, a memory-safe programming language that eliminates entire classes of vulnerabilities common in C/C++ implementations:<a href="#section-16.1.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-15.1.1-2.1">
-              <p id="section-15.1.1-2.1.1"><strong>No Buffer Overflows:</strong> Go's built-in bounds checking prevents buffer overflow attacks.<a href="#section-15.1.1-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.1.1-2.1">
+              <p id="section-16.1.1-2.1.1"><strong>No Buffer Overflows:</strong> Go's built-in bounds checking prevents buffer overflow attacks.<a href="#section-16.1.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.1-2.2">
-              <p id="section-15.1.1-2.2.1"><strong>No Use-After-Free:</strong> Automatic garbage collection eliminates dangling pointer vulnerabilities.<a href="#section-15.1.1-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.1-2.2">
+              <p id="section-16.1.1-2.2.1"><strong>No Use-After-Free:</strong> Automatic garbage collection eliminates dangling pointer vulnerabilities.<a href="#section-16.1.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.1-2.3">
-              <p id="section-15.1.1-2.3.1"><strong>No Null Pointer Dereferences:</strong> Go's type system and nil handling prevent null pointer crashes.<a href="#section-15.1.1-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.1-2.3">
+              <p id="section-16.1.1-2.3.1"><strong>No Null Pointer Dereferences:</strong> Go's type system and nil handling prevent null pointer crashes.<a href="#section-16.1.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.1-2.4">
-              <p id="section-15.1.1-2.4.1"><strong>Race Condition Detection:</strong> Built-in race detector helps identify concurrency issues during development.<a href="#section-15.1.1-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.1-2.4">
+              <p id="section-16.1.1-2.4.1"><strong>Race Condition Detection:</strong> Built-in race detector helps identify concurrency issues during development.<a href="#section-16.1.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
-<p id="section-15.1.1-3">This choice aligns with recommendations from CISA, NSA, and other security agencies advocating for memory-safe languages in critical infrastructure software.<a href="#section-15.1.1-3" class="pilcrow">¶</a></p>
+<p id="section-16.1.1-3">This choice aligns with recommendations from CISA, NSA, and other security agencies advocating for memory-safe languages in critical infrastructure software.<a href="#section-16.1.1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="cross-platform-support">
-<section id="section-15.1.2">
+<section id="section-16.1.2">
           <h4 id="name-cross-platform-support">
-<a href="#section-15.1.2" class="section-number selfRef">15.1.2. </a><a href="#name-cross-platform-support" class="section-name selfRef">Cross-Platform Support</a>
+<a href="#section-16.1.2" class="section-number selfRef">16.1.2. </a><a href="#name-cross-platform-support" class="section-name selfRef">Cross-Platform Support</a>
           </h4>
-<p id="section-15.1.2-1">OpenNHP provides native support across multiple platforms:<a href="#section-15.1.2-1" class="pilcrow">¶</a></p>
-<table class="center" id="table-16">
-            <caption><a href="#table-16" class="selfRef">Table 16</a></caption>
+<p id="section-16.1.2-1">OpenNHP provides native support across multiple platforms:<a href="#section-16.1.2-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-18">
+            <caption><a href="#table-18" class="selfRef">Table 18</a></caption>
 <thead>
               <tr>
                 <th class="text-left" rowspan="1" colspan="1">Platform</th>
@@ -3264,136 +3514,136 @@ K:
 </section>
 </div>
 <div id="modular-architecture">
-<section id="section-15.1.3">
+<section id="section-16.1.3">
           <h4 id="name-modular-architecture">
-<a href="#section-15.1.3" class="section-number selfRef">15.1.3. </a><a href="#name-modular-architecture" class="section-name selfRef">Modular Architecture</a>
+<a href="#section-16.1.3" class="section-number selfRef">16.1.3. </a><a href="#name-modular-architecture" class="section-name selfRef">Modular Architecture</a>
           </h4>
-<p id="section-15.1.3-1">The implementation provides separate binaries for each NHP component:<a href="#section-15.1.3-1" class="pilcrow">¶</a></p>
+<p id="section-16.1.3-1">The implementation provides separate binaries for each NHP component:<a href="#section-16.1.3-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-15.1.3-2.1">
-              <p id="section-15.1.3-2.1.1"><strong>nhp-agent:</strong> Client-side agent for initiating NHP connections<a href="#section-15.1.3-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.1.3-2.1">
+              <p id="section-16.1.3-2.1.1"><strong>nhp-agent:</strong> Client-side agent for initiating NHP connections<a href="#section-16.1.3-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.3-2.2">
-              <p id="section-15.1.3-2.2.1"><strong>nhp-server:</strong> Control plane server for authentication and authorization<a href="#section-15.1.3-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.3-2.2">
+              <p id="section-16.1.3-2.2.1"><strong>nhp-server:</strong> Control plane server for authentication and authorization<a href="#section-16.1.3-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.3-2.3">
-              <p id="section-15.1.3-2.3.1"><strong>nhp-ac:</strong> Access controller for policy enforcement<a href="#section-15.1.3-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.3-2.3">
+              <p id="section-16.1.3-2.3.1"><strong>nhp-ac:</strong> Access controller for policy enforcement<a href="#section-16.1.3-2.3.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
-<p id="section-15.1.3-3">Each component can be deployed independently, enabling flexible deployment topologies from standalone to distributed enterprise configurations.<a href="#section-15.1.3-3" class="pilcrow">¶</a></p>
+<p id="section-16.1.3-3">Each component can be deployed independently, enabling flexible deployment topologies from standalone to distributed enterprise configurations.<a href="#section-16.1.3-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="cryptographic-implementation">
-<section id="section-15.1.4">
+<section id="section-16.1.4">
           <h4 id="name-cryptographic-implementatio">
-<a href="#section-15.1.4" class="section-number selfRef">15.1.4. </a><a href="#name-cryptographic-implementatio" class="section-name selfRef">Cryptographic Implementation</a>
+<a href="#section-16.1.4" class="section-number selfRef">16.1.4. </a><a href="#name-cryptographic-implementatio" class="section-name selfRef">Cryptographic Implementation</a>
           </h4>
-<p id="section-15.1.4-1">The reference implementation uses well-audited cryptographic libraries:<a href="#section-15.1.4-1" class="pilcrow">¶</a></p>
+<p id="section-16.1.4-1">The reference implementation uses well-audited cryptographic libraries:<a href="#section-16.1.4-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-15.1.4-2.1">
-              <p id="section-15.1.4-2.1.1"><strong>Noise Protocol:</strong> flynn/noise library for Noise Framework handshakes<a href="#section-15.1.4-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.1.4-2.1">
+              <p id="section-16.1.4-2.1.1"><strong>Noise Protocol:</strong> flynn/noise library for Noise Framework handshakes<a href="#section-16.1.4-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.4-2.2">
-              <p id="section-15.1.4-2.2.1"><strong>Curve25519:</strong> golang.org/x/crypto for elliptic curve operations<a href="#section-15.1.4-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.4-2.2">
+              <p id="section-16.1.4-2.2.1"><strong>Curve25519:</strong> golang.org/x/crypto for elliptic curve operations<a href="#section-16.1.4-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.4-2.3">
-              <p id="section-15.1.4-2.3.1"><strong>ChaCha20-Poly1305:</strong> Standard library crypto/cipher for AEAD encryption<a href="#section-15.1.4-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.4-2.3">
+              <p id="section-16.1.4-2.3.1"><strong>ChaCha20-Poly1305:</strong> Standard library crypto/cipher for AEAD encryption<a href="#section-16.1.4-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.4-2.4">
-              <p id="section-15.1.4-2.4.1"><strong>HKDF:</strong> golang.org/x/crypto/hkdf for key derivation<a href="#section-15.1.4-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.4-2.4">
+              <p id="section-16.1.4-2.4.1"><strong>HKDF:</strong> golang.org/x/crypto/hkdf for key derivation<a href="#section-16.1.4-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
 </div>
 <div id="performance-characteristics">
-<section id="section-15.1.5">
+<section id="section-16.1.5">
           <h4 id="name-performance-characteristics">
-<a href="#section-15.1.5" class="section-number selfRef">15.1.5. </a><a href="#name-performance-characteristics" class="section-name selfRef">Performance Characteristics</a>
+<a href="#section-16.1.5" class="section-number selfRef">16.1.5. </a><a href="#name-performance-characteristics" class="section-name selfRef">Performance Characteristics</a>
           </h4>
-<p id="section-15.1.5-1">The Go implementation provides:<a href="#section-15.1.5-1" class="pilcrow">¶</a></p>
+<p id="section-16.1.5-1">The Go implementation provides:<a href="#section-16.1.5-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-15.1.5-2.1">
-              <p id="section-15.1.5-2.1.1"><strong>Low Latency:</strong> Typical NHP handshake completes in under 10ms on local networks<a href="#section-15.1.5-2.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.1.5-2.1">
+              <p id="section-16.1.5-2.1.1"><strong>Low Latency:</strong> Typical NHP handshake completes in under 10ms on local networks<a href="#section-16.1.5-2.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.5-2.2">
-              <p id="section-15.1.5-2.2.1"><strong>High Throughput:</strong> Single NHP-Server can handle thousands of concurrent sessions<a href="#section-15.1.5-2.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.5-2.2">
+              <p id="section-16.1.5-2.2.1"><strong>High Throughput:</strong> Single NHP-Server can handle thousands of concurrent sessions<a href="#section-16.1.5-2.2.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.5-2.3">
-              <p id="section-15.1.5-2.3.1"><strong>Minimal Footprint:</strong> Agent binary under 15MB, low memory consumption<a href="#section-15.1.5-2.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.5-2.3">
+              <p id="section-16.1.5-2.3.1"><strong>Minimal Footprint:</strong> Agent binary under 15MB, low memory consumption<a href="#section-16.1.5-2.3.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-15.1.5-2.4">
-              <p id="section-15.1.5-2.4.1"><strong>Concurrent Design:</strong> Goroutine-based concurrency for efficient resource utilization<a href="#section-15.1.5-2.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-16.1.5-2.4">
+              <p id="section-16.1.5-2.4.1"><strong>Concurrent Design:</strong> Goroutine-based concurrency for efficient resource utilization<a href="#section-16.1.5-2.4.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
 </div>
 <div id="open-source-governance">
-<section id="section-15.1.6">
+<section id="section-16.1.6">
           <h4 id="name-open-source-governance">
-<a href="#section-15.1.6" class="section-number selfRef">15.1.6. </a><a href="#name-open-source-governance" class="section-name selfRef">Open Source Governance</a>
+<a href="#section-16.1.6" class="section-number selfRef">16.1.6. </a><a href="#name-open-source-governance" class="section-name selfRef">Open Source Governance</a>
           </h4>
-<p id="section-15.1.6-1">The OpenNHP project operates under the Apache 2.0 license, fostering community collaboration and transparent development to accelerate adoption and ensure rigorous peer review of its security mechanisms.<a href="#section-15.1.6-1" class="pilcrow">¶</a></p>
+<p id="section-16.1.6-1">The OpenNHP project operates under the Apache 2.0 license, fostering community collaboration and transparent development to accelerate adoption and ensure rigorous peer review of its security mechanisms.<a href="#section-16.1.6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
 </div>
 <div id="practical-use-case-stealthdns">
-<section id="section-15.2">
+<section id="section-16.2">
         <h3 id="name-practical-use-case-stealthd">
-<a href="#section-15.2" class="section-number selfRef">15.2. </a><a href="#name-practical-use-case-stealthd" class="section-name selfRef">Practical Use Case: StealthDNS</a>
+<a href="#section-16.2" class="section-number selfRef">16.2. </a><a href="#name-practical-use-case-stealthd" class="section-name selfRef">Practical Use Case: StealthDNS</a>
         </h3>
-<p id="section-15.2-1">StealthDNS is a Zero Trust DNS client powered by OpenNHP that demonstrates practical application of the NHP protocol for DNS-level infrastructure hiding. It is available at:<a href="#section-15.2-1" class="pilcrow">¶</a></p>
-<p id="section-15.2-2">https://github.com/OpenNHP/StealthDNS<a href="#section-15.2-2" class="pilcrow">¶</a></p>
-<p id="section-15.2-3">StealthDNS implements the NHP-DNS integration described in this specification, providing:<a href="#section-15.2-3" class="pilcrow">¶</a></p>
+<p id="section-16.2-1">StealthDNS is a Zero Trust DNS client powered by OpenNHP that demonstrates practical application of the NHP protocol for DNS-level infrastructure hiding. It is available at:<a href="#section-16.2-1" class="pilcrow">¶</a></p>
+<p id="section-16.2-2">https://github.com/OpenNHP/StealthDNS<a href="#section-16.2-2" class="pilcrow">¶</a></p>
+<p id="section-16.2-3">StealthDNS implements the NHP-DNS integration described in this specification, providing:<a href="#section-16.2-3" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-15.2-4.1">
-            <p id="section-15.2-4.1.1"><strong>Invisible DNS Resolution:</strong> Protected domains have no public DNS records. Only authenticated clients can resolve hidden service addresses.<a href="#section-15.2-4.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-16.2-4.1">
+            <p id="section-16.2-4.1.1"><strong>Invisible DNS Resolution:</strong> Protected domains have no public DNS records. Only authenticated clients can resolve hidden service addresses.<a href="#section-16.2-4.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-15.2-4.2">
-            <p id="section-15.2-4.2.1"><strong>NHP-Powered Authentication:</strong> Uses the OpenNHP library to perform cryptographic NHP knocking before DNS resolution.<a href="#section-15.2-4.2.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.2-4.2">
+            <p id="section-16.2-4.2.1"><strong>NHP-Powered Authentication:</strong> Uses the OpenNHP library to perform cryptographic NHP knocking before DNS resolution.<a href="#section-16.2-4.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-15.2-4.3">
-            <p id="section-15.2-4.3.1"><strong>Transparent Local Resolver:</strong> Runs as a local DNS resolver (127.0.0.1:53), requiring no application changes.<a href="#section-15.2-4.3.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.2-4.3">
+            <p id="section-16.2-4.3.1"><strong>Transparent Local Resolver:</strong> Runs as a local DNS resolver (127.0.0.1:53), requiring no application changes.<a href="#section-16.2-4.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-15.2-4.4">
-            <p id="section-15.2-4.4.1"><strong>Cross-Platform Support:</strong> Available on Windows, macOS, Linux, Android, and iOS.<a href="#section-15.2-4.4.1" class="pilcrow">¶</a></p>
+          <li class="normal" id="section-16.2-4.4">
+            <p id="section-16.2-4.4.1"><strong>Cross-Platform Support:</strong> Available on Windows, macOS, Linux, Android, and iOS.<a href="#section-16.2-4.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-15.2-5">The StealthDNS workflow demonstrates the authenticate-before-connect principle:<a href="#section-15.2-5" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-15.2-6">
-<li id="section-15.2-6.1">
-            <p id="section-15.2-6.1.1">Application performs DNS lookup for a protected domain.<a href="#section-15.2-6.1.1" class="pilcrow">¶</a></p>
+<p id="section-16.2-5">The StealthDNS workflow demonstrates the authenticate-before-connect principle:<a href="#section-16.2-5" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-16.2-6">
+<li id="section-16.2-6.1">
+            <p id="section-16.2-6.1.1">Application performs DNS lookup for a protected domain.<a href="#section-16.2-6.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-15.2-6.2">
-            <p id="section-15.2-6.2.1">StealthDNS checks if the domain is NHP-protected.<a href="#section-15.2-6.2.1" class="pilcrow">¶</a></p>
+          <li id="section-16.2-6.2">
+            <p id="section-16.2-6.2.1">StealthDNS checks if the domain is NHP-protected.<a href="#section-16.2-6.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-15.2-6.3">
-            <p id="section-15.2-6.3.1">If protected, StealthDNS performs NHP knock with identity and device context.<a href="#section-15.2-6.3.1" class="pilcrow">¶</a></p>
+          <li id="section-16.2-6.3">
+            <p id="section-16.2-6.3.1">If protected, StealthDNS performs NHP knock with identity and device context.<a href="#section-16.2-6.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-15.2-6.4">
-            <p id="section-15.2-6.4.1">Upon successful authentication, the NHP Controller returns ephemeral address mappings.<a href="#section-15.2-6.4.1" class="pilcrow">¶</a></p>
+          <li id="section-16.2-6.4">
+            <p id="section-16.2-6.4.1">Upon successful authentication, the NHP Controller returns ephemeral address mappings.<a href="#section-16.2-6.4.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-15.2-6.5">
-            <p id="section-15.2-6.5.1">StealthDNS returns valid DNS records only to authorized clients.<a href="#section-15.2-6.5.1" class="pilcrow">¶</a></p>
+          <li id="section-16.2-6.5">
+            <p id="section-16.2-6.5.1">StealthDNS returns valid DNS records only to authorized clients.<a href="#section-16.2-6.5.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-15.2-6.6">
-            <p id="section-15.2-6.6.1">Unauthorized clients receive NXDOMAIN—the service remains invisible.<a href="#section-15.2-6.6.1" class="pilcrow">¶</a></p>
+          <li id="section-16.2-6.6">
+            <p id="section-16.2-6.6.1">Unauthorized clients receive NXDOMAIN—the service remains invisible.<a href="#section-16.2-6.6.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
-<p id="section-15.2-7">This enforces <strong>identity before visibility</strong> and <strong>authorization before connectivity</strong>, demonstrating real-world application of NHP principles.<a href="#section-15.2-7" class="pilcrow">¶</a></p>
+<p id="section-16.2-7">This enforces <strong>identity before visibility</strong> and <strong>authorization before connectivity</strong>, demonstrating real-world application of NHP principles.<a href="#section-16.2-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
 </div>
 <div id="sec-combined-references">
-<section id="section-16">
+<section id="section-17">
       <h2 id="name-references">
-<a href="#section-16" class="section-number selfRef">16. </a><a href="#name-references" class="section-name selfRef">References</a>
+<a href="#section-17" class="section-number selfRef">17. </a><a href="#name-references" class="section-name selfRef">References</a>
       </h2>
 <div id="sec-normative-references">
-<section id="section-16.1">
+<section id="section-17.1">
         <h3 id="name-normative-references">
-<a href="#section-16.1" class="section-number selfRef">16.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-17.1" class="section-number selfRef">17.1. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
         </h3>
 <dl class="references">
 <dt id="NoiseFramework">[NoiseFramework]</dt>
@@ -3424,9 +3674,9 @@ K:
 </section>
 </div>
 <div id="sec-informative-references">
-<section id="section-16.2">
+<section id="section-17.2">
         <h3 id="name-informative-references">
-<a href="#section-16.2" class="section-number selfRef">16.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
+<a href="#section-17.2" class="section-number selfRef">17.2. </a><a href="#name-informative-references" class="section-name selfRef">Informative References</a>
         </h3>
 <dl class="references">
 <dt id="CSA.NHP.Whitepaper">[CSA.NHP.Whitepaper]</dt>

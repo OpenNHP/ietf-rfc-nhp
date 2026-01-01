@@ -4,7 +4,7 @@
 
 Independent Submission                                           B. Chen
 Request for Comments: 2                                          OpenNHP
-Category: Informational                                   1 January 2025
+Category: Informational                                   1 January 2026
 ISSN: 2070-1721
 
 
@@ -46,7 +46,7 @@ Status of This Memo
 
 Copyright Notice
 
-   Copyright (c) 2025 IETF Trust and the persons identified as the
+   Copyright (c) 2026 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -61,88 +61,95 @@ Table of Contents
    1.  Introduction
    2.  Conventions and Definitions
    3.  Design Objectives
-   4.  Threat Model
-     4.1.  Reconnaissance and Scanning
-     4.2.  Pre-Authentication Exploits
-     4.3.  DDoS Attacks
-     4.4.  Credential Theft and Replay
-     4.5.  Man-in-the-Middle Attacks
-   5.  Architectural Overview
-     5.1.  Core Components
-       5.1.1.  NHP-Agent
-       5.1.2.  NHP-Server
-       5.1.3.  NHP-AC (Access Controller)
-       5.1.4.  Authorization Service Provider (ASP)
-     5.2.  Component Interactions
-     5.3.  Deployment Models
-       5.3.1.  Standalone Deployment
-       5.3.2.  Clustered Deployment
-       5.3.3.  Edge AC Deployment
-       5.3.4.  Multi-Tenant Deployment
-   6.  Protocol Workflow
-     6.1.  Control Plane vs Data Plane
-     6.2.  Workflow Steps
-     6.3.  Sequence Diagram
-   7.  Cryptographic Framework
-     7.1.  Cryptographic Primitives
-     7.2.  Noise Protocol Handshake Patterns
-       7.2.1.  XX Pattern (Default)
-       7.2.2.  IK Pattern (Performance Optimized)
-       7.2.3.  K Pattern (One-Way)
-     7.3.  Key Management
-       7.3.1.  Static Keys
-       7.3.2.  Ephemeral Keys
-       7.3.3.  Key Rotation
-   8.  Message Format
-     8.1.  Message Header
-       8.1.1.  Header Fields
-     8.2.  Message Types
-     8.3.  Message Definitions
-       8.3.1.  NHP-KPL (Keepalive)
-       8.3.2.  NHP-KNK (Knock)
-       8.3.3.  NHP-ACK (Acknowledge)
-       8.3.4.  NHP-AOP (AC Operations)
-       8.3.5.  NHP-ART (AC Result)
-       8.3.6.  NHP-ACC (Access)
-       8.3.7.  NHP-REG (Register)
-       8.3.8.  NHP-RAK (Register Acknowledge)
-       8.3.9.  NHP-LOG (Log)
-       8.3.10. NHP-LAK (Log Acknowledge)
-   9.  Logging and Auditing
-     9.1.  Log Types
-     9.2.  Log Format
-     9.3.  Log Transmission
-     9.4.  Compliance Considerations
-   10. Integration with SDP
-     10.1.  Integration Architecture
-     10.2.  Integration Process
-     10.3.  Benefits of NHP-SDP Integration
-   11. Integration with DNS
-     11.1.  DNS Integration Architecture
+   4.  Relationship to TLS
+     4.1.  OSI Layer Positioning
+     4.2.  Key Differences
+     4.3.  The Pre-Authentication Problem
+     4.4.  Complementary Security Model
+     4.5.  Vulnerabilities Addressed by NHP but Not TLS
+     4.6.  Why Both Are Needed
+   5.  Threat Model
+     5.1.  Reconnaissance and Scanning
+     5.2.  Pre-Authentication Exploits
+     5.3.  DDoS Attacks
+     5.4.  Credential Theft and Replay
+     5.5.  Man-in-the-Middle Attacks
+   6.  Architectural Overview
+     6.1.  Core Components
+       6.1.1.  NHP-Agent
+       6.1.2.  NHP-Server
+       6.1.3.  NHP-AC (Access Controller)
+       6.1.4.  Authorization Service Provider (ASP)
+     6.2.  Component Interactions
+     6.3.  Deployment Models
+       6.3.1.  Standalone Deployment
+       6.3.2.  Clustered Deployment
+       6.3.3.  Edge AC Deployment
+       6.3.4.  Multi-Tenant Deployment
+   7.  Protocol Workflow
+     7.1.  Control Plane vs Data Plane
+     7.2.  Workflow Steps
+     7.3.  Sequence Diagram
+   8.  Cryptographic Framework
+     8.1.  Cryptographic Primitives
+     8.2.  Noise Protocol Handshake Patterns
+       8.2.1.  XX Pattern (Default)
+       8.2.2.  IK Pattern (Performance Optimized)
+       8.2.3.  K Pattern (One-Way)
+     8.3.  Key Management
+       8.3.1.  Static Keys
+       8.3.2.  Ephemeral Keys
+       8.3.3.  Key Rotation
+   9.  Message Format
+     9.1.  Message Header
+       9.1.1.  Header Fields
+     9.2.  Message Types
+     9.3.  Message Definitions
+       9.3.1.  NHP-KPL (Keepalive)
+       9.3.2.  NHP-KNK (Knock)
+       9.3.3.  NHP-ACK (Acknowledge)
+       9.3.4.  NHP-AOP (AC Operations)
+       9.3.5.  NHP-ART (AC Result)
+       9.3.6.  NHP-ACC (Access)
+       9.3.7.  NHP-REG (Register)
+       9.3.8.  NHP-RAK (Register Acknowledge)
+       9.3.9.  NHP-LOG (Log)
+       9.3.10. NHP-LAK (Log Acknowledge)
+   10. Logging and Auditing
+     10.1.  Log Types
+     10.2.  Log Format
+     10.3.  Log Transmission
+     10.4.  Compliance Considerations
+   11. Integration with SDP
+     11.1.  Integration Architecture
      11.2.  Integration Process
-   12. Integration with FIDO
-     12.1.  FIDO Integration Flow
-     12.2.  Recovery and Fallback
-   13. Security Considerations
-     13.1.  Infrastructure Invisibility
-     13.2.  Replay Attack Prevention
-     13.3.  Key Security
-     13.4.  Session Security
-     13.5.  Denial of Service Mitigation
-     13.6.  Limitations
-   14. IANA Considerations
-   15. Reference Implementation
-     15.1.  Implementation Characteristics
-       15.1.1.  Memory-Safe Language
-       15.1.2.  Cross-Platform Support
-       15.1.3.  Modular Architecture
-       15.1.4.  Cryptographic Implementation
-       15.1.5.  Performance Characteristics
-       15.1.6.  Open Source Governance
-     15.2.  Practical Use Case: StealthDNS
-   16. References
-     16.1.  Normative References
-     16.2.  Informative References
+     11.3.  Benefits of NHP-SDP Integration
+   12. Integration with DNS
+     12.1.  DNS Integration Architecture
+     12.2.  Integration Process
+   13. Integration with FIDO
+     13.1.  FIDO Integration Flow
+     13.2.  Recovery and Fallback
+   14. Security Considerations
+     14.1.  Infrastructure Invisibility
+     14.2.  Replay Attack Prevention
+     14.3.  Key Security
+     14.4.  Session Security
+     14.5.  Denial of Service Mitigation
+     14.6.  Limitations
+   15. IANA Considerations
+   16. Reference Implementation
+     16.1.  Implementation Characteristics
+       16.1.1.  Memory-Safe Language
+       16.1.2.  Cross-Platform Support
+       16.1.3.  Modular Architecture
+       16.1.4.  Cryptographic Implementation
+       16.1.5.  Performance Characteristics
+       16.1.6.  Open Source Governance
+     16.2.  Practical Use Case: StealthDNS
+   17. References
+     17.1.  Normative References
+     17.2.  Informative References
    Acknowledgments
    Author's Address
 
@@ -259,49 +266,196 @@ Table of Contents
        driven reconnaissance and exploitation by denying visibility
        before authentication.
 
-4.  Threat Model
+4.  Relationship to TLS
+
+   NHP and TLS (Transport Layer Security) are complementary protocols
+   that operate at different OSI layers and serve distinct security
+   purposes.  This section clarifies their differences and how they work
+   together.
+
+4.1.  OSI Layer Positioning
+
+   +-------------------+
+   | Application (L7)  |  HTTP, SMTP, SSH, etc.
+   +-------------------+
+           ↓
+   +-------------------+
+   | Presentation (L6) |  TLS/SSL - Data encryption & integrity
+   +-------------------+
+           ↓
+   +-------------------+
+   | Session (L5)      |  NHP - Authentication before connection
+   +-------------------+
+           ↓
+   +-------------------+
+   | Transport (L4)    |  TCP, UDP, QUIC
+   +-------------------+
+           ↓
+   +-------------------+
+   | Network (L3)      |  IP
+   +-------------------+
+
+4.2.  Key Differences
+
+    +================+=======================+=======================+
+    | Aspect         | NHP (Layer 5)         | TLS (Layer 6)         |
+    +================+=======================+=======================+
+    | *Primary       | Infrastructure hiding | Data encryption and   |
+    | Purpose*       | and access control    | integrity             |
+    +----------------+-----------------------+-----------------------+
+    | *When          | BEFORE connection     | AFTER TCP connection  |
+    | Authentication | establishment         | established           |
+    | Occurs*        |                       |                       |
+    +----------------+-----------------------+-----------------------+
+    | *Service       | Services are          | Services are VISIBLE, |
+    | Visibility*    | INVISIBLE to          | communication is      |
+    |                | unauthorized users    | encrypted             |
+    +----------------+-----------------------+-----------------------+
+    | *Attack        | Eliminates pre-       | Protects data in      |
+    | Surface*       | authentication attack | transit, but service  |
+    |                | surface               | ports remain exposed  |
+    +----------------+-----------------------+-----------------------+
+    | *Port          | No ports exposed      | Ports must be open to |
+    | Exposure*      | until authenticated   | initiate TLS          |
+    |                |                       | handshake             |
+    +----------------+-----------------------+-----------------------+
+    | *Vulnerability | None—no connection    | TLS handshake         |
+    | Window*        | without               | vulnerabilities can   |
+    |                | authentication        | be exploited          |
+    +----------------+-----------------------+-----------------------+
+
+                                 Table 1
+
+4.3.  The Pre-Authentication Problem
+
+   TLS provides excellent protection for data in transit, but it has a
+   fundamental limitation: *the service must be reachable to initiate
+   the TLS handshake*. This creates a pre-authentication attack window:
+
+Traditional TLS Flow:
+
+Attacker    ──────►  Open Port 443  ──────►  TLS Handshake  ──────►  Authentication
+                         ↑
+                    Service is VISIBLE
+                    Port scan succeeds
+                    Pre-auth exploits possible
+
+NHP + TLS Flow:
+
+Attacker    ──────►  No Open Ports  ──────►  BLOCKED (Service Invisible)
+                         ↑
+                    Cannot discover service
+                    Port scan fails
+
+Authorized  ──────►  NHP Knock  ──────►  Port Opens  ──────►  TLS  ──────►  Application
+User                     ↑                    ↑
+                    Authenticated         Encrypted
+                    BEFORE connect        data transfer
+
+4.4.  Complementary Security Model
+
+   NHP and TLS are designed to work together, not replace each other:
+
+   1.  *NHP provides:* Authentication-before-connect, infrastructure
+       invisibility, access control
+
+   2.  *TLS provides:* Data encryption, integrity verification, server
+       authentication
+
+   A complete Zero Trust deployment SHOULD use both:
+
+   *  *NHP* ensures only authorized users can discover and reach the
+      service
+
+   *  *TLS* encrypts all data exchanged after access is granted
+
+4.5.  Vulnerabilities Addressed by NHP but Not TLS
+
+    +=============================+================+=================+
+    | Vulnerability Type          | TLS Protection | NHP Protection  |
+    +=============================+================+=================+
+    | Port scanning and service   | ✗ None         | ✓ Service       |
+    | discovery                   |                | invisible       |
+    +-----------------------------+----------------+-----------------+
+    | Pre-authentication exploits | ✗ Vulnerable   | ✓ No connection |
+    | (e.g., Heartbleed)          |                | possible        |
+    +-----------------------------+----------------+-----------------+
+    | TLS implementation bugs     | ✗ Vulnerable   | ✓ No handshake  |
+    | before handshake            |                | initiated       |
+    +-----------------------------+----------------+-----------------+
+    | DDoS attacks on exposed     | ✗ Service      | ✓ Service       |
+    | services                    | reachable      | hidden          |
+    +-----------------------------+----------------+-----------------+
+    | Credential stuffing on      | ✗ Page         | ✓ Page          |
+    | login pages                 | accessible     | invisible       |
+    +-----------------------------+----------------+-----------------+
+    | Zero-day exploits before    | ✗ Service      | ✓ Service       |
+    | authentication              | exposed        | protected       |
+    +-----------------------------+----------------+-----------------+
+
+                                 Table 2
+
+4.6.  Why Both Are Needed
+
+   NHP alone does not encrypt application data—it only controls access.
+   TLS alone does not hide services—it only encrypts traffic.  Together,
+   they provide defense in depth:
+
+   *  *Without NHP:* Attackers can scan, probe, and exploit services
+      before any authentication occurs
+
+   *  *Without TLS:* Authorized traffic would be transmitted in
+      plaintext after NHP grants access
+
+   *  *With Both:* Services are invisible to attackers, and all
+      authorized traffic is encrypted
+
+   This layered approach aligns with Zero Trust principles: never trust,
+   always verify, and minimize attack surface at every layer.
+
+5.  Threat Model
 
    NHP is designed to mitigate the following threat categories:
 
-4.1.  Reconnaissance and Scanning
+5.1.  Reconnaissance and Scanning
 
    Automated scanning tools and AI-driven reconnaissance continuously
    probe Internet-facing services.  NHP eliminates the ability to
    discover protected resources by requiring cryptographic
    authentication before any network visibility is granted.
 
-4.2.  Pre-Authentication Exploits
+5.2.  Pre-Authentication Exploits
 
    Many vulnerabilities can be exploited before authentication occurs.
    By enforcing authentication-before-connect, NHP prevents attackers
    from reaching vulnerable services.
 
-4.3.  DDoS Attacks
+5.3.  DDoS Attacks
 
    NHP reduces DDoS attack surface by hiding service endpoints.
    Attackers cannot target what they cannot discover.
 
-4.4.  Credential Theft and Replay
+5.4.  Credential Theft and Replay
 
    NHP uses ephemeral keys and timestamp-based nonces to prevent
    credential replay attacks.  Each session requires fresh cryptographic
    material.
 
-4.5.  Man-in-the-Middle Attacks
+5.5.  Man-in-the-Middle Attacks
 
    Mutual authentication using asymmetric cryptography ensures both
    parties verify each other's identity before establishing
    communication.
 
-5.  Architectural Overview
+6.  Architectural Overview
 
    NHP operates as a distributed session-layer protocol that enforces
    authentication-before-connect access between clients and protected
    resources.
 
-5.1.  Core Components
+6.1.  Core Components
 
-5.1.1.  NHP-Agent
+6.1.1.  NHP-Agent
 
    The NHP-Agent is a client-side process, SDK, or embedded module that
    initiates communication with the protected network.  Its
@@ -317,7 +471,7 @@ Table of Contents
    *  Handling session lifecycle including keepalives and re-
       authentication
 
-5.1.2.  NHP-Server
+6.1.2.  NHP-Server
 
    The NHP-Server is the core control-plane service responsible for:
 
@@ -338,7 +492,7 @@ Table of Contents
    Functionally, the NHP-Server maps to the *Policy Administrator* role
    defined in NIST SP 800-207 Zero Trust Architecture.
 
-5.1.3.  NHP-AC (Access Controller)
+6.1.3.  NHP-AC (Access Controller)
 
    The NHP-AC is the enforcement component residing logically or
    physically near protected resources.  Its responsibilities include:
@@ -357,7 +511,7 @@ Table of Contents
    The NHP-AC corresponds to the *Policy Enforcement Point (PEP)* in
    NIST SP 800-207 terminology.
 
-5.1.4.  Authorization Service Provider (ASP)
+6.1.4.  Authorization Service Provider (ASP)
 
    The ASP is an external identity and policy service that the NHP-
    Server queries for authorization decisions.  This may include:
@@ -371,7 +525,7 @@ Table of Contents
 
    *  Risk scoring engines
 
-5.2.  Component Interactions
+6.2.  Component Interactions
 
    The following diagram illustrates the relationship between NHP
    components:
@@ -394,17 +548,17 @@ Table of Contents
    |  Resource   |   Data Plane
    +-------------+
 
-5.3.  Deployment Models
+6.3.  Deployment Models
 
    NHP components can be deployed in different configurations:
 
-5.3.1.  Standalone Deployment
+6.3.1.  Standalone Deployment
 
    For small environments or testing scenarios, the NHP-Server and NHP-
    AC can coexist on the same host.  This configuration simplifies setup
    while maintaining full protocol compliance.
 
-5.3.2.  Clustered Deployment
+6.3.2.  Clustered Deployment
 
    In enterprise or cloud environments, multiple NHP-Servers can be
    deployed in a load-balanced cluster.  Each server manages a pool of
@@ -412,14 +566,14 @@ Table of Contents
    The NHP-Agent dynamically discovers the nearest NHP-Server through
    DNS or bootstrap configuration.
 
-5.3.3.  Edge AC Deployment
+6.3.3.  Edge AC Deployment
 
    Edge nodes (e.g., gateways, routers, or micro-segmentation agents)
    can host lightweight NHP-AC components.  These edge ACs enforce fine-
    grained policies close to workloads, improving latency and fault
    isolation.
 
-5.3.4.  Multi-Tenant Deployment
+6.3.4.  Multi-Tenant Deployment
 
    In service-provider or multi-cloud environments, each tenant can
    operate an independent NHP-Server while sharing an underlying AC
@@ -427,9 +581,9 @@ Table of Contents
    complete tenant separation through identity-scoped keys and per-
    tenant policy databases.
 
-6.  Protocol Workflow
+7.  Protocol Workflow
 
-6.1.  Control Plane vs Data Plane
+7.1.  Control Plane vs Data Plane
 
    The *Control Plane* carries cryptographic authentication and
    authorization information among NHP-Agent, NHP-Server, NHP-AC, and
@@ -443,7 +597,7 @@ Table of Contents
    This strict separation enforces the _authenticate-before-connect_
    principle central to Zero Trust.
 
-6.2.  Workflow Steps
+7.2.  Workflow Steps
 
    The complete NHP workflow consists of the following steps:
 
@@ -474,7 +628,7 @@ Table of Contents
    9.  *Logging and Audit:* NHP-AC uploads access logs via NHP-LOG
        messages for compliance and auditing.
 
-6.3.  Sequence Diagram
+7.3.  Sequence Diagram
 
    NHP-Agent           NHP-Server            NHP-AC             ASP/IAM
        |                    |                    |                   |
@@ -494,13 +648,13 @@ Table of Contents
        |                    |--- NHP-LAK ------->|                   |
        |                    |                    |                   |
 
-7.  Cryptographic Framework
+8.  Cryptographic Framework
 
    NHP employs the Noise Protocol Framework [NoiseFramework] for all
    cryptographic operations.  This section defines the required
    cryptographic primitives and handshake patterns.
 
-7.1.  Cryptographic Primitives
+8.1.  Cryptographic Primitives
 
    Implementations MUST support the following cryptographic primitives:
 
@@ -516,7 +670,7 @@ Table of Contents
             | Key Derivation | HKDF              | RFC 5869  |
             +----------------+-------------------+-----------+
 
-                                 Table 1
+                                 Table 3
 
    Implementations MAY additionally support:
 
@@ -530,13 +684,13 @@ Table of Contents
                | Hash     | BLAKE2s           | RFC 7693  |
                +----------+-------------------+-----------+
 
-                                 Table 2
+                                 Table 4
 
-7.2.  Noise Protocol Handshake Patterns
+8.2.  Noise Protocol Handshake Patterns
 
    NHP supports the following Noise handshake patterns:
 
-7.2.1.  XX Pattern (Default)
+8.2.1.  XX Pattern (Default)
 
    The XX pattern provides full forward secrecy and identity protection
    for both parties.  It is the RECOMMENDED pattern for most
@@ -547,7 +701,7 @@ Table of Contents
      <- e, ee, s, es
      -> s, se
 
-7.2.2.  IK Pattern (Performance Optimized)
+8.2.2.  IK Pattern (Performance Optimized)
 
    The IK pattern is used when the NHP-Agent knows the NHP-Server's
    static public key in advance, reducing round trips.
@@ -558,7 +712,7 @@ Table of Contents
      -> e, es, s, ss
      <- e, ee, se
 
-7.2.3.  K Pattern (One-Way)
+8.2.3.  K Pattern (One-Way)
 
    The K pattern is used for one-way initiation where only the initiator
    needs to be authenticated by the responder.
@@ -568,9 +722,9 @@ Table of Contents
      ...
      -> e, es, ss
 
-7.3.  Key Management
+8.3.  Key Management
 
-7.3.1.  Static Keys
+8.3.1.  Static Keys
 
    Each NHP component maintains a static Curve25519 key pair:
 
@@ -583,23 +737,23 @@ Table of Contents
    Static public keys MUST be distributed through a secure out-of-band
    mechanism or registered through the NHP-REG message flow.
 
-7.3.2.  Ephemeral Keys
+8.3.2.  Ephemeral Keys
 
    Ephemeral keys are generated for each session to provide forward
    secrecy.  Implementations MUST use cryptographically secure random
    number generators for ephemeral key generation.
 
-7.3.3.  Key Rotation
+8.3.3.  Key Rotation
 
    Static keys SHOULD be rotated periodically.  The NHP-REG and NHP-RAK
    messages support key re-registration without service interruption.
 
-8.  Message Format
+9.  Message Format
 
    All NHP messages share a common header structure followed by an
    encrypted payload.
 
-8.1.  Message Header
+9.1.  Message Header
 
    The NHP message header is 32 bytes with the following structure:
 
@@ -619,11 +773,11 @@ Table of Contents
    |        Payload Length         |        Header Checksum        |
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 
-8.1.1.  Header Fields
+9.1.1.  Header Fields
 
    Version (8 bits)  Protocol version.  Current version is 0x01.
 
-   Type (8 bits)  Message type code.  See Section 8.2.
+   Type (8 bits)  Message type code.  See Section 9.2.
 
    Flags (8 bits)  Control flags: * Bit 0: Compression enabled * Bit 1:
       Fragmentation flag * Bit 2: Priority message * Bits 3-7: Reserved
@@ -641,7 +795,7 @@ Table of Contents
    Header Checksum (16 bits)  CRC-16 checksum of the header for
       integrity verification.
 
-8.2.  Message Types
+9.2.  Message Types
 
       +===========+=========+==============+========================+
       | Type Code | Name    | Direction    | Description            |
@@ -687,11 +841,11 @@ Table of Contents
       | 0x11      | NHP-LAK | Server→AC    | Log acknowledgment     |
       +-----------+---------+--------------+------------------------+
 
-                                  Table 3
+                                  Table 5
 
-8.3.  Message Definitions
+9.3.  Message Definitions
 
-8.3.1.  NHP-KPL (Keepalive)
+9.3.1.  NHP-KPL (Keepalive)
 
    Keepalive messages maintain session state between components.  The
    payload contains:
@@ -704,9 +858,9 @@ Table of Contents
           | Sequence   | 4 bytes  | Monotonic sequence number  |
           +------------+----------+----------------------------+
 
-                                 Table 4
+                                 Table 6
 
-8.3.2.  NHP-KNK (Knock)
+9.3.2.  NHP-KNK (Knock)
 
    The knock message initiates access request from NHP-Agent to NHP-
    Server.  The encrypted payload contains:
@@ -726,9 +880,9 @@ Table of Contents
      |                     |          | (location, etc.)             |
      +---------------------+----------+------------------------------+
 
-                                  Table 5
+                                  Table 7
 
-8.3.3.  NHP-ACK (Acknowledge)
+9.3.3.  NHP-ACK (Acknowledge)
 
    The acknowledge message confirms knock success and provides access
    parameters:
@@ -749,9 +903,9 @@ Table of Contents
     | Granted Resources | Variable | List of granted resource access |
     +-------------------+----------+---------------------------------+
 
-                                 Table 6
+                                 Table 8
 
-8.3.4.  NHP-AOP (AC Operations)
+9.3.4.  NHP-AOP (AC Operations)
 
    The AC operations message instructs NHP-AC to modify access rules:
 
@@ -769,9 +923,9 @@ Table of Contents
      | Access Token  | Variable | Token for agent verification       |
      +---------------+----------+------------------------------------+
 
-                                  Table 7
+                                  Table 9
 
-8.3.5.  NHP-ART (AC Result)
+9.3.5.  NHP-ART (AC Result)
 
    The AC result message reports operation status:
 
@@ -785,9 +939,9 @@ Table of Contents
         | Details      | Variable | Additional status information |
         +--------------+----------+-------------------------------+
 
-                                  Table 8
+                                  Table 10
 
-8.3.6.  NHP-ACC (Access)
+9.3.6.  NHP-ACC (Access)
 
    The access message is sent from NHP-Agent to NHP-AC to initiate data
    plane access:
@@ -804,9 +958,9 @@ Table of Contents
        | Requested Service | Variable | Target service identifier |
        +-------------------+----------+---------------------------+
 
-                                 Table 9
+                                 Table 11
 
-8.3.7.  NHP-REG (Register)
+9.3.7.  NHP-REG (Register)
 
    The registration message registers NHP-Agent public key with NHP-
    Server:
@@ -823,9 +977,9 @@ Table of Contents
       | OTP        | Variable | One-time password for verification |
       +------------+----------+------------------------------------+
 
-                                 Table 10
+                                 Table 12
 
-8.3.8.  NHP-RAK (Register Acknowledge)
+9.3.8.  NHP-RAK (Register Acknowledge)
 
    Confirms successful registration:
 
@@ -839,9 +993,9 @@ Table of Contents
       | Certificate       | Variable | Optional server certificate |
       +-------------------+----------+-----------------------------+
 
-                                 Table 11
+                                 Table 13
 
-8.3.9.  NHP-LOG (Log)
+9.3.9.  NHP-LOG (Log)
 
    Log upload message from NHP-AC to NHP-Server:
 
@@ -855,9 +1009,9 @@ Table of Contents
          | Log Content | Variable | Compressed log entries       |
          +-------------+----------+------------------------------+
 
-                                  Table 12
+                                  Table 14
 
-8.3.10.  NHP-LAK (Log Acknowledge)
+9.3.10.  NHP-LAK (Log Acknowledge)
 
    Confirms log receipt:
 
@@ -867,14 +1021,14 @@ Table of Contents
               | Log ID | 32 bytes | Received log identifier |
               +--------+----------+-------------------------+
 
-                                  Table 13
+                                  Table 15
 
-9.  Logging and Auditing
+10.  Logging and Auditing
 
    NHP provides comprehensive logging capabilities to support security
    monitoring, compliance, and forensic analysis.
 
-9.1.  Log Types
+10.1.  Log Types
 
    NHP defines the following log categories:
 
@@ -890,7 +1044,7 @@ Table of Contents
    System Logs  Record component health, configuration changes, and
       operational events.
 
-9.2.  Log Format
+10.2.  Log Format
 
    All NHP logs SHOULD use structured JSON format with the following
    mandatory fields:
@@ -908,7 +1062,7 @@ Table of Contents
      "details": {}
    }
 
-9.3.  Log Transmission
+10.3.  Log Transmission
 
    NHP-AC components transmit logs to NHP-Server using NHP-LOG messages.
    Implementations MUST:
@@ -921,7 +1075,7 @@ Table of Contents
 
    *  Store logs locally if transmission fails
 
-9.4.  Compliance Considerations
+10.4.  Compliance Considerations
 
    NHP logging supports compliance with:
 
@@ -933,12 +1087,12 @@ Table of Contents
 
    *  PCI-DSS logging requirements
 
-10.  Integration with SDP
+11.  Integration with SDP
 
    NHP is designed to integrate seamlessly with existing Software-
    Defined Perimeter (SDP) deployments as defined in [CSA.SDP.Spec2.0].
 
-10.1.  Integration Architecture
+11.1.  Integration Architecture
 
    In an SDP integration, NHP components map to SDP components as
    follows:
@@ -953,9 +1107,9 @@ Table of Contents
                   | NHP-AC        | SDP Gateway         |
                   +---------------+---------------------+
 
-                                  Table 14
+                                  Table 16
 
-10.2.  Integration Process
+11.2.  Integration Process
 
    1.  *Discovery:* SDP Controller advertises NHP-Server endpoint to SDP
        Initiating Hosts.
@@ -969,7 +1123,7 @@ Table of Contents
    4.  *Enforcement:* NHP-AC opens ports on SDP Gateway based on NHP-AOP
        commands.
 
-10.3.  Benefits of NHP-SDP Integration
+11.3.  Benefits of NHP-SDP Integration
 
    *  *Stronger Cryptography:* NHP's Noise-based key exchange provides
       better forward secrecy than traditional SPA.
@@ -983,12 +1137,12 @@ Table of Contents
    *  *Extensibility:* NHP message types support richer interaction
       patterns.
 
-11.  Integration with DNS
+12.  Integration with DNS
 
    NHP can integrate with DNS infrastructure to provide stealth
    resolution of protected resources.
 
-11.1.  DNS Integration Architecture
+12.1.  DNS Integration Architecture
 
    +-------------+     +-------------+     +-------------+
    | NHP-Agent   |---->| NHP-Server  |---->| DNS Server  |
@@ -1001,7 +1155,7 @@ Table of Contents
    | (No Records)|     |             |
    +-------------+     +-------------+
 
-11.2.  Integration Process
+12.2.  Integration Process
 
    1.  Protected resources have no public DNS records.
 
@@ -1015,12 +1169,12 @@ Table of Contents
    This prevents DNS enumeration attacks and keeps resource addresses
    invisible to unauthorized users.
 
-12.  Integration with FIDO
+13.  Integration with FIDO
 
    NHP supports integration with FIDO2/WebAuthn for strong user
    authentication.
 
-12.1.  FIDO Integration Flow
+13.1.  FIDO Integration Flow
 
    1.  User initiates NHP-KNK with FIDO assertion
 
@@ -1029,7 +1183,7 @@ Table of Contents
    3.  Upon successful FIDO authentication, NHP-Server proceeds with
        access grant
 
-12.2.  Recovery and Fallback
+13.2.  Recovery and Fallback
 
    For FIDO authentication failures, NHP supports fallback to:
 
@@ -1039,9 +1193,9 @@ Table of Contents
 
    *  Recovery codes
 
-13.  Security Considerations
+14.  Security Considerations
 
-13.1.  Infrastructure Invisibility
+14.1.  Infrastructure Invisibility
 
    NHP ensures infrastructure invisibility by:
 
@@ -1053,7 +1207,7 @@ Table of Contents
 
    *  Supporting ephemeral port allocation for data plane connections
 
-13.2.  Replay Attack Prevention
+14.2.  Replay Attack Prevention
 
    NHP prevents replay attacks through:
 
@@ -1064,7 +1218,7 @@ Table of Contents
 
    *  Session-bound tokens that cannot be reused across sessions
 
-13.3.  Key Security
+14.3.  Key Security
 
    Implementations MUST:
 
@@ -1077,7 +1231,7 @@ Table of Contents
 
    *  Securely erase key material when no longer needed
 
-13.4.  Session Security
+14.4.  Session Security
 
    *  Sessions MUST have configurable expiration (RECOMMENDED default: 4
       hours)
@@ -1086,7 +1240,7 @@ Table of Contents
 
    *  Session tokens MUST be bound to client identity and IP address
 
-13.5.  Denial of Service Mitigation
+14.5.  Denial of Service Mitigation
 
    NHP provides DoS resistance through:
 
@@ -1096,7 +1250,7 @@ Table of Contents
 
    *  Cookie-based session resumption to avoid repeated handshakes
 
-13.6.  Limitations
+14.6.  Limitations
 
    NHP does not protect against:
 
@@ -1108,7 +1262,7 @@ Table of Contents
 
    *  Social engineering attacks targeting user credentials
 
-14.  IANA Considerations
+15.  IANA Considerations
 
    This document requests IANA to establish a new registry for NHP
    Message Types with the following initial values:
@@ -1153,22 +1307,22 @@ Table of Contents
                     | 0x11  | NHP-LAK | This document |
                     +-------+---------+---------------+
 
-                                  Table 15
+                                  Table 17
 
    Values 0x12-0xFF are reserved for future use.
 
-15.  Reference Implementation
+16.  Reference Implementation
 
    An open-source reference implementation of NHP is available at:
 
    https://github.com/OpenNHP/opennhp
 
-15.1.  Implementation Characteristics
+16.1.  Implementation Characteristics
 
    The OpenNHP reference implementation is designed with the following
    characteristics:
 
-15.1.1.  Memory-Safe Language
+16.1.1.  Memory-Safe Language
 
    OpenNHP is implemented in *Go (Golang)*, a memory-safe programming
    language that eliminates entire classes of vulnerabilities common in
@@ -1190,7 +1344,7 @@ Table of Contents
    security agencies advocating for memory-safe languages in critical
    infrastructure software.
 
-15.1.2.  Cross-Platform Support
+16.1.2.  Cross-Platform Support
 
    OpenNHP provides native support across multiple platforms:
 
@@ -1216,9 +1370,9 @@ Table of Contents
         |          |                   | applications            |
         +----------+-------------------+-------------------------+
 
-                                 Table 16
+                                 Table 18
 
-15.1.3.  Modular Architecture
+16.1.3.  Modular Architecture
 
    The implementation provides separate binaries for each NHP component:
 
@@ -1233,7 +1387,7 @@ Table of Contents
    deployment topologies from standalone to distributed enterprise
    configurations.
 
-15.1.4.  Cryptographic Implementation
+16.1.4.  Cryptographic Implementation
 
    The reference implementation uses well-audited cryptographic
    libraries:
@@ -1248,7 +1402,7 @@ Table of Contents
 
    *  *HKDF:* golang.org/x/crypto/hkdf for key derivation
 
-15.1.5.  Performance Characteristics
+16.1.5.  Performance Characteristics
 
    The Go implementation provides:
 
@@ -1264,13 +1418,13 @@ Table of Contents
    *  *Concurrent Design:* Goroutine-based concurrency for efficient
       resource utilization
 
-15.1.6.  Open Source Governance
+16.1.6.  Open Source Governance
 
    The OpenNHP project operates under the Apache 2.0 license, fostering
    community collaboration and transparent development to accelerate
    adoption and ensure rigorous peer review of its security mechanisms.
 
-15.2.  Practical Use Case: StealthDNS
+16.2.  Practical Use Case: StealthDNS
 
    StealthDNS is a Zero Trust DNS client powered by OpenNHP that
    demonstrates practical application of the NHP protocol for DNS-level
@@ -1316,9 +1470,9 @@ Table of Contents
    connectivity*, demonstrating real-world application of NHP
    principles.
 
-16.  References
+17.  References
 
-16.1.  Normative References
+17.1.  Normative References
 
    [NoiseFramework]
               Perrin, T., "The Noise Protocol Framework", 2018,
@@ -1346,7 +1500,7 @@ Table of Contents
               Public Key Encryption", RFC 9180, DOI 10.17487/RFC9180,
               February 2022, <https://www.rfc-editor.org/rfc/rfc9180>.
 
-16.2.  Informative References
+17.2.  Informative References
 
    [CSA.NHP.Whitepaper]
               Cloud Security Alliance, "Stealth Mode SDP for Zero Trust
