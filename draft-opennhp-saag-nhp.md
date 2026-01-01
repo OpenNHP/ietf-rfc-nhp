@@ -190,7 +190,7 @@ TLS provides excellent protection for data in transit, but it has a fundamental 
 
 ~~~
 Traditional TLS Flow:
-                                                        
+
 Attacker    ──────►  Open Port 443  ──────►  TLS Handshake  ──────►  Authentication
                          ↑
                     Service is VISIBLE
