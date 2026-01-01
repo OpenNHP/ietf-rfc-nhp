@@ -1386,7 +1386,30 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.15.1"><a href="#section-15" class="auto internal xref">15</a>. <a href="#name-reference-implementation" class="internal xref">Reference Implementation</a></p>
 <ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1">
-                <p id="section-toc.1-1.15.2.1.1"><a href="#section-15.1" class="auto internal xref">15.1</a>.  <a href="#name-practical-use-case-stealthd" class="internal xref">Practical Use Case: StealthDNS</a></p>
+                <p id="section-toc.1-1.15.2.1.1"><a href="#section-15.1" class="auto internal xref">15.1</a>.  <a href="#name-implementation-characterist" class="internal xref">Implementation Characteristics</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.1">
+                    <p id="section-toc.1-1.15.2.1.2.1.1"><a href="#section-15.1.1" class="auto internal xref">15.1.1</a>.  <a href="#name-memory-safe-language" class="internal xref">Memory-Safe Language</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.2">
+                    <p id="section-toc.1-1.15.2.1.2.2.1"><a href="#section-15.1.2" class="auto internal xref">15.1.2</a>.  <a href="#name-cross-platform-support" class="internal xref">Cross-Platform Support</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.3">
+                    <p id="section-toc.1-1.15.2.1.2.3.1"><a href="#section-15.1.3" class="auto internal xref">15.1.3</a>.  <a href="#name-modular-architecture" class="internal xref">Modular Architecture</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.4">
+                    <p id="section-toc.1-1.15.2.1.2.4.1"><a href="#section-15.1.4" class="auto internal xref">15.1.4</a>.  <a href="#name-cryptographic-implementatio" class="internal xref">Cryptographic Implementation</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.5">
+                    <p id="section-toc.1-1.15.2.1.2.5.1"><a href="#section-15.1.5" class="auto internal xref">15.1.5</a>.  <a href="#name-performance-characteristics" class="internal xref">Performance Characteristics</a></p>
+</li>
+                  <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.1.2.6">
+                    <p id="section-toc.1-1.15.2.1.2.6.1"><a href="#section-15.1.6" class="auto internal xref">15.1.6</a>.  <a href="#name-open-source-governance" class="internal xref">Open Source Governance</a></p>
+</li>
+                </ul>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.15.2.2">
+                <p id="section-toc.1-1.15.2.2.1"><a href="#section-15.2" class="auto internal xref">15.2</a>.  <a href="#name-practical-use-case-stealthd" class="internal xref">Practical Use Case: StealthDNS</a></p>
 </li>
             </ul>
 </li>
@@ -3161,51 +3184,203 @@ K:
       </h2>
 <p id="section-15-1">An open-source reference implementation of NHP is available at:<a href="#section-15-1" class="pilcrow">¶</a></p>
 <p id="section-15-2">https://github.com/OpenNHP/opennhp<a href="#section-15-2" class="pilcrow">¶</a></p>
-<p id="section-15-3">The reference implementation is developed as an open-source initiative under the OpenNHP project, fostering community collaboration and transparent development to accelerate adoption and ensure rigorous peer review of its security mechanisms.<a href="#section-15-3" class="pilcrow">¶</a></p>
-<div id="practical-use-case-stealthdns">
+<div id="implementation-characteristics">
 <section id="section-15.1">
-        <h3 id="name-practical-use-case-stealthd">
-<a href="#section-15.1" class="section-number selfRef">15.1. </a><a href="#name-practical-use-case-stealthd" class="section-name selfRef">Practical Use Case: StealthDNS</a>
+        <h3 id="name-implementation-characterist">
+<a href="#section-15.1" class="section-number selfRef">15.1. </a><a href="#name-implementation-characterist" class="section-name selfRef">Implementation Characteristics</a>
         </h3>
-<p id="section-15.1-1">StealthDNS is a Zero Trust DNS client powered by OpenNHP that demonstrates practical application of the NHP protocol for DNS-level infrastructure hiding. It is available at:<a href="#section-15.1-1" class="pilcrow">¶</a></p>
-<p id="section-15.1-2">https://github.com/OpenNHP/StealthDNS<a href="#section-15.1-2" class="pilcrow">¶</a></p>
-<p id="section-15.1-3">StealthDNS implements the NHP-DNS integration described in this specification, providing:<a href="#section-15.1-3" class="pilcrow">¶</a></p>
+<p id="section-15.1-1">The OpenNHP reference implementation is designed with the following characteristics:<a href="#section-15.1-1" class="pilcrow">¶</a></p>
+<div id="memory-safe-language">
+<section id="section-15.1.1">
+          <h4 id="name-memory-safe-language">
+<a href="#section-15.1.1" class="section-number selfRef">15.1.1. </a><a href="#name-memory-safe-language" class="section-name selfRef">Memory-Safe Language</a>
+          </h4>
+<p id="section-15.1.1-1">OpenNHP is implemented in <strong>Go (Golang)</strong>, a memory-safe programming language that eliminates entire classes of vulnerabilities common in C/C++ implementations:<a href="#section-15.1.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-15.1-4.1">
-            <p id="section-15.1-4.1.1"><strong>Invisible DNS Resolution:</strong> Protected domains have no public DNS records. Only authenticated clients can resolve hidden service addresses.<a href="#section-15.1-4.1.1" class="pilcrow">¶</a></p>
+<li class="normal" id="section-15.1.1-2.1">
+              <p id="section-15.1.1-2.1.1"><strong>No Buffer Overflows:</strong> Go's built-in bounds checking prevents buffer overflow attacks.<a href="#section-15.1.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-15.1-4.2">
-            <p id="section-15.1-4.2.1"><strong>NHP-Powered Authentication:</strong> Uses the OpenNHP library to perform cryptographic NHP knocking before DNS resolution.<a href="#section-15.1-4.2.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-15.1.1-2.2">
+              <p id="section-15.1.1-2.2.1"><strong>No Use-After-Free:</strong> Automatic garbage collection eliminates dangling pointer vulnerabilities.<a href="#section-15.1.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-15.1-4.3">
-            <p id="section-15.1-4.3.1"><strong>Transparent Local Resolver:</strong> Runs as a local DNS resolver (127.0.0.1:53), requiring no application changes.<a href="#section-15.1-4.3.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-15.1.1-2.3">
+              <p id="section-15.1.1-2.3.1"><strong>No Null Pointer Dereferences:</strong> Go's type system and nil handling prevent null pointer crashes.<a href="#section-15.1.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-15.1-4.4">
-            <p id="section-15.1-4.4.1"><strong>Cross-Platform Support:</strong> Available on Windows, macOS, Linux, Android, and iOS.<a href="#section-15.1-4.4.1" class="pilcrow">¶</a></p>
+            <li class="normal" id="section-15.1.1-2.4">
+              <p id="section-15.1.1-2.4.1"><strong>Race Condition Detection:</strong> Built-in race detector helps identify concurrency issues during development.<a href="#section-15.1.1-2.4.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+<p id="section-15.1.1-3">This choice aligns with recommendations from CISA, NSA, and other security agencies advocating for memory-safe languages in critical infrastructure software.<a href="#section-15.1.1-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="cross-platform-support">
+<section id="section-15.1.2">
+          <h4 id="name-cross-platform-support">
+<a href="#section-15.1.2" class="section-number selfRef">15.1.2. </a><a href="#name-cross-platform-support" class="section-name selfRef">Cross-Platform Support</a>
+          </h4>
+<p id="section-15.1.2-1">OpenNHP provides native support across multiple platforms:<a href="#section-15.1.2-1" class="pilcrow">¶</a></p>
+<table class="center" id="table-16">
+            <caption><a href="#table-16" class="selfRef">Table 16</a></caption>
+<thead>
+              <tr>
+                <th class="text-left" rowspan="1" colspan="1">Platform</th>
+                <th class="text-left" rowspan="1" colspan="1">Components</th>
+                <th class="text-left" rowspan="1" colspan="1">Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-left" rowspan="1" colspan="1">Linux</td>
+                <td class="text-left" rowspan="1" colspan="1">Agent, Server, AC</td>
+                <td class="text-left" rowspan="1" colspan="1">Full production support for x86_64, ARM64</td>
+              </tr>
+              <tr>
+                <td class="text-left" rowspan="1" colspan="1">Windows</td>
+                <td class="text-left" rowspan="1" colspan="1">Agent, Server, AC</td>
+                <td class="text-left" rowspan="1" colspan="1">Native Windows service integration</td>
+              </tr>
+              <tr>
+                <td class="text-left" rowspan="1" colspan="1">macOS</td>
+                <td class="text-left" rowspan="1" colspan="1">Agent</td>
+                <td class="text-left" rowspan="1" colspan="1">Desktop client with system integration</td>
+              </tr>
+              <tr>
+                <td class="text-left" rowspan="1" colspan="1">FreeBSD</td>
+                <td class="text-left" rowspan="1" colspan="1">Agent, Server, AC</td>
+                <td class="text-left" rowspan="1" colspan="1">BSD-family operating system support</td>
+              </tr>
+              <tr>
+                <td class="text-left" rowspan="1" colspan="1">Android</td>
+                <td class="text-left" rowspan="1" colspan="1">Agent (Library)</td>
+                <td class="text-left" rowspan="1" colspan="1">Mobile SDK for Android applications</td>
+              </tr>
+              <tr>
+                <td class="text-left" rowspan="1" colspan="1">iOS</td>
+                <td class="text-left" rowspan="1" colspan="1">Agent (Library)</td>
+                <td class="text-left" rowspan="1" colspan="1">Mobile SDK for iOS applications</td>
+              </tr>
+            </tbody>
+          </table>
+</section>
+</div>
+<div id="modular-architecture">
+<section id="section-15.1.3">
+          <h4 id="name-modular-architecture">
+<a href="#section-15.1.3" class="section-number selfRef">15.1.3. </a><a href="#name-modular-architecture" class="section-name selfRef">Modular Architecture</a>
+          </h4>
+<p id="section-15.1.3-1">The implementation provides separate binaries for each NHP component:<a href="#section-15.1.3-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-15.1.3-2.1">
+              <p id="section-15.1.3-2.1.1"><strong>nhp-agent:</strong> Client-side agent for initiating NHP connections<a href="#section-15.1.3-2.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.1.3-2.2">
+              <p id="section-15.1.3-2.2.1"><strong>nhp-server:</strong> Control plane server for authentication and authorization<a href="#section-15.1.3-2.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.1.3-2.3">
+              <p id="section-15.1.3-2.3.1"><strong>nhp-ac:</strong> Access controller for policy enforcement<a href="#section-15.1.3-2.3.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+<p id="section-15.1.3-3">Each component can be deployed independently, enabling flexible deployment topologies from standalone to distributed enterprise configurations.<a href="#section-15.1.3-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="cryptographic-implementation">
+<section id="section-15.1.4">
+          <h4 id="name-cryptographic-implementatio">
+<a href="#section-15.1.4" class="section-number selfRef">15.1.4. </a><a href="#name-cryptographic-implementatio" class="section-name selfRef">Cryptographic Implementation</a>
+          </h4>
+<p id="section-15.1.4-1">The reference implementation uses well-audited cryptographic libraries:<a href="#section-15.1.4-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-15.1.4-2.1">
+              <p id="section-15.1.4-2.1.1"><strong>Noise Protocol:</strong> flynn/noise library for Noise Framework handshakes<a href="#section-15.1.4-2.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.1.4-2.2">
+              <p id="section-15.1.4-2.2.1"><strong>Curve25519:</strong> golang.org/x/crypto for elliptic curve operations<a href="#section-15.1.4-2.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.1.4-2.3">
+              <p id="section-15.1.4-2.3.1"><strong>ChaCha20-Poly1305:</strong> Standard library crypto/cipher for AEAD encryption<a href="#section-15.1.4-2.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.1.4-2.4">
+              <p id="section-15.1.4-2.4.1"><strong>HKDF:</strong> golang.org/x/crypto/hkdf for key derivation<a href="#section-15.1.4-2.4.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+</section>
+</div>
+<div id="performance-characteristics">
+<section id="section-15.1.5">
+          <h4 id="name-performance-characteristics">
+<a href="#section-15.1.5" class="section-number selfRef">15.1.5. </a><a href="#name-performance-characteristics" class="section-name selfRef">Performance Characteristics</a>
+          </h4>
+<p id="section-15.1.5-1">The Go implementation provides:<a href="#section-15.1.5-1" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-15.1.5-2.1">
+              <p id="section-15.1.5-2.1.1"><strong>Low Latency:</strong> Typical NHP handshake completes in under 10ms on local networks<a href="#section-15.1.5-2.1.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.1.5-2.2">
+              <p id="section-15.1.5-2.2.1"><strong>High Throughput:</strong> Single NHP-Server can handle thousands of concurrent sessions<a href="#section-15.1.5-2.2.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.1.5-2.3">
+              <p id="section-15.1.5-2.3.1"><strong>Minimal Footprint:</strong> Agent binary under 15MB, low memory consumption<a href="#section-15.1.5-2.3.1" class="pilcrow">¶</a></p>
+</li>
+            <li class="normal" id="section-15.1.5-2.4">
+              <p id="section-15.1.5-2.4.1"><strong>Concurrent Design:</strong> Goroutine-based concurrency for efficient resource utilization<a href="#section-15.1.5-2.4.1" class="pilcrow">¶</a></p>
+</li>
+          </ul>
+</section>
+</div>
+<div id="open-source-governance">
+<section id="section-15.1.6">
+          <h4 id="name-open-source-governance">
+<a href="#section-15.1.6" class="section-number selfRef">15.1.6. </a><a href="#name-open-source-governance" class="section-name selfRef">Open Source Governance</a>
+          </h4>
+<p id="section-15.1.6-1">The OpenNHP project operates under the Apache 2.0 license, fostering community collaboration and transparent development to accelerate adoption and ensure rigorous peer review of its security mechanisms.<a href="#section-15.1.6-1" class="pilcrow">¶</a></p>
+</section>
+</div>
+</section>
+</div>
+<div id="practical-use-case-stealthdns">
+<section id="section-15.2">
+        <h3 id="name-practical-use-case-stealthd">
+<a href="#section-15.2" class="section-number selfRef">15.2. </a><a href="#name-practical-use-case-stealthd" class="section-name selfRef">Practical Use Case: StealthDNS</a>
+        </h3>
+<p id="section-15.2-1">StealthDNS is a Zero Trust DNS client powered by OpenNHP that demonstrates practical application of the NHP protocol for DNS-level infrastructure hiding. It is available at:<a href="#section-15.2-1" class="pilcrow">¶</a></p>
+<p id="section-15.2-2">https://github.com/OpenNHP/StealthDNS<a href="#section-15.2-2" class="pilcrow">¶</a></p>
+<p id="section-15.2-3">StealthDNS implements the NHP-DNS integration described in this specification, providing:<a href="#section-15.2-3" class="pilcrow">¶</a></p>
+<ul class="normal">
+<li class="normal" id="section-15.2-4.1">
+            <p id="section-15.2-4.1.1"><strong>Invisible DNS Resolution:</strong> Protected domains have no public DNS records. Only authenticated clients can resolve hidden service addresses.<a href="#section-15.2-4.1.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-15.2-4.2">
+            <p id="section-15.2-4.2.1"><strong>NHP-Powered Authentication:</strong> Uses the OpenNHP library to perform cryptographic NHP knocking before DNS resolution.<a href="#section-15.2-4.2.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-15.2-4.3">
+            <p id="section-15.2-4.3.1"><strong>Transparent Local Resolver:</strong> Runs as a local DNS resolver (127.0.0.1:53), requiring no application changes.<a href="#section-15.2-4.3.1" class="pilcrow">¶</a></p>
+</li>
+          <li class="normal" id="section-15.2-4.4">
+            <p id="section-15.2-4.4.1"><strong>Cross-Platform Support:</strong> Available on Windows, macOS, Linux, Android, and iOS.<a href="#section-15.2-4.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
-<p id="section-15.1-5">The StealthDNS workflow demonstrates the authenticate-before-connect principle:<a href="#section-15.1-5" class="pilcrow">¶</a></p>
-<ol start="1" type="1" class="normal type-1" id="section-15.1-6">
-<li id="section-15.1-6.1">
-            <p id="section-15.1-6.1.1">Application performs DNS lookup for a protected domain.<a href="#section-15.1-6.1.1" class="pilcrow">¶</a></p>
+<p id="section-15.2-5">The StealthDNS workflow demonstrates the authenticate-before-connect principle:<a href="#section-15.2-5" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-15.2-6">
+<li id="section-15.2-6.1">
+            <p id="section-15.2-6.1.1">Application performs DNS lookup for a protected domain.<a href="#section-15.2-6.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-15.1-6.2">
-            <p id="section-15.1-6.2.1">StealthDNS checks if the domain is NHP-protected.<a href="#section-15.1-6.2.1" class="pilcrow">¶</a></p>
+          <li id="section-15.2-6.2">
+            <p id="section-15.2-6.2.1">StealthDNS checks if the domain is NHP-protected.<a href="#section-15.2-6.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-15.1-6.3">
-            <p id="section-15.1-6.3.1">If protected, StealthDNS performs NHP knock with identity and device context.<a href="#section-15.1-6.3.1" class="pilcrow">¶</a></p>
+          <li id="section-15.2-6.3">
+            <p id="section-15.2-6.3.1">If protected, StealthDNS performs NHP knock with identity and device context.<a href="#section-15.2-6.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-15.1-6.4">
-            <p id="section-15.1-6.4.1">Upon successful authentication, the NHP Controller returns ephemeral address mappings.<a href="#section-15.1-6.4.1" class="pilcrow">¶</a></p>
+          <li id="section-15.2-6.4">
+            <p id="section-15.2-6.4.1">Upon successful authentication, the NHP Controller returns ephemeral address mappings.<a href="#section-15.2-6.4.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-15.1-6.5">
-            <p id="section-15.1-6.5.1">StealthDNS returns valid DNS records only to authorized clients.<a href="#section-15.1-6.5.1" class="pilcrow">¶</a></p>
+          <li id="section-15.2-6.5">
+            <p id="section-15.2-6.5.1">StealthDNS returns valid DNS records only to authorized clients.<a href="#section-15.2-6.5.1" class="pilcrow">¶</a></p>
 </li>
-          <li id="section-15.1-6.6">
-            <p id="section-15.1-6.6.1">Unauthorized clients receive NXDOMAIN—the service remains invisible.<a href="#section-15.1-6.6.1" class="pilcrow">¶</a></p>
+          <li id="section-15.2-6.6">
+            <p id="section-15.2-6.6.1">Unauthorized clients receive NXDOMAIN—the service remains invisible.<a href="#section-15.2-6.6.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
-<p id="section-15.1-7">This enforces <strong>identity before visibility</strong> and <strong>authorization before connectivity</strong>, demonstrating real-world application of NHP principles.<a href="#section-15.1-7" class="pilcrow">¶</a></p>
+<p id="section-15.2-7">This enforces <strong>identity before visibility</strong> and <strong>authorization before connectivity</strong>, demonstrating real-world application of NHP principles.<a href="#section-15.2-7" class="pilcrow">¶</a></p>
 </section>
 </div>
 </section>
