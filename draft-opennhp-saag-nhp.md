@@ -5,7 +5,7 @@ category: info
 docname: draft-opennhp-saag-nhp-latest
 submissiontype: independent
 number: 02
-date: 2025-01-01
+date: 2026-01-01
 v: 3
 area: "Security"
 workgroup: "saag"
