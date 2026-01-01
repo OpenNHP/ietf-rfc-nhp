@@ -145,6 +145,106 @@ The NHP protocol is designed to achieve the following objectives:
 
 7. **AI Threat Mitigation:** Reduce the attack surface against AI-driven reconnaissance and exploitation by denying visibility before authentication.
 
+# Relationship to TLS
+
+NHP and TLS (Transport Layer Security) are complementary protocols that operate at different OSI layers and serve distinct security purposes. This section clarifies their differences and how they work together.
+
+## OSI Layer Positioning
+
+~~~
++-------------------+
+| Application (L7)  |  HTTP, SMTP, SSH, etc.
++-------------------+
+        ↓
++-------------------+
+| Presentation (L6) |  TLS/SSL - Data encryption & integrity
++-------------------+
+        ↓
++-------------------+
+| Session (L5)      |  NHP - Authentication before connection
++-------------------+
+        ↓
++-------------------+
+| Transport (L4)    |  TCP, UDP, QUIC
++-------------------+
+        ↓
++-------------------+
+| Network (L3)      |  IP
++-------------------+
+~~~
+
+## Key Differences
+
+| Aspect | NHP (Layer 5) | TLS (Layer 6) |
+|--------|---------------|---------------|
+| **Primary Purpose** | Infrastructure hiding and access control | Data encryption and integrity |
+| **When Authentication Occurs** | BEFORE connection establishment | AFTER TCP connection established |
+| **Service Visibility** | Services are INVISIBLE to unauthorized users | Services are VISIBLE, communication is encrypted |
+| **Attack Surface** | Eliminates pre-authentication attack surface | Protects data in transit, but service ports remain exposed |
+| **Port Exposure** | No ports exposed until authenticated | Ports must be open to initiate TLS handshake |
+| **Vulnerability Window** | None—no connection without authentication | TLS handshake vulnerabilities can be exploited |
+
+## The Pre-Authentication Problem
+
+TLS provides excellent protection for data in transit, but it has a fundamental limitation: **the service must be reachable to initiate the TLS handshake**. This creates a pre-authentication attack window:
+
+~~~
+Traditional TLS Flow:
+                                                        
+Attacker    ──────►  Open Port 443  ──────►  TLS Handshake  ──────►  Authentication
+                         ↑
+                    Service is VISIBLE
+                    Port scan succeeds
+                    Pre-auth exploits possible
+~~~
+
+~~~
+NHP + TLS Flow:
+
+Attacker    ──────►  No Open Ports  ──────►  BLOCKED (Service Invisible)
+                         ↑
+                    Cannot discover service
+                    Port scan fails
+
+Authorized  ──────►  NHP Knock  ──────►  Port Opens  ──────►  TLS  ──────►  Application
+User                     ↑                    ↑
+                    Authenticated         Encrypted
+                    BEFORE connect        data transfer
+~~~
+
+## Complementary Security Model
+
+NHP and TLS are designed to work together, not replace each other:
+
+1. **NHP provides:** Authentication-before-connect, infrastructure invisibility, access control
+2. **TLS provides:** Data encryption, integrity verification, server authentication
+
+A complete Zero Trust deployment SHOULD use both:
+
+* **NHP** ensures only authorized users can discover and reach the service
+* **TLS** encrypts all data exchanged after access is granted
+
+## Vulnerabilities Addressed by NHP but Not TLS
+
+| Vulnerability Type | TLS Protection | NHP Protection |
+|--------------------|----------------|----------------|
+| Port scanning and service discovery | ✗ None | ✓ Service invisible |
+| Pre-authentication exploits (e.g., Heartbleed) | ✗ Vulnerable | ✓ No connection possible |
+| TLS implementation bugs before handshake | ✗ Vulnerable | ✓ No handshake initiated |
+| DDoS attacks on exposed services | ✗ Service reachable | ✓ Service hidden |
+| Credential stuffing on login pages | ✗ Page accessible | ✓ Page invisible |
+| Zero-day exploits before authentication | ✗ Service exposed | ✓ Service protected |
+
+## Why Both Are Needed
+
+NHP alone does not encrypt application data—it only controls access. TLS alone does not hide services—it only encrypts traffic. Together, they provide defense in depth:
+
+* **Without NHP:** Attackers can scan, probe, and exploit services before any authentication occurs
+* **Without TLS:** Authorized traffic would be transmitted in plaintext after NHP grants access
+* **With Both:** Services are invisible to attackers, and all authorized traffic is encrypted
+
+This layered approach aligns with Zero Trust principles: never trust, always verify, and minimize attack surface at every layer.
+
 # Threat Model
 
 NHP is designed to mitigate the following threat categories:
