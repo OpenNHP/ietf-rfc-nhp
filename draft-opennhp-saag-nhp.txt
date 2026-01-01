@@ -4,11 +4,8 @@
 
 Independent Submission                                           B. Chen
 Request for Comments: 2                                          OpenNHP
-Category: Informational                                         J. Posey
-ISSN: 2070-1721                                  Cloud Security Alliance
-                                                                  Y. Liu
-                                                                 OpenNHP
-                                                          1 January 2025
+Category: Informational                                   1 January 2025
+ISSN: 2070-1721
 
 
                  Network-Infrastructure Hiding Protocol
@@ -135,11 +132,12 @@ Table of Contents
      13.6.  Limitations
    14. IANA Considerations
    15. Reference Implementation
+     15.1.  Practical Use Case: StealthDNS
    16. References
      16.1.  Normative References
      16.2.  Informative References
    Acknowledgments
-   Authors' Addresses
+   Author's Address
 
 1.  Introduction
 
@@ -1163,6 +1161,52 @@ Table of Contents
    collaboration and transparent development to accelerate adoption and
    ensure rigorous peer review of its security mechanisms.
 
+15.1.  Practical Use Case: StealthDNS
+
+   StealthDNS is a Zero Trust DNS client powered by OpenNHP that
+   demonstrates practical application of the NHP protocol for DNS-level
+   infrastructure hiding.  It is available at:
+
+   https://github.com/OpenNHP/StealthDNS
+
+   StealthDNS implements the NHP-DNS integration described in this
+   specification, providing:
+
+   *  *Invisible DNS Resolution:* Protected domains have no public DNS
+      records.  Only authenticated clients can resolve hidden service
+      addresses.
+
+   *  *NHP-Powered Authentication:* Uses the OpenNHP library to perform
+      cryptographic NHP knocking before DNS resolution.
+
+   *  *Transparent Local Resolver:* Runs as a local DNS resolver
+      (127.0.0.1:53), requiring no application changes.
+
+   *  *Cross-Platform Support:* Available on Windows, macOS, Linux,
+      Android, and iOS.
+
+   The StealthDNS workflow demonstrates the authenticate-before-connect
+   principle:
+
+   1.  Application performs DNS lookup for a protected domain.
+
+   2.  StealthDNS checks if the domain is NHP-protected.
+
+   3.  If protected, StealthDNS performs NHP knock with identity and
+       device context.
+
+   4.  Upon successful authentication, the NHP Controller returns
+       ephemeral address mappings.
+
+   5.  StealthDNS returns valid DNS records only to authorized clients.
+
+   6.  Unauthorized clients receive NXDOMAIN—the service remains
+       invisible.
+
+   This enforces *identity before visibility* and *authorization before
+   connectivity*, demonstrating real-world application of NHP
+   principles.
+
 16.  References
 
 16.1.  Normative References
@@ -1198,7 +1242,7 @@ Table of Contents
    [CSA.NHP.Whitepaper]
               Cloud Security Alliance, "Stealth Mode SDP for Zero Trust
               Network Infrastructure: Introducing the Network-
-              Infrastructure Hiding Protocol (NHP)", 2025.
+              Infrastructure Hiding Protocol (NHP)", 2026.
 
    [CSA.SDP.Spec2.0]
               Cloud Security Alliance, "Software Defined Perimeter
@@ -1215,32 +1259,15 @@ Acknowledgments
    Alliance (CSA) Zero Trust Working Group, particularly the "Stealth
    Mode SDP for Zero Trust Network Infrastructure" whitepaper
    [CSA.NHP.Whitepaper].  The authors acknowledge the contributions of
-   the CSA Zero Trust Research Working Group led by Michael Roza and
-   Vinoth Ramalingam.
+   the CSA Zero Trust Research Working Group.
 
    The authors would also like to thank the China Computer Federation
    (CCF) for their collaborative support, and the OpenNHP open source
    community for their contributions, testing, and feedback on early
    implementations of the Network-Infrastructure Hiding Protocol.
 
-   Special thanks to the reviewers: Justin Bowen, George Chi, Xinpi Du,
-   Jason Garbis, Philip Griffiths, Matias Katz, Prashant Khanwale,
-   Vaibhav Malik, Dr. Victor Monga, Surendra Narang, Dharnisha
-   Narasappa, Chinaza Obidike, Srinivasa Ravi Teja Peri, Venkataramana
-   Ragothaman, Shashank Shelat, Jen Trahan, and Washima Tuleun.
-
-Authors' Addresses
+Author's Address
 
    Benfeng Chen
    OpenNHP
    Email: benfeng@gmail.com
-
-
-   Justin Posey
-   Cloud Security Alliance
-   Email: justin.posey@cloudsecurityalliance.org
-
-
-   Yuanyuan Liu
-   OpenNHP
-   Email: yuanyuan.liu@opennhp.org
