@@ -802,7 +802,65 @@ An open-source reference implementation of NHP is available at:
 
 https://github.com/OpenNHP/opennhp
 
-The reference implementation is developed as an open-source initiative under the OpenNHP project, fostering community collaboration and transparent development to accelerate adoption and ensure rigorous peer review of its security mechanisms.
+## Implementation Characteristics
+
+The OpenNHP reference implementation is designed with the following characteristics:
+
+### Memory-Safe Language
+
+OpenNHP is implemented in **Go (Golang)**, a memory-safe programming language that eliminates entire classes of vulnerabilities common in C/C++ implementations:
+
+* **No Buffer Overflows:** Go's built-in bounds checking prevents buffer overflow attacks.
+* **No Use-After-Free:** Automatic garbage collection eliminates dangling pointer vulnerabilities.
+* **No Null Pointer Dereferences:** Go's type system and nil handling prevent null pointer crashes.
+* **Race Condition Detection:** Built-in race detector helps identify concurrency issues during development.
+
+This choice aligns with recommendations from CISA, NSA, and other security agencies advocating for memory-safe languages in critical infrastructure software.
+
+### Cross-Platform Support
+
+OpenNHP provides native support across multiple platforms:
+
+| Platform | Components | Description |
+|----------|------------|-------------|
+| Linux | Agent, Server, AC | Full production support for x86_64, ARM64 |
+| Windows | Agent, Server, AC | Native Windows service integration |
+| macOS | Agent | Desktop client with system integration |
+| FreeBSD | Agent, Server, AC | BSD-family operating system support |
+| Android | Agent (Library) | Mobile SDK for Android applications |
+| iOS | Agent (Library) | Mobile SDK for iOS applications |
+
+### Modular Architecture
+
+The implementation provides separate binaries for each NHP component:
+
+* **nhp-agent:** Client-side agent for initiating NHP connections
+* **nhp-server:** Control plane server for authentication and authorization
+* **nhp-ac:** Access controller for policy enforcement
+
+Each component can be deployed independently, enabling flexible deployment topologies from standalone to distributed enterprise configurations.
+
+### Cryptographic Implementation
+
+The reference implementation uses well-audited cryptographic libraries:
+
+* **Noise Protocol:** flynn/noise library for Noise Framework handshakes
+* **Curve25519:** golang.org/x/crypto for elliptic curve operations
+* **ChaCha20-Poly1305:** Standard library crypto/cipher for AEAD encryption
+* **HKDF:** golang.org/x/crypto/hkdf for key derivation
+
+### Performance Characteristics
+
+The Go implementation provides:
+
+* **Low Latency:** Typical NHP handshake completes in under 10ms on local networks
+* **High Throughput:** Single NHP-Server can handle thousands of concurrent sessions
+* **Minimal Footprint:** Agent binary under 15MB, low memory consumption
+* **Concurrent Design:** Goroutine-based concurrency for efficient resource utilization
+
+### Open Source Governance
+
+The OpenNHP project operates under the Apache 2.0 license, fostering community collaboration and transparent development to accelerate adoption and ensure rigorous peer review of its security mechanisms.
 
 ## Practical Use Case: StealthDNS
 
