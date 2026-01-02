@@ -4,9 +4,9 @@
 
 This is the working area for the IETF [SAAG Working Group](https://datatracker.ietf.org/group/saag/documents/) Internet-Draft, "Network infrastructure Hiding Protocol".
 
-* [Editor's Copy](https://OpenNHP.github.io/ietf-rfc-nhp/#go.draft-opennhp-saag-nhp.html)
+* [HTML Version](https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-saag-nhp.html)
 * [Datatracker Page](https://datatracker.ietf.org/doc/draft-opennhp-saag-nhp/)
-* [Working Group Draft](https://www.ietf.org/archive/id/draft-opennhp-saag-nhp-00.html)
+* [Working Group Draft](https://www.ietf.org/archive/id/draft-opennhp-saag-nhp-02.html)
 * [Compare Editor's Copy to Working Group Draft](https://OpenNHP.github.io/ietf-rfc-nhp/#go.draft-opennhp-saag-nhp.diff)
 
 
