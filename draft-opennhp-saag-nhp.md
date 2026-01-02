@@ -4,7 +4,7 @@ abbrev: "NHP"
 category: info
 docname: draft-opennhp-saag-nhp-latest
 submissiontype: independent
-number: 02
+number: 00
 date: 2026-01-01
 v: 3
 area: "Security"
