@@ -2,7 +2,7 @@
 
 # Network infrastructure Hiding Protocol
 
-This is the working area for an Independent Submission Internet-Draft, "Network infrastructure Hiding Protocol", with discussion directed to the IETF [ztcpp non-WG mailing list](https://www.ietf.org/mailman/listinfo/ztcpp).
+This is the working area for the Independent Submission Internet-Draft "Network-Infrastructure Hiding Protocol". Discussion takes place on the IETF [ztcpp mailing list](https://www.ietf.org/mailman/listinfo/ztcpp) ([archive](https://mailarchive.ietf.org/arch/browse/ztcpp/)).
 
 * [Datatracker Status](https://datatracker.ietf.org/doc/draft-opennhp-ztcpp-nhp/)
 * [HTML (IETF Archive)](https://www.ietf.org/archive/id/draft-opennhp-ztcpp-nhp-00.html)

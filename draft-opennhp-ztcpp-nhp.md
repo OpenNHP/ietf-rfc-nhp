@@ -4,11 +4,7 @@ abbrev: "NHP"
 category: info
 docname: draft-opennhp-ztcpp-nhp-latest
 submissiontype: independent
-number: 00
-date: 2026-01-01
 v: 3
-area: "Security"
-workgroup: "ztcpp"
 keyword:
  - zero trust
  - session layer
