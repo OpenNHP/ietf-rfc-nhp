@@ -2,13 +2,14 @@
 
 
 
-Independent Submission                                           B. Chen
-Request for Comments: 0                                          OpenNHP
-Category: Informational                                   1 January 2026
-ISSN: 2070-1721
+Network Working Group                                            B. Chen
+Internet-Draft                                                   OpenNHP
+Intended status: Informational                             23 April 2026
+Expires: 25 October 2026
 
 
                  Network-Infrastructure Hiding Protocol
+                     draft-opennhp-ztcpp-nhp-latest
 
 Abstract
 
@@ -28,21 +29,39 @@ Abstract
    with Software-Defined Perimeter (SDP), DNS, FIDO, and Zero Trust
    policy engines.
 
+About This Document
+
+   This note is to be removed before publishing as an RFC.
+
+   The latest revision of this draft can be found at
+   https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-ztcpp-nhp.html.
+   Status information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-opennhp-ztcpp-nhp/.
+
+   Discussion of this document takes place on the ztcpp Independent
+   Submission mailing list (mailto:ztcpp@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/ztcpp/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/ztcpp/.
+
+   Source for this draft and an issue tracker can be found at
+   https://github.com/OpenNHP/ietf-rfc-nhp.
+
 Status of This Memo
 
-   This document is not an Internet Standards Track specification; it is
-   published for informational purposes.
+   This Internet-Draft is submitted in full conformance with the
+   provisions of BCP 78 and BCP 79.
 
-   This is a contribution to the RFC Series, independently of any other
-   RFC stream.  The RFC Editor has chosen to publish this document at
-   its discretion and makes no statement about its value for
-   implementation or deployment.  Documents approved for publication by
-   the RFC Editor are not candidates for any level of Internet Standard;
-   see Section 2 of RFC 7841.
+   Internet-Drafts are working documents of the Internet Engineering
+   Task Force (IETF).  Note that other groups may also distribute
+   working documents as Internet-Drafts.  The list of current Internet-
+   Drafts is at https://datatracker.ietf.org/drafts/current/.
 
-   Information about the current status of this document, any errata,
-   and how to provide feedback on it may be obtained at
-   https://www.rfc-editor.org/info/rfc0.
+   Internet-Drafts are draft documents valid for a maximum of six months
+   and may be updated, replaced, or obsoleted by other documents at any
+   time.  It is inappropriate to use Internet-Drafts as reference
+   material or to cite them other than as "work in progress."
+
+   This Internet-Draft will expire on 25 October 2026.
 
 Copyright Notice
 
@@ -50,11 +69,10 @@ Copyright Notice
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
-   Provisions Relating to IETF Documents
-   (https://trustee.ietf.org/license-info) in effect on the date of
-   publication of this document.  Please review these documents
-   carefully, as they describe your rights and restrictions with respect
-   to this document.
+   Provisions Relating to IETF Documents (https://trustee.ietf.org/
+   license-info) in effect on the date of publication of this document.
+   Please review these documents carefully, as they describe your rights
+   and restrictions with respect to this document.
 
 Table of Contents
 
