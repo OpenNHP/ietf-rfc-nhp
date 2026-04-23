@@ -2,14 +2,14 @@
 
 # Network infrastructure Hiding Protocol
 
-This is the working area for the IETF [SAAG Working Group](https://datatracker.ietf.org/group/saag/documents/) Internet-Draft, "Network infrastructure Hiding Protocol".
+This is the working area for an Independent Submission Internet-Draft, "Network infrastructure Hiding Protocol", with discussion directed to the IETF [ztcpp non-WG mailing list](https://www.ietf.org/mailman/listinfo/ztcpp).
 
-* [Datatracker Status](https://datatracker.ietf.org/doc/draft-opennhp-saag-nhp/)
-* [HTML (IETF Archive)](https://www.ietf.org/archive/id/draft-opennhp-saag-nhp-00.html)
-* [HTML (Datatracker)](https://datatracker.ietf.org/doc/html/draft-opennhp-saag-nhp)
-* [Plain Text](https://www.ietf.org/archive/id/draft-opennhp-saag-nhp-00.txt)
-* [Editor's Copy](https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-saag-nhp.html)
-* [Compare Editor's Copy to Working Group Draft](https://OpenNHP.github.io/ietf-rfc-nhp/#go.draft-opennhp-saag-nhp.diff)
+* [Datatracker Status](https://datatracker.ietf.org/doc/draft-opennhp-ztcpp-nhp/)
+* [HTML (IETF Archive)](https://www.ietf.org/archive/id/draft-opennhp-ztcpp-nhp-00.html)
+* [HTML (Datatracker)](https://datatracker.ietf.org/doc/html/draft-opennhp-ztcpp-nhp)
+* [Plain Text](https://www.ietf.org/archive/id/draft-opennhp-ztcpp-nhp-00.txt)
+* [Editor's Copy](https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-ztcpp-nhp.html)
+* [Compare Editor's Copy to Individual Draft](https://OpenNHP.github.io/ietf-rfc-nhp/#go.draft-opennhp-ztcpp-nhp.diff)
 
 
 ## Contributing

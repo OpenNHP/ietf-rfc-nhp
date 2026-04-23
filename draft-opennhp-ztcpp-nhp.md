@@ -2,25 +2,25 @@
 title: "Network-Infrastructure Hiding Protocol"
 abbrev: "NHP"
 category: info
-docname: draft-opennhp-saag-nhp-latest
+docname: draft-opennhp-ztcpp-nhp-latest
 submissiontype: independent
 number: 00
 date: 2026-01-01
 v: 3
 area: "Security"
-workgroup: "saag"
+workgroup: "ztcpp"
 keyword:
  - zero trust
  - session layer
  - network obfuscation
  - SDP
 venue:
-  group: "SAAG"
-  type: "Working Group"
-  mail: "saag@ietf.org"
-  arch: "https://mailarchive.ietf.org/arch/browse/saag/"
+  group: "ztcpp"
+  type: "Independent Submission"
+  mail: "ztcpp@ietf.org"
+  arch: "https://mailarchive.ietf.org/arch/browse/ztcpp/"
   github: "OpenNHP/ietf-rfc-nhp"
-  latest: "https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-saag-nhp.html"
+  latest: "https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-ztcpp-nhp.html"
 
 author:
  -
