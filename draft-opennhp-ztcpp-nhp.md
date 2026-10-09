@@ -2,7 +2,7 @@
 title: "Network-Infrastructure Hiding Protocol"
 abbrev: "NHP"
 category: info
-docname: draft-opennhp-ztcpp-nhp-01
+docname: draft-opennhp-ztcpp-nhp-latest
 submissiontype: independent
 v: 3
 keyword:
@@ -41,6 +41,7 @@ normative:
     target: https://noiseprotocol.org/noise.html
 
 informative:
+  RFC8126:
   NIST.SP.800-207:
     title: "Zero Trust Architecture"
     author:
@@ -391,7 +392,7 @@ The complete NHP workflow consists of the following steps:
 
 8. **Session Maintenance:** NHP-Server and NHP-AC maintain session state through NHP-KPL keepalive messages.
 
-9. **Logging and Audit:** NHP-AC uploads access logs via NHP-LOG messages for compliance and auditing.
+9. **Logging and Audit:** Logging is described in {{logging-transmission}}. Log transport is not defined in this revision.
 
 ## Sequence Diagram
 
@@ -409,9 +410,6 @@ NHP-Agent           NHP-Server            NHP-AC             ASP/IAM
     |                    |                    |                   |
     |--- NHP-ACC --------|------------------>|                   |
     |<================== Data Session ======>|                   |
-    |                    |                    |                   |
-    |                    |<-- NHP-LOG --------|                   |
-    |                    |--- NHP-LAK ------->|                   |
     |                    |                    |                   |
 ~~~
 
@@ -502,186 +500,278 @@ All NHP messages share a common header structure followed by an encrypted payloa
 
 ## Message Header
 
-The NHP message header is 32 bytes with the following structure:
+Every NHP message begins with a fixed-length header. The header length depends on the cipher scheme. The reference implementation defines two layouts:
 
-~~~
- 0                   1                   2                   3
- 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|    Version    |     Type      |     Flags     |   Reserved    |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                                                               |
-+                          Nonce (96 bits)                      +
-|                                                               |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|                                                               |
-+                       Timestamp (64 bits)                     +
-|                                                               |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-|        Payload Length         |        Header Checksum        |
-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
-~~~
+| Layout | Flags bit 0 | Header size | Public key size |
+|--------|-------------|-------------|-----------------|
+| Curve (CIPHER_SCHEME_CURVE) | 0 | 240 bytes | 32 bytes |
+| GMSM (CIPHER_SCHEME_GMSM) | 1 | 304 bytes | 64 bytes |
+
+The header is followed by the encrypted body. All integers are in network byte order.
+
+### Curve Header Layout
+
+| Offset | Size | Field |
+|--------|------|-------|
+| 0 | 4 | Preamble: random 32-bit value, chosen per message |
+| 4 | 4 | Type and Payload Size, XORed with the Preamble |
+| 8 | 1 | Major Version |
+| 9 | 1 | Minor Version |
+| 10 | 2 | Flags |
+| 12 | 4 | Unused (not written by the reference implementation) |
+| 16 | 8 | Counter |
+| 24 | 32 | Ephemeral Public Key |
+| 56 | 80 | Identity: 64 bytes of encrypted identity plus a 16-byte AEAD tag |
+| 136 | 48 | Static Public Key: 32 bytes plus a 16-byte AEAD tag |
+| 184 | 24 | Timestamp: 8 bytes plus a 16-byte AEAD tag |
+| 208 | 32 | HMAC |
+
+The GMSM layout has the same field order. The Ephemeral Public Key is 64 bytes and the Static Public Key field is 80 bytes (64 bytes plus a 16-byte tag), which brings the header to 304 bytes.
 
 ### Header Fields
 
-Version (8 bits)
-: Protocol version. Current version is 0x01.
+Preamble (32 bits)
+: A random value chosen per message. The Type and Payload Size field is masked with it, so the type and size are not visible on the wire in plaintext.
 
-Type (8 bits)
-: Message type code. See {{message-types}}.
+Type and Payload Size (32 bits)
+: The message type in the upper 16 bits and the length of the encrypted body in the lower 16 bits, XORed with the Preamble. The receiver recovers both by XORing the field with the Preamble. See {{message-types}} for type values.
 
-Flags (8 bits)
-: Control flags:
-  * Bit 0: Compression enabled
-  * Bit 1: Fragmentation flag
-  * Bit 2: Priority message
-  * Bits 3-7: Reserved
+Version (16 bits)
+: Major and minor protocol version. Each is one byte.
 
-Reserved (8 bits)
-: Reserved for future use. MUST be set to zero.
+Flags (16 bits)
+: Bits are numbered from the least significant bit.
+  * Bit 0: Extended header. When set, the header uses the GMSM layout.
+  * Bit 1: Body compression enabled.
+  * Bit 2: Client public key flag.
+  * Bits 3-11: Reserved. Senders MUST set these to zero.
+  * Bits 12-15: Cipher scheme (0 = Curve, 1 = GMSM).
 
-Nonce (96 bits)
-: Unique nonce for AEAD encryption. MUST be unique per message within a session.
+Counter (64 bits)
+: A per-session message counter in network byte order. It is used as the low 8 bytes of the 12-byte AEAD nonce, and the high 4 bytes of the nonce are zero. A counter value MUST NOT be reused within a session with the same key.
 
-Timestamp (64 bits)
-: UNIX epoch time in milliseconds. Used for replay protection.
+Ephemeral, Identity, Static, Timestamp, HMAC
+: Key and authentication fields for the handshake. Each encrypted field carries its own AEAD tag. The HMAC covers the header prefix.
 
-Payload Length (16 bits)
-: Length of the encrypted payload in bytes.
-
-Header Checksum (16 bits)
-: CRC-16 checksum of the header for integrity verification.
+The encrypted body follows the header. Its length is given by the Payload Size field. The body is encrypted with the chain hash as additional authenticated data.
 
 ## Message Types {#message-types}
 
 | Type Code | Name | Direction | Description |
 |-----------|------|-----------|-------------|
-| 0x00 | NHP-KPL | Any | Keepalive message |
+| 0x00 | NHP-KPL | Any | Keepalive |
 | 0x01 | NHP-KNK | Agent→Server | Knock request |
 | 0x02 | NHP-ACK | Server→Agent | Knock acknowledgment |
-| 0x03 | NHP-AOP | Server→AC | AC operation command |
+| 0x03 | NHP-AOP | Server→AC | AC operation request |
 | 0x04 | NHP-ART | AC→Server | AC operation result |
-| 0x05 | NHP-LST | Agent→Server | Resource list request |
-| 0x06 | NHP-LRT | Server→Agent | Resource list response |
-| 0x07 | NHP-COK | Server→Agent | Cookie for session resumption |
+| 0x05 | NHP-LST | Agent→Server | List services and applications |
+| 0x06 | NHP-LRT | Server→Agent | Service list result |
+| 0x07 | NHP-COK | Server→Agent | Cookie for re-knock |
 | 0x08 | NHP-RKN | Agent→Server | Re-knock with cookie |
-| 0x09 | NHP-RLY | Relay→Server | Relayed message |
+| 0x09 | NHP-RLY | Relay→Server | Relayed packet |
 | 0x0A | NHP-AOL | AC→Server | AC online notification |
-| 0x0B | NHP-AAK | Server→AC | AC acknowledge |
-| 0x0C | NHP-OTP | Any | One-time password request |
-| 0x0D | NHP-REG | Agent→Server | Public key registration |
+| 0x0B | NHP-AAK | Server→AC | Acknowledgment of AC online notification |
+| 0x0C | NHP-OTP | Agent→Server | One-time passcode request |
+| 0x0D | NHP-REG | Agent→Server | Agent registration |
 | 0x0E | NHP-RAK | Server→Agent | Registration acknowledgment |
 | 0x0F | NHP-ACC | Agent→AC | Access request |
-| 0x10 | NHP-LOG | AC→Server | Log upload |
-| 0x11 | NHP-LAK | Server→AC | Log acknowledgment |
+| 0x10 | NHP-EXT | Agent→Server | Immediate disconnection request |
+
+Values 0x11-0x16 are used by DHP message types in the reference implementation. They are not defined in this document. Values 0x17-0xFF are reserved.
 
 ## Message Definitions
 
+Message bodies are JSON objects. Field names below are the JSON keys used by the reference implementation's message structures. A field is optional where the reference implementation marks it `omitempty`.
+
 ### NHP-KPL (Keepalive)
 
-Keepalive messages maintain session state between components. The payload contains:
-
-| Field | Size | Description |
-|-------|------|-------------|
-| Session ID | 16 bytes | Current session identifier |
-| Sequence | 4 bytes | Monotonic sequence number |
+Keepalive messages maintain session state between components. This revision does not define a body structure.
 
 ### NHP-KNK (Knock)
 
-The knock message initiates access request from NHP-Agent to NHP-Server. The encrypted payload contains:
+Sent by NHP-Agent to NHP-Server to request access to a resource.
 
-| Field | Size | Description |
-|-------|------|-------------|
-| User ID | Variable | Unique user identifier |
-| Device ID | Variable | Unique device identifier |
-| Device Fingerprint | 32 bytes | Device attestation hash |
-| Requested Resources | Variable | List of resource identifiers |
-| Context Data | Variable | Additional context (location, etc.) |
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| headerType | integer | Yes | Header type value |
+| usrId | string | Yes | User identifier |
+| devId | string | Yes | Device identifier |
+| orgId | string | No | Organization identifier |
+| aspId | string | Yes | Authorization Service Provider identifier |
+| resId | string | Yes | Resource identifier |
+| results | object | No | Results of client-side checks |
+| usrData | object | No | Additional user data |
 
-### NHP-ACK (Acknowledge)
+### NHP-ACK (Knock Acknowledgment)
 
-The acknowledge message confirms knock success and provides access parameters:
+Sent by NHP-Server to NHP-Agent in response to NHP-KNK.
 
-| Field | Size | Description |
-|-------|------|-------------|
-| Status Code | 2 bytes | Result status |
-| Session ID | 16 bytes | Assigned session identifier |
-| Access Token | Variable | Token for NHP-AC access |
-| AC Addresses | Variable | List of AC endpoints |
-| Expiration | 8 bytes | Session expiration timestamp |
-| Granted Resources | Variable | List of granted resource access |
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| errCode | string | Yes | Result code |
+| errMsg | string | No | Error description |
+| resHost | object | Yes | Map of resource host addresses |
+| opnTime | integer | Yes | Open time for access |
+| aspToken | string | No | Token for AC-side validation |
+| agentAddr | string | Yes | Source address observed for the agent |
+| acTokens | object | Yes | Map of AC access tokens |
+| preActions | object | No | Pre-access actions |
+| redirectUrl | string | No | Redirect URL |
 
-### NHP-AOP (AC Operations)
+### NHP-AOP (AC Operation Request)
 
-The AC operations message instructs NHP-AC to modify access rules:
+Sent by NHP-Server to NHP-AC to open access for an agent.
 
-| Field | Size | Description |
-|-------|------|-------------|
-| Operation | 1 byte | OPEN (0x01) or CLOSE (0x02) |
-| Agent Address | Variable | Source IP/port of authorized agent |
-| Resource ID | Variable | Target resource identifier |
-| Expiration | 8 bytes | Rule expiration timestamp |
-| Access Token | Variable | Token for agent verification |
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| usrId | string | Yes | User identifier |
+| devId | string | Yes | Device identifier |
+| orgId | string | No | Organization identifier |
+| aspId | string | Yes | Authorization Service Provider identifier |
+| resId | string | Yes | Resource identifier |
+| srcAddrs | array of NetAddress | Yes | Source addresses to allow |
+| dstAddrs | array of NetAddress | Yes | Destination addresses to allow |
+| opnTime | integer | Yes | Open time |
 
-### NHP-ART (AC Result)
+### NHP-ART (AC Operation Result)
 
-The AC result message reports operation status:
+Sent by NHP-AC to NHP-Server with the result of NHP-AOP.
 
-| Field | Size | Description |
-|-------|------|-------------|
-| Status Code | 2 bytes | Operation result |
-| Operation ID | 16 bytes | Reference to NHP-AOP |
-| Details | Variable | Additional status information |
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| errCode | string | Yes | Result code |
+| errMsg | string | No | Error description |
+| opnTime | integer | Yes | Open time granted |
+| token | string | Yes | AC access token |
+| preAct | PreAccessInfo | No | Pre-access information |
 
-### NHP-ACC (Access)
+### NHP-LST (List Request) and NHP-LRT (List Result)
 
-The access message is sent from NHP-Agent to NHP-AC to initiate data plane access:
+NHP-LST carries the same identity fields as NHP-KNK, without a resource identifier: usrId, devId, orgId (optional), aspId, and usrData (optional).
 
-| Field | Size | Description |
-|-------|------|-------------|
-| User ID | Variable | User identifier |
-| Device ID | Variable | Device identifier |
-| Access Token | Variable | Token from NHP-ACK |
-| Requested Service | Variable | Target service identifier |
+NHP-LRT carries:
+
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| errCode | string | Yes | Result code |
+| errMsg | string | No | Error description |
+| list | object | No | Services and applications |
+
+### NHP-COK (Cookie)
+
+Sent by NHP-Server to NHP-Agent.
+
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| trxId | integer (64-bit) | Yes | Transaction identifier |
+| cookie | string | Yes | Cookie for re-knock |
+
+### NHP-RKN (Re-Knock)
+
+Sent by NHP-Agent to NHP-Server with the cookie from NHP-COK. This revision does not define the body structure.
+
+### NHP-RLY (Relayed Packet)
+
+Sent by a relay to NHP-Server to forward a packet on behalf of a client.
+
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| srcAddr | NetAddress | Yes | Original client address |
+| innerPkt | string | Yes | Base64-encoded inner NHP packet |
+
+### NHP-AOL (AC Online)
+
+Sent by NHP-AC to NHP-Server to report the resources it serves.
+
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| aspId | string | Yes | Authorization Service Provider identifier |
+| resIds | array of string | Yes | Resource identifiers |
+| acId | string | No | AC identifier |
+
+### NHP-AAK (AC Acknowledgment)
+
+Sent by NHP-Server to NHP-AC after receiving NHP-AOL.
+
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| errCode | string | Yes | Result code |
+| errMsg | string | No | Error description |
+| acAddr | string | Yes | AC address |
+
+### NHP-OTP (One-Time Passcode Request)
+
+Sent by NHP-Agent to NHP-Server.
+
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| usrId | string | Yes | User identifier |
+| devId | string | Yes | Device identifier |
+| orgId | string | No | Organization identifier |
+| aspId | string | Yes | Authorization Service Provider identifier |
+| pass | string | No | Passcode |
+| pubKey | string | No | Agent public key |
+| usrData | object | No | Additional user data |
 
 ### NHP-REG (Register)
 
-The registration message registers NHP-Agent public key with NHP-Server:
+Sent by NHP-Agent to NHP-Server to register its public key.
 
-| Field | Size | Description |
-|-------|------|-------------|
-| User ID | Variable | User identifier |
-| Device ID | Variable | Device identifier |
-| Public Key | 32 bytes | Agent's static public key |
-| OTP | Variable | One-time password for verification |
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| usrId | string | Yes | User identifier |
+| devId | string | Yes | Device identifier |
+| orgId | string | No | Organization identifier |
+| aspId | string | Yes | Authorization Service Provider identifier |
+| otp | string | No | One-time passcode |
+| pubKey | string | No | Agent public key |
+| usrData | object | No | Additional user data |
 
-### NHP-RAK (Register Acknowledge)
+### NHP-RAK (Register Acknowledgment)
 
-Confirms successful registration:
+Sent by NHP-Server to NHP-Agent.
 
-| Field | Size | Description |
-|-------|------|-------------|
-| Status Code | 2 bytes | Registration result |
-| Server Public Key | 32 bytes | Server's static public key |
-| Certificate | Variable | Optional server certificate |
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| errCode | string | Yes | Result code |
+| errMsg | string | No | Error description |
+| aspId | string | Yes | Authorization Service Provider identifier |
+| expiresAt | integer | No | Unix time, in seconds, when the registered key expires |
 
-### NHP-LOG (Log)
+### NHP-ACC (Access)
 
-Log upload message from NHP-AC to NHP-Server:
+Sent by NHP-Agent to NHP-AC to access a resource. The NHP-AC replies with an access acknowledgment carrying errCode, errMsg (optional), and agentAddr (optional).
 
-| Field | Size | Description |
-|-------|------|-------------|
-| AC ID | Variable | Access controller identifier |
-| Log ID | 32 bytes | Unique log identifier (hash) |
-| Log Content | Variable | Compressed log entries |
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| usrId | string | Yes | User identifier |
+| devId | string | Yes | Device identifier |
+| orgId | string | No | Organization identifier |
+| acToken | string | Yes | Access token from NHP-ACK |
+| usrData | object | No | Additional user data |
 
-### NHP-LAK (Log Acknowledge)
+### NHP-EXT (Disconnect)
 
-Confirms log receipt:
+Sent by NHP-Agent to NHP-Server to request immediate disconnection. This revision does not define the body structure.
 
-| Field | Size | Description |
-|-------|------|-------------|
-| Log ID | 32 bytes | Received log identifier |
+### NetAddress
+
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| ip | string | Yes | IP address |
+| port | integer | No | Port number |
+| proto | string | No | "tcp" or "udp"; empty for any |
+
+### PreAccessInfo
+
+| JSON Key | Type | Required | Description |
+|----------|------|----------|-------------|
+| acIp | string | Yes | AC IP address |
+| acPort | string | Yes | AC port |
+| acPubKey | string | Yes | AC public key |
+| acToken | string | Yes | AC access token |
+| acCipherScheme | integer | Yes | Cipher scheme of the AC |
+
 
 # Logging and Auditing
 
@@ -722,9 +812,11 @@ All NHP logs SHOULD use structured JSON format with the following mandatory fiel
 }
 ~~~
 
-## Log Transmission
+## Log Transmission {#logging-transmission}
 
-NHP-AC components transmit logs to NHP-Server using NHP-LOG messages. Implementations MUST:
+NHP-LOG and NHP-LAK are not implemented in the reference implementation, and this revision does not register message types for them. The requirements below are intended for a future revision that defines the log transport:
+
+NHP-AC components transmit logs to NHP-Server. Implementations MUST:
 
 * Encrypt all log transmissions using the established Noise session
 * Batch logs to reduce network overhead
@@ -870,7 +962,7 @@ NHP does not protect against:
 
 # IANA Considerations
 
-This document requests IANA to establish a new registry for NHP Message Types with the following initial values:
+This document requests IANA to establish a new registry named "NHP Message Types" with an 8-bit type field. The registration policy is Specification Required {{RFC8126}}. The initial values are:
 
 | Value | Name | Reference |
 |-------|------|-----------|
@@ -890,10 +982,9 @@ This document requests IANA to establish a new registry for NHP Message Types wi
 | 0x0D | NHP-REG | This document |
 | 0x0E | NHP-RAK | This document |
 | 0x0F | NHP-ACC | This document |
-| 0x10 | NHP-LOG | This document |
-| 0x11 | NHP-LAK | This document |
+| 0x10 | NHP-EXT | This document |
 
-Values 0x12-0xFF are reserved for future use.
+Values 0x11-0x16 are used by DHP message types in the reference implementation and are to be registered by the document that defines them. Values 0x17-0xFF are reserved for future use.
 
 # Reference Implementation
 
