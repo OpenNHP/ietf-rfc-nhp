@@ -33,7 +33,6 @@ normative:
   RFC8174:
   RFC9000:
   RFC8446:
-  RFC9180:
   NoiseFramework:
     title: "The Noise Protocol Framework"
     author:
@@ -66,7 +65,7 @@ informative:
 
 --- abstract
 
-The Network-Infrastructure Hiding Protocol (NHP) is a cryptography-based session-layer protocol designed to operationalize Zero Trust principles by concealing protected network resources from unauthorized entities. NHP enforces authentication-before-connect access control, rendering IP addresses, ports, and domain names invisible to unauthorized users. This document defines the protocol architecture, cryptographic framework, message formats, and workflow to enable independent implementation of NHP. It represents the third generation of network hiding technology—evolving from first-generation port knocking to second-generation Single-Packet Authorization (SPA) and now to NHP with advanced asymmetric cryptography, mutual authentication, and scalability for modern threats. This specification also provides guidance for integration with Software-Defined Perimeter (SDP), DNS, FIDO, and Zero Trust policy engines.
+The Network-Infrastructure Hiding Protocol (NHP) is a cryptography-based session-layer protocol designed to operationalize Zero Trust principles by concealing protected network resources from unauthorized entities. NHP enforces authentication-before-connect access control, rendering IP addresses, ports, and domain names invisible to unauthorized users. This document defines the protocol architecture, cryptographic framework, message formats, and workflow to enable independent implementation of NHP. It represents the third generation of network hiding technology--evolving from first-generation port knocking to second-generation Single-Packet Authorization (SPA) and now to NHP with advanced asymmetric cryptography, mutual authentication, and scalability for modern threats. This specification also provides guidance for integration with Software-Defined Perimeter (SDP), DNS, FIDO, and Zero Trust policy engines.
 
 --- middle
 
@@ -134,7 +133,7 @@ The NHP protocol is designed to achieve the following objectives:
 
 1. **Infrastructure Invisibility:** Eliminate unauthorized network visibility by enforcing authentication prior to session establishment. Protected resources remain invisible to unauthorized scanners and attackers.
 
-2. **Session Layer Operation:** Operate at OSI Layer 5, complementing existing TCP, UDP, and QUIC transports without requiring changes to underlying network infrastructure.
+2. **Session Layer Operation:** Operate at OSI Layer 5, complementing existing TCP, UDP, and QUIC {{RFC9000}} transports without requiring changes to underlying network infrastructure.
 
 3. **Decentralized Trust:** Support decentralized trust using asymmetric cryptography and ephemeral key exchange, eliminating single points of trust failure.
 
@@ -148,7 +147,7 @@ The NHP protocol is designed to achieve the following objectives:
 
 # Relationship to TLS
 
-NHP and TLS (Transport Layer Security) are complementary protocols that operate at different OSI layers and serve distinct security purposes. This section clarifies their differences and how they work together.
+NHP and TLS (Transport Layer Security {{RFC8446}}) are complementary protocols that operate at different OSI layers and serve distinct security purposes. This section clarifies their differences and how they work together.
 
 ## OSI Layer Positioning
 
@@ -156,19 +155,19 @@ NHP and TLS (Transport Layer Security) are complementary protocols that operate 
 +-------------------+
 | Application (L7)  |  HTTP, SMTP, SSH, etc.
 +-------------------+
-        ↓
+        v
 +-------------------+
 | Presentation (L6) |  TLS/SSL - Data encryption & integrity
 +-------------------+
-        ↓
+        v
 +-------------------+
 | Session (L5)      |  NHP - Authentication before connection
 +-------------------+
-        ↓
+        v
 +-------------------+
 | Transport (L4)    |  TCP, UDP, QUIC
 +-------------------+
-        ↓
+        v
 +-------------------+
 | Network (L3)      |  IP
 +-------------------+
@@ -183,7 +182,7 @@ NHP and TLS (Transport Layer Security) are complementary protocols that operate 
 | **Service Visibility** | Services are INVISIBLE to unauthorized users | Services are VISIBLE, communication is encrypted |
 | **Attack Surface** | Eliminates pre-authentication attack surface | Protects data in transit, but service ports remain exposed |
 | **Port Exposure** | No ports exposed until authenticated | Ports must be open to initiate TLS handshake |
-| **Vulnerability Window** | None—no connection without authentication | TLS handshake vulnerabilities can be exploited |
+| **Vulnerability Window** | None--no connection without authentication | TLS handshake vulnerabilities can be exploited |
 
 ## The Pre-Authentication Problem
 
@@ -192,8 +191,8 @@ TLS provides excellent protection for data in transit, but it has a fundamental 
 ~~~
 Traditional TLS Flow:
 
-Attacker    ──────►  Open Port 443  ──────►  TLS Handshake  ──────►  Authentication
-                         ↑
+Attacker    ------>  Open Port 443  ------>  TLS Handshake  ------>  Authentication
+                         ^
                     Service is VISIBLE
                     Port scan succeeds
                     Pre-auth exploits possible
@@ -202,13 +201,13 @@ Attacker    ──────►  Open Port 443  ──────►  TLS Han
 ~~~
 NHP + TLS Flow:
 
-Attacker    ──────►  No Open Ports  ──────►  BLOCKED (Service Invisible)
-                         ↑
+Attacker    ------>  No Open Ports  ------>  BLOCKED (Service Invisible)
+                         ^
                     Cannot discover service
                     Port scan fails
 
-Authorized  ──────►  NHP Knock  ──────►  Port Opens  ──────►  TLS  ──────►  Application
-User                     ↑                    ↑
+Authorized  ------>  NHP Knock  ------>  Port Opens  ------>  TLS  ------>  Application
+User                     ^                    ^
                     Authenticated         Encrypted
                     BEFORE connect        data transfer
 ~~~
@@ -229,16 +228,16 @@ A complete Zero Trust deployment SHOULD use both:
 
 | Vulnerability Type | TLS Protection | NHP Protection |
 |--------------------|----------------|----------------|
-| Port scanning and service discovery | ✗ None | ✓ Service invisible |
-| Pre-authentication exploits (e.g., Heartbleed) | ✗ Vulnerable | ✓ No connection possible |
-| TLS implementation bugs before handshake | ✗ Vulnerable | ✓ No handshake initiated |
-| DDoS attacks on exposed services | ✗ Service reachable | ✓ Service hidden |
-| Credential stuffing on login pages | ✗ Page accessible | ✓ Page invisible |
-| Zero-day exploits before authentication | ✗ Service exposed | ✓ Service protected |
+| Port scanning and service discovery | No: None | Yes: Service invisible |
+| Pre-authentication exploits (e.g., Heartbleed) | No: Vulnerable | Yes: No connection possible |
+| TLS implementation bugs before handshake | No: Vulnerable | Yes: No handshake initiated |
+| DDoS attacks on exposed services | No: Service reachable | Yes: Service hidden |
+| Credential stuffing on login pages | No: Page accessible | Yes: Page invisible |
+| Zero-day exploits before authentication | No: Service exposed | Yes: Service protected |
 
 ## Why Both Are Needed
 
-NHP alone does not encrypt application data—it only controls access. TLS alone does not hide services—it only encrypts traffic. Together, they provide defense in depth:
+NHP alone does not encrypt application data--it only controls access. TLS alone does not hide services--it only encrypts traffic. Together, they provide defense in depth:
 
 * **Without NHP:** Attackers can scan, probe, and exploit services before any authentication occurs
 * **Without TLS:** Authorized traffic would be transmitted in plaintext after NHP grants access
@@ -296,7 +295,7 @@ The NHP-Server is the core control-plane service responsible for:
 * Instructing NHP-AC components to open or close access paths
 * Managing session state and expiration
 
-Functionally, the NHP-Server maps to the **Policy Administrator** role defined in NIST SP 800-207 Zero Trust Architecture.
+Functionally, the NHP-Server maps to the **Policy Administrator** role defined in NIST SP 800-207 Zero Trust Architecture {{NIST.SP.800-207}}.
 
 ### NHP-AC (Access Controller)
 
@@ -561,22 +560,22 @@ The encrypted body follows the header. Its length is given by the Payload Size f
 | Type Code | Name | Direction | Description |
 |-----------|------|-----------|-------------|
 | 0x00 | NHP-KPL | Any | Keepalive |
-| 0x01 | NHP-KNK | Agent→Server | Knock request |
-| 0x02 | NHP-ACK | Server→Agent | Knock acknowledgment |
-| 0x03 | NHP-AOP | Server→AC | AC operation request |
-| 0x04 | NHP-ART | AC→Server | AC operation result |
-| 0x05 | NHP-LST | Agent→Server | List services and applications |
-| 0x06 | NHP-LRT | Server→Agent | Service list result |
-| 0x07 | NHP-COK | Server→Agent | Cookie for re-knock |
-| 0x08 | NHP-RKN | Agent→Server | Re-knock with cookie |
-| 0x09 | NHP-RLY | Relay→Server | Relayed packet |
-| 0x0A | NHP-AOL | AC→Server | AC online notification |
-| 0x0B | NHP-AAK | Server→AC | Acknowledgment of AC online notification |
-| 0x0C | NHP-OTP | Agent→Server | One-time passcode request |
-| 0x0D | NHP-REG | Agent→Server | Agent registration |
-| 0x0E | NHP-RAK | Server→Agent | Registration acknowledgment |
-| 0x0F | NHP-ACC | Agent→AC | Access request |
-| 0x10 | NHP-EXT | Agent→Server | Immediate disconnection request |
+| 0x01 | NHP-KNK | Agent->Server | Knock request |
+| 0x02 | NHP-ACK | Server->Agent | Knock acknowledgment |
+| 0x03 | NHP-AOP | Server->AC | AC operation request |
+| 0x04 | NHP-ART | AC->Server | AC operation result |
+| 0x05 | NHP-LST | Agent->Server | List services and applications |
+| 0x06 | NHP-LRT | Server->Agent | Service list result |
+| 0x07 | NHP-COK | Server->Agent | Cookie for re-knock |
+| 0x08 | NHP-RKN | Agent->Server | Re-knock with cookie |
+| 0x09 | NHP-RLY | Relay->Server | Relayed packet |
+| 0x0A | NHP-AOL | AC->Server | AC online notification |
+| 0x0B | NHP-AAK | Server->AC | Acknowledgment of AC online notification |
+| 0x0C | NHP-OTP | Agent->Server | One-time passcode request |
+| 0x0D | NHP-REG | Agent->Server | Agent registration |
+| 0x0E | NHP-RAK | Server->Agent | Registration acknowledgment |
+| 0x0F | NHP-ACC | Agent->AC | Access request |
+| 0x10 | NHP-EXT | Agent->Server | Immediate disconnection request |
 
 Values 0x11-0x16 are used by DHP message types in the reference implementation. They are not defined in this document. Values 0x17-0xFF are reserved.
 
@@ -1080,7 +1079,7 @@ The StealthDNS workflow demonstrates the authenticate-before-connect principle:
 3. If protected, StealthDNS performs NHP knock with identity and device context.
 4. Upon successful authentication, the NHP Controller returns ephemeral address mappings.
 5. StealthDNS returns valid DNS records only to authorized clients.
-6. Unauthorized clients receive NXDOMAIN—the service remains invisible.
+6. Unauthorized clients receive NXDOMAIN--the service remains invisible.
 
 This enforces **identity before visibility** and **authorization before connectivity**, demonstrating real-world application of NHP principles.
 
