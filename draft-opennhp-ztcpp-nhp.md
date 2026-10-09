@@ -26,6 +26,7 @@ author:
  -
     fullname: Justin Posey
     organization: LayerV
+    email: justin@layerv.ai
 
 normative:
   RFC2119:
