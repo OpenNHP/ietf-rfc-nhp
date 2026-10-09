@@ -8,7 +8,7 @@
 <meta content="Benfeng Chen" name="author">
 <meta content="Justin Posey" name="author">
 <meta content="
-       The Network-Infrastructure Hiding Protocol (NHP) is a cryptography-based session-layer protocol designed to operationalize Zero Trust principles by concealing protected network resources from unauthorized entities. NHP enforces authentication-before-connect access control, rendering IP addresses, ports, and domain names invisible to unauthorized users. This document defines the protocol architecture, cryptographic framework, message formats, and workflow to enable independent implementation of NHP. It represents the third generation of network hiding technology—evolving from first-generation port knocking to second-generation Single-Packet Authorization (SPA) and now to NHP with advanced asymmetric cryptography, mutual authentication, and scalability for modern threats. This specification also provides guidance for integration with Software-Defined Perimeter (SDP), DNS, FIDO, and Zero Trust policy engines. 
+       The Network-Infrastructure Hiding Protocol (NHP) is a cryptography-based session-layer protocol designed to operationalize Zero Trust principles by concealing protected network resources from unauthorized entities. NHP enforces authentication-before-connect access control, rendering IP addresses, ports, and domain names invisible to unauthorized users. This document defines the protocol architecture, cryptographic framework, message formats, and workflow to enable independent implementation of NHP. It represents the third generation of network hiding technology--evolving from first-generation port knocking to second-generation Single-Packet Authorization (SPA) and now to NHP with advanced asymmetric cryptography, mutual authentication, and scalability for modern threats. This specification also provides guidance for integration with Software-Defined Perimeter (SDP), DNS, FIDO, and Zero Trust policy engines. 
     " name="description">
 <meta content="xml2rfc 3.34.1" name="generator">
 <meta content="zero trust" name="keyword">
@@ -1084,7 +1084,7 @@ svg {
 <h1 id="title">Network-Infrastructure Hiding Protocol</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">The Network-Infrastructure Hiding Protocol (NHP) is a cryptography-based session-layer protocol designed to operationalize Zero Trust principles by concealing protected network resources from unauthorized entities. NHP enforces authentication-before-connect access control, rendering IP addresses, ports, and domain names invisible to unauthorized users. This document defines the protocol architecture, cryptographic framework, message formats, and workflow to enable independent implementation of NHP. It represents the third generation of network hiding technology—evolving from first-generation port knocking to second-generation Single-Packet Authorization (SPA) and now to NHP with advanced asymmetric cryptography, mutual authentication, and scalability for modern threats. This specification also provides guidance for integration with Software-Defined Perimeter (SDP), DNS, FIDO, and Zero Trust policy engines.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">The Network-Infrastructure Hiding Protocol (NHP) is a cryptography-based session-layer protocol designed to operationalize Zero Trust principles by concealing protected network resources from unauthorized entities. NHP enforces authentication-before-connect access control, rendering IP addresses, ports, and domain names invisible to unauthorized users. This document defines the protocol architecture, cryptographic framework, message formats, and workflow to enable independent implementation of NHP. It represents the third generation of network hiding technology--evolving from first-generation port knocking to second-generation Single-Packet Authorization (SPA) and now to NHP with advanced asymmetric cryptography, mutual authentication, and scalability for modern threats. This specification also provides guidance for integration with Software-Defined Perimeter (SDP), DNS, FIDO, and Zero Trust policy engines.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1608,7 +1608,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
           <p id="section-3-2.1.1"><strong>Infrastructure Invisibility:</strong> Eliminate unauthorized network visibility by enforcing authentication prior to session establishment. Protected resources remain invisible to unauthorized scanners and attackers.<a href="#section-3-2.1.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-3-2.2">
-          <p id="section-3-2.2.1"><strong>Session Layer Operation:</strong> Operate at OSI Layer 5, complementing existing TCP, UDP, and QUIC transports without requiring changes to underlying network infrastructure.<a href="#section-3-2.2.1" class="pilcrow">¶</a></p>
+          <p id="section-3-2.2.1"><strong>Session Layer Operation:</strong> Operate at OSI Layer 5, complementing existing TCP, UDP, and QUIC <span>[<a href="#RFC9000" class="cite xref">RFC9000</a>]</span> transports without requiring changes to underlying network infrastructure.<a href="#section-3-2.2.1" class="pilcrow">¶</a></p>
 </li>
         <li id="section-3-2.3">
           <p id="section-3-2.3.1"><strong>Decentralized Trust:</strong> Support decentralized trust using asymmetric cryptography and ephemeral key exchange, eliminating single points of trust failure.<a href="#section-3-2.3.1" class="pilcrow">¶</a></p>
@@ -1633,7 +1633,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-relationship-to-tls">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-relationship-to-tls" class="section-name selfRef">Relationship to TLS</a>
       </h2>
-<p id="section-4-1">NHP and TLS (Transport Layer Security) are complementary protocols that operate at different OSI layers and serve distinct security purposes. This section clarifies their differences and how they work together.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">NHP and TLS (Transport Layer Security <span>[<a href="#RFC8446" class="cite xref">RFC8446</a>]</span>) are complementary protocols that operate at different OSI layers and serve distinct security purposes. This section clarifies their differences and how they work together.<a href="#section-4-1" class="pilcrow">¶</a></p>
 <div id="osi-layer-positioning">
 <section id="section-4.1">
         <h3 id="name-osi-layer-positioning">
@@ -1644,19 +1644,19 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 +-------------------+
 | Application (L7)  |  HTTP, SMTP, SSH, etc.
 +-------------------+
-        ↓
+        v
 +-------------------+
 | Presentation (L6) |  TLS/SSL - Data encryption &amp; integrity
 +-------------------+
-        ↓
+        v
 +-------------------+
 | Session (L5)      |  NHP - Authentication before connection
 +-------------------+
-        ↓
+        v
 +-------------------+
 | Transport (L4)    |  TCP, UDP, QUIC
 +-------------------+
-        ↓
+        v
 +-------------------+
 | Network (L3)      |  IP
 +-------------------+
@@ -1718,7 +1718,7 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
               <td class="text-left" rowspan="1" colspan="1">
                 <strong>Vulnerability Window</strong>
 </td>
-              <td class="text-left" rowspan="1" colspan="1">None—no connection without authentication</td>
+              <td class="text-left" rowspan="1" colspan="1">None--no connection without authentication</td>
               <td class="text-left" rowspan="1" colspan="1">TLS handshake vulnerabilities can be exploited</td>
             </tr>
           </tbody>
@@ -1735,8 +1735,8 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <pre>
 Traditional TLS Flow:
 
-Attacker    ──────►  Open Port 443  ──────►  TLS Handshake  ──────►  Authentication
-                         ↑
+Attacker    ------&gt;  Open Port 443  ------&gt;  TLS Handshake  ------&gt;  Authentication
+                         ^
                     Service is VISIBLE
                     Port scan succeeds
                     Pre-auth exploits possible
@@ -1746,13 +1746,13 @@ Attacker    ──────►  Open Port 443  ──────►  TLS Han
 <pre>
 NHP + TLS Flow:
 
-Attacker    ──────►  No Open Ports  ──────►  BLOCKED (Service Invisible)
-                         ↑
+Attacker    ------&gt;  No Open Ports  ------&gt;  BLOCKED (Service Invisible)
+                         ^
                     Cannot discover service
                     Port scan fails
 
-Authorized  ──────►  NHP Knock  ──────►  Port Opens  ──────►  TLS  ──────►  Application
-User                     ↑                    ↑
+Authorized  ------&gt;  NHP Knock  ------&gt;  Port Opens  ------&gt;  TLS  ------&gt;  Application
+User                     ^                    ^
                     Authenticated         Encrypted
                     BEFORE connect        data transfer
 </pre><a href="#section-4.3-3" class="pilcrow">¶</a>
@@ -1801,33 +1801,33 @@ User                     ↑                    ↑
           <tbody>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">Port scanning and service discovery</td>
-              <td class="text-left" rowspan="1" colspan="1">✗ None</td>
-              <td class="text-left" rowspan="1" colspan="1">✓ Service invisible</td>
+              <td class="text-left" rowspan="1" colspan="1">No: None</td>
+              <td class="text-left" rowspan="1" colspan="1">Yes: Service invisible</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">Pre-authentication exploits (e.g., Heartbleed)</td>
-              <td class="text-left" rowspan="1" colspan="1">✗ Vulnerable</td>
-              <td class="text-left" rowspan="1" colspan="1">✓ No connection possible</td>
+              <td class="text-left" rowspan="1" colspan="1">No: Vulnerable</td>
+              <td class="text-left" rowspan="1" colspan="1">Yes: No connection possible</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">TLS implementation bugs before handshake</td>
-              <td class="text-left" rowspan="1" colspan="1">✗ Vulnerable</td>
-              <td class="text-left" rowspan="1" colspan="1">✓ No handshake initiated</td>
+              <td class="text-left" rowspan="1" colspan="1">No: Vulnerable</td>
+              <td class="text-left" rowspan="1" colspan="1">Yes: No handshake initiated</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">DDoS attacks on exposed services</td>
-              <td class="text-left" rowspan="1" colspan="1">✗ Service reachable</td>
-              <td class="text-left" rowspan="1" colspan="1">✓ Service hidden</td>
+              <td class="text-left" rowspan="1" colspan="1">No: Service reachable</td>
+              <td class="text-left" rowspan="1" colspan="1">Yes: Service hidden</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">Credential stuffing on login pages</td>
-              <td class="text-left" rowspan="1" colspan="1">✗ Page accessible</td>
-              <td class="text-left" rowspan="1" colspan="1">✓ Page invisible</td>
+              <td class="text-left" rowspan="1" colspan="1">No: Page accessible</td>
+              <td class="text-left" rowspan="1" colspan="1">Yes: Page invisible</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">Zero-day exploits before authentication</td>
-              <td class="text-left" rowspan="1" colspan="1">✗ Service exposed</td>
-              <td class="text-left" rowspan="1" colspan="1">✓ Service protected</td>
+              <td class="text-left" rowspan="1" colspan="1">No: Service exposed</td>
+              <td class="text-left" rowspan="1" colspan="1">Yes: Service protected</td>
             </tr>
           </tbody>
         </table>
@@ -1838,7 +1838,7 @@ User                     ↑                    ↑
         <h3 id="name-why-both-are-needed">
 <a href="#section-4.6" class="section-number selfRef">4.6. </a><a href="#name-why-both-are-needed" class="section-name selfRef">Why Both Are Needed</a>
         </h3>
-<p id="section-4.6-1">NHP alone does not encrypt application data—it only controls access. TLS alone does not hide services—it only encrypts traffic. Together, they provide defense in depth:<a href="#section-4.6-1" class="pilcrow">¶</a></p>
+<p id="section-4.6-1">NHP alone does not encrypt application data--it only controls access. TLS alone does not hide services--it only encrypts traffic. Together, they provide defense in depth:<a href="#section-4.6-1" class="pilcrow">¶</a></p>
 <ul class="normal">
 <li class="normal" id="section-4.6-2.1">
             <p id="section-4.6-2.1.1"><strong>Without NHP:</strong> Attackers can scan, probe, and exploit services before any authentication occurs<a href="#section-4.6-2.1.1" class="pilcrow">¶</a></p>
@@ -1962,7 +1962,7 @@ User                     ↑                    ↑
               <p id="section-6.1.2-2.6.1">Managing session state and expiration<a href="#section-6.1.2-2.6.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
-<p id="section-6.1.2-3">Functionally, the NHP-Server maps to the <strong>Policy Administrator</strong> role defined in NIST SP 800-207 Zero Trust Architecture.<a href="#section-6.1.2-3" class="pilcrow">¶</a></p>
+<p id="section-6.1.2-3">Functionally, the NHP-Server maps to the <strong>Policy Administrator</strong> role defined in NIST SP 800-207 Zero Trust Architecture <span>[<a href="#NIST.SP.800-207" class="cite xref">NIST.SP.800-207</a>]</span>.<a href="#section-6.1.2-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="nhp-ac-access-controller">
@@ -2531,97 +2531,97 @@ K:
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x01</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-KNK</td>
-              <td class="text-left" rowspan="1" colspan="1">Agent→Server</td>
+              <td class="text-left" rowspan="1" colspan="1">Agent-&gt;Server</td>
               <td class="text-left" rowspan="1" colspan="1">Knock request</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x02</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-ACK</td>
-              <td class="text-left" rowspan="1" colspan="1">Server→Agent</td>
+              <td class="text-left" rowspan="1" colspan="1">Server-&gt;Agent</td>
               <td class="text-left" rowspan="1" colspan="1">Knock acknowledgment</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x03</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-AOP</td>
-              <td class="text-left" rowspan="1" colspan="1">Server→AC</td>
+              <td class="text-left" rowspan="1" colspan="1">Server-&gt;AC</td>
               <td class="text-left" rowspan="1" colspan="1">AC operation request</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x04</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-ART</td>
-              <td class="text-left" rowspan="1" colspan="1">AC→Server</td>
+              <td class="text-left" rowspan="1" colspan="1">AC-&gt;Server</td>
               <td class="text-left" rowspan="1" colspan="1">AC operation result</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x05</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-LST</td>
-              <td class="text-left" rowspan="1" colspan="1">Agent→Server</td>
+              <td class="text-left" rowspan="1" colspan="1">Agent-&gt;Server</td>
               <td class="text-left" rowspan="1" colspan="1">List services and applications</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x06</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-LRT</td>
-              <td class="text-left" rowspan="1" colspan="1">Server→Agent</td>
+              <td class="text-left" rowspan="1" colspan="1">Server-&gt;Agent</td>
               <td class="text-left" rowspan="1" colspan="1">Service list result</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x07</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-COK</td>
-              <td class="text-left" rowspan="1" colspan="1">Server→Agent</td>
+              <td class="text-left" rowspan="1" colspan="1">Server-&gt;Agent</td>
               <td class="text-left" rowspan="1" colspan="1">Cookie for re-knock</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x08</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-RKN</td>
-              <td class="text-left" rowspan="1" colspan="1">Agent→Server</td>
+              <td class="text-left" rowspan="1" colspan="1">Agent-&gt;Server</td>
               <td class="text-left" rowspan="1" colspan="1">Re-knock with cookie</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x09</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-RLY</td>
-              <td class="text-left" rowspan="1" colspan="1">Relay→Server</td>
+              <td class="text-left" rowspan="1" colspan="1">Relay-&gt;Server</td>
               <td class="text-left" rowspan="1" colspan="1">Relayed packet</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x0A</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-AOL</td>
-              <td class="text-left" rowspan="1" colspan="1">AC→Server</td>
+              <td class="text-left" rowspan="1" colspan="1">AC-&gt;Server</td>
               <td class="text-left" rowspan="1" colspan="1">AC online notification</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x0B</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-AAK</td>
-              <td class="text-left" rowspan="1" colspan="1">Server→AC</td>
+              <td class="text-left" rowspan="1" colspan="1">Server-&gt;AC</td>
               <td class="text-left" rowspan="1" colspan="1">Acknowledgment of AC online notification</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x0C</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-OTP</td>
-              <td class="text-left" rowspan="1" colspan="1">Agent→Server</td>
+              <td class="text-left" rowspan="1" colspan="1">Agent-&gt;Server</td>
               <td class="text-left" rowspan="1" colspan="1">One-time passcode request</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x0D</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-REG</td>
-              <td class="text-left" rowspan="1" colspan="1">Agent→Server</td>
+              <td class="text-left" rowspan="1" colspan="1">Agent-&gt;Server</td>
               <td class="text-left" rowspan="1" colspan="1">Agent registration</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x0E</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-RAK</td>
-              <td class="text-left" rowspan="1" colspan="1">Server→Agent</td>
+              <td class="text-left" rowspan="1" colspan="1">Server-&gt;Agent</td>
               <td class="text-left" rowspan="1" colspan="1">Registration acknowledgment</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x0F</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-ACC</td>
-              <td class="text-left" rowspan="1" colspan="1">Agent→AC</td>
+              <td class="text-left" rowspan="1" colspan="1">Agent-&gt;AC</td>
               <td class="text-left" rowspan="1" colspan="1">Access request</td>
             </tr>
             <tr>
               <td class="text-left" rowspan="1" colspan="1">0x10</td>
               <td class="text-left" rowspan="1" colspan="1">NHP-EXT</td>
-              <td class="text-left" rowspan="1" colspan="1">Agent→Server</td>
+              <td class="text-left" rowspan="1" colspan="1">Agent-&gt;Server</td>
               <td class="text-left" rowspan="1" colspan="1">Immediate disconnection request</td>
             </tr>
           </tbody>
@@ -4142,7 +4142,7 @@ K:
             <p id="section-16.2-6.5.1">StealthDNS returns valid DNS records only to authorized clients.<a href="#section-16.2-6.5.1" class="pilcrow">¶</a></p>
 </li>
           <li id="section-16.2-6.6">
-            <p id="section-16.2-6.6.1">Unauthorized clients receive NXDOMAIN—the service remains invisible.<a href="#section-16.2-6.6.1" class="pilcrow">¶</a></p>
+            <p id="section-16.2-6.6.1">Unauthorized clients receive NXDOMAIN--the service remains invisible.<a href="#section-16.2-6.6.1" class="pilcrow">¶</a></p>
 </li>
         </ol>
 <p id="section-16.2-7">This enforces <strong>identity before visibility</strong> and <strong>authorization before connectivity</strong>, demonstrating real-world application of NHP principles.<a href="#section-16.2-7" class="pilcrow">¶</a></p>
@@ -4178,12 +4178,8 @@ K:
 <span class="refAuthor">Rescorla, E.</span>, <span class="refTitle">"The Transport Layer Security (TLS) Protocol Version 1.3"</span>, <span class="seriesInfo">RFC 8446</span>, <span class="seriesInfo">DOI 10.17487/RFC8446</span>, <time datetime="2018-08" class="refDate">August 2018</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8446">https://www.rfc-editor.org/rfc/rfc8446</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC9000">[RFC9000]</dt>
-        <dd>
-<span class="refAuthor">Iyengar, J., Ed.</span> and <span class="refAuthor">M. Thomson, Ed.</span>, <span class="refTitle">"QUIC: A UDP-Based Multiplexed and Secure Transport"</span>, <span class="seriesInfo">RFC 9000</span>, <span class="seriesInfo">DOI 10.17487/RFC9000</span>, <time datetime="2021-05" class="refDate">May 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9000">https://www.rfc-editor.org/rfc/rfc9000</a>&gt;</span>. </dd>
-<dd class="break"></dd>
-<dt id="RFC9180">[RFC9180]</dt>
       <dd>
-<span class="refAuthor">Barnes, R.</span>, <span class="refAuthor">Bhargavan, K.</span>, <span class="refAuthor">Lipp, B.</span>, and <span class="refAuthor">C. Wood</span>, <span class="refTitle">"Hybrid Public Key Encryption"</span>, <span class="seriesInfo">RFC 9180</span>, <span class="seriesInfo">DOI 10.17487/RFC9180</span>, <time datetime="2022-02" class="refDate">February 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9180">https://www.rfc-editor.org/rfc/rfc9180</a>&gt;</span>. </dd>
+<span class="refAuthor">Iyengar, J., Ed.</span> and <span class="refAuthor">M. Thomson, Ed.</span>, <span class="refTitle">"QUIC: A UDP-Based Multiplexed and Secure Transport"</span>, <span class="seriesInfo">RFC 9000</span>, <span class="seriesInfo">DOI 10.17487/RFC9000</span>, <time datetime="2021-05" class="refDate">May 2021</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9000">https://www.rfc-editor.org/rfc/rfc9000</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
