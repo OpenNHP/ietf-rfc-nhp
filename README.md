@@ -1,4 +1,4 @@
-<!-- regenerate: on (set to off if you edit this file) -->
+<!-- regenerate: off (set to off if you edit this file) -->
 
 # Network infrastructure Hiding Protocol
 
@@ -10,6 +10,7 @@ This is the working area for the Independent Submission Internet-Draft "Network-
 * [Plain Text](https://www.ietf.org/archive/id/draft-opennhp-ztcpp-nhp-00.txt)
 * [Editor's Copy](https://OpenNHP.github.io/ietf-rfc-nhp/draft-opennhp-ztcpp-nhp.html)
 * [Compare Editor's Copy to Individual Draft](https://OpenNHP.github.io/ietf-rfc-nhp/#go.draft-opennhp-ztcpp-nhp.diff)
+* [Live Demo](https://opennhp.org/demo/)
 
 
 ## Contributing

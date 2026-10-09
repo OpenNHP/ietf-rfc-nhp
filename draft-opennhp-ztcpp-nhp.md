@@ -2,7 +2,7 @@
 title: "Network-Infrastructure Hiding Protocol"
 abbrev: "NHP"
 category: info
-docname: draft-opennhp-ztcpp-nhp-latest
+docname: draft-opennhp-ztcpp-nhp-01
 submissiontype: independent
 v: 3
 keyword:
@@ -23,6 +23,9 @@ author:
     fullname: Benfeng Chen
     organization: OpenNHP
     email: benfeng@gmail.com
+ -
+    fullname: Justin Posey
+    organization: LayerV
 
 normative:
   RFC2119:
@@ -897,6 +900,10 @@ Values 0x12-0xFF are reserved for future use.
 An open-source reference implementation of NHP is available at:
 
 https://github.com/OpenNHP/opennhp
+
+A live demo of the protocol is available at:
+
+https://opennhp.org/demo/
 
 ## Implementation Characteristics
 
